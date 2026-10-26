@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)file:///C:/Users/ASUS/OneDrive/JET-EOI-JUBILEE%20DASHBOARD/18_academy.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SECTION 18 — INCLUSIVE ENTREPRENEURSHIP ACADEMY | Sovereign Bio-Solar-Thermal Campus</title>
+<style>
+  :root {
+    --bg-superwhite: #FFFFFF;
+    --navy-blue: #0A192F;
+    --dark-green: #1B4332;
+    --sunny-gold: #D4AF37;
+    --teal: #008080;
+    --text-primary: #1A202C;
+    --text-muted: #4A5568;
+    --card-bg: #F8FAFC;
+    --border-color: #E2E8F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg-superwhite);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; background: var(--bg-superwhite); }
+
+  /* Top Ownership Badge */
+  .ownership-bar {
+    background: var(--dark-green);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--sunny-gold);
+  }
+
+  .ownership-bar span { color: var(--sunny-gold); }
+
+  /* Main Heading Block */
+  .header-block {
+    background-color: var(--navy-blue);
+    color: var(--bg-superwhite);
+    padding: 40px 30px;
+    border-radius: 0 0 8px 8px;
+    border-bottom: 5px solid var(--sunny-gold);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  .header-block.active-narration {
+    border: 3px solid var(--sunny-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .header-block h1 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .header-block .subtitle { font-size: 1.1rem; color: var(--sunny-gold); font-weight: 500; margin-bottom: 15px; }
+  .header-block .tags { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; }
+  .header-block .tag { background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.4); color: #FFFFFF; }
+
+  /* Control Panel */
+  .control-panel {
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .control-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+  .control-title { font-weight: 700; color: #1E40AF; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .button-group { display: flex; gap: 12px; flex-wrap: wrap; }
+  
+  .btn-action {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+  }
+  .btn-action:hover { background: #1D4ED8; }
+  .btn-stop {
+    background: #DC2626;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .btn-stop:hover { background: #B91C1C; }
+
+  /* Section Styles */
+  section {
+    margin-bottom: 45px;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  section.active-narration {
+    background-color: rgba(59, 130, 246, 0.05);
+    border: 2px solid #3B82F6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+
+  h2 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  h2 .section-audio-btn {
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h2 .section-audio-btn:hover { background: #006666; }
+
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--teal);
+    border-radius: 2px;
+  }
+
+  p { color: var(--text-muted); margin-bottom: 15px; font-size: 1rem; }
+
+  /* Grid Layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+
+  .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; }
+  .card-header { font-weight: bold; color: var(--dark-green); font-size: 1.1rem; margin-bottom: 10px; }
+
+  /* Bullet Lists */
+  ul, ol { padding-left: 0; list-style: none; }
+  ul li { position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--text-muted); }
+  ul li::before { content: '■'; position: absolute; left: 0; color: var(--sunny-gold); font-size: 0.8rem; top: 2px; }
+
+  /* Callout Box */
+  .teachability-box {
+    background-color: #F0FDF4;
+    border-left: 4px solid var(--dark-green);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
+  }
+  .teachability-title { font-weight: 700; color: var(--dark-green); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+
+  /* Tables */
+  .styled-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+  .styled-table thead tr { background-color: var(--navy-blue); color: #FFFFFF; text-align: left; }
+  .styled-table th, .styled-table td { padding: 10px 12px; border: 1px solid var(--border-color); }
+  .styled-table tbody tr { border-bottom: 1px solid var(--border-color); }
+  .styled-table tbody tr:nth-of-type(even) { background-color: var(--card-bg); }
+  .styled-table tbody tr:last-of-type { border-bottom: 2px solid var(--dark-green); }
+
+  /* Diagram Box */
+  .diagram-box {
+    background: var(--navy-blue);
+    color: #FFFFFF;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.88rem;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--sunny-gold);
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.4;
+  }
+  .diagram-box span { color: var(--sunny-gold); font-weight: bold; }
+
+  /* Interactive Signature Image Stamp Styles */
+  .signature-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
+  @media (max-width: 768px) { .signature-container { grid-template-columns: 1fr; } }
+  .signature-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+  .signature-title { font-size: 0.85rem; font-weight: 700; color: var(--dark-green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px; }
+  
+  .signature-dropzone {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    margin-bottom: 12px;
+    background: #FFFFFF;
+    border: 1.5px dashed var(--teal);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .signature-dropzone:hover { background: #F0FDF4; border-color: var(--dark-green); }
+  .signature-dropzone p { font-size: 0.8rem; color: var(--text-muted); margin: 0; text-align: center; }
+  
+  .signature-preview-img {
+    max-width: 90%;
+    max-height: 90px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .signature-actions { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
+  .btn-sig { padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; border: none; cursor: pointer; transition: all 0.2s ease; }
+  .btn-upload { background: #E2E8F0; color: var(--navy-blue); }
+  .btn-upload:hover { background: #CBD5E1; }
+  .btn-lock { background: var(--dark-green); color: #FFFFFF; }
+  .btn-lock:hover { background: #143225; }
+  .btn-sig:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .signatory-name { font-size: 1rem; font-weight: 800; color: var(--navy-blue); }
+  .signatory-role { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+  .signatory-meta { font-size: 0.78rem; color: var(--teal); font-weight: 600; }
+  .signature-status { font-size: 0.75rem; font-weight: 700; color: #D97706; margin-top: 6px; }
+  .signature-status.locked { color: #059669; }
+
+  /* Institutional Profile Footer Block */
+  .institutional-block { background-color: var(--navy-blue); color: #FFFFFF; padding: 30px; border-radius: 8px; margin-top: 40px; border-top: 4px solid var(--dark-green); }
+  .institutional-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; font-size: 0.9rem; }
+  .institutional-item strong { color: var(--sunny-gold); display: block; margin-bottom: 4px; }
+  .contact-link { color: #FFFFFF; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="container" id="documentContainer">
+
+  <!-- Ownership Header Bar -->
+  <div class="ownership-bar">
+    <div>PROPRIETARY &amp; CONFIDENTIAL — <span>LWANDILE ENGINEERING PROJECTS &amp; INCLUSIVE ENTREPRENEURIAL ACADEMY</span></div>
+    <div>SCAPUSH PRECISION STANDARD</div>
+  </div>
+
+  <!-- Main Heading Block -->
+  <header class="header-block" id="secHeader">
+    <h1>SECTION 18 — INCLUSIVE ENTREPRENEURSHIP ACADEMY</h1>
+    <div class="subtitle">Sovereign Bio-Solar-Thermal Campus | Master Design Specification</div>
+    <div class="tags">
+      <span class="tag">Doc Ref: 18_academy.html</span>
+      <span class="tag">Status: APPROVED BASELINE</span>
+      <span class="tag">Governance: Scapush Precision</span>
+      <span class="tag">Human Capital &amp; Enterprise Engine</span>
+    </div>
+  </header>
+
+  <!-- Control Panel -->
+  <div class="control-panel" role="region" aria-label="Accessibility Control Center">
+    <div class="control-row">
+      <div class="control-title">
+        <span>🔊 Auto-Scrolling Live Narration Engine</span>
+      </div>
+      <div class="button-group">
+        <button class="btn-action" onclick="startAutoScrollingNarration()">▶ Start Auto-Scroll Narration</button>
+        <button class="btn-stop" onclick="stopSpeech()">⏹ Stop / Misa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1: Purpose, Vision & Strategic Objectives -->
+  <section id="sec1">
+    <h2>
+      <span>1. Purpose, Institutional Vision &amp; Strategic Objectives</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec1')">🔊 Listen Section</button>
+    </h2>
+    <p>The Inclusive Entrepreneurship Academy functions as the education, training, skills development, human capital transformation, and enterprise incubation centre of the Sovereign Bio-Solar-Thermal Campus. Led by Dr. Palesa Charlotte Felix-Faure, the Academy bridges technical engineering, circular agriculture, and off-grid utilities with accredited human skills development and enterprise creation under the Just Energy Transition (JET) framework.</p>
+
+    <div class="teachability-box">
+      <div class="teachability-title">INSTITUTIONAL VISION &amp; INCLUSION MANDATE</div>
+      <p style="margin-bottom: 0; color: var(--text-primary);">
+        To serve as a community-centred centre of excellence for Food, Energy, Water, Circular Economy, and Accessibility Innovation. The Academy guarantees step-free, fully accessible pathways for youth, women, and persons with disabilities, ensuring complete economic and technical inclusion within South Africa's green transition.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">Core Strategic Objectives</div>
+        <ul>
+          <li><strong>Green Skills Development:</strong> Building local technical competence across solar PV, microgrids, biodigesters, and CHP.</li>
+          <li><strong>Disability &amp; Youth Inclusion:</strong> Tailored learning tracks guaranteeing 100% universal access for all abilities.</li>
+          <li><strong>Enterprise Incubation:</strong> Transforming technical competencies into viable commercial cooperatives and green SMEs.</li>
+          <li><strong>Food-Energy-Water Literacy:</strong> Educating community leaders on sovereign, zero-waste circular ecosystems.</li>
+          <li><strong>Employment Readiness:</strong> Certifying operators for direct deployment across off-grid infrastructure assets.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Academy 3-Tier Learning Framework</div>
+        <table class="styled-table" style="margin-top: 0;">
+          <thead>
+            <tr>
+              <th>Learning Tier</th>
+              <th>Category Standard</th>
+              <th>Target Audience &amp; Delivery Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tier 1</strong></td>
+              <td>Accredited Qualification Pathways</td>
+              <td>Formal NQF Level 2 to 5 occupational qualifications and credit-bearing skills programmes.</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 2</strong></td>
+              <td>Campus Operator Certifications</td>
+              <td>Intensive practical certifications for direct hands-on operation of campus infrastructure.</td>
+            </tr>
+            <tr>
+              <td><strong>Tier 3</strong></td>
+              <td>Community Awareness &amp; Inclusion</td>
+              <td>Broad community workshops, food-energy-water security literacy, and disability inclusion.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Six Academic Faculties & Detailed Curriculum Matrix -->
+  <section id="sec2">
+    <h2>
+      <span>2. Academic Faculties &amp; Detailed Curriculum Specifications</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec2')">🔊 Listen Section</button>
+    </h2>
+    <p>The Academy structures its formal educational offerings across six specialized faculties. All modules are codified below with exact NQF alignment, SAQA credit allocations, total learning hours, practical-to-theory ratios, assessment models, and articulation pathways:</p>
+
+    <!-- Faculty 1: Renewable Energy -->
+    <div class="card" style="margin-bottom: 25px;">
+      <div class="card-header">2.1 Faculty of Renewable Energy &amp; Microgrid Utilities</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Module Code</th>
+            <th>Module Title &amp; Focus Area</th>
+            <th>NQF</th>
+            <th>Credits</th>
+            <th>Hours (Prac / Theo)</th>
+            <th>Assessment Type</th>
+            <th>Certification &amp; Articulation Pathway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>REN-M01</strong></td>
+            <td>Renewable Energy Fundamentals</td>
+            <td>L2</td>
+            <td>12</td>
+            <td>120h (70h / 50h)</td>
+            <td>Formative + Practical Exam</td>
+            <td>Occupational Certificate: Energy Systems → Articulates to REN-M02</td>
+          </tr>
+          <tr>
+            <td><strong>REN-M02</strong></td>
+            <td>Solar PV Installation Fundamentals</td>
+            <td>L3</td>
+            <td>16</td>
+            <td>160h (100h / 60h)</td>
+            <td>Practical Trade Assessment</td>
+            <td>Solar PV Installer Ticket (GreenCard) → Articulates to REN-M03</td>
+          </tr>
+          <tr>
+            <td><strong>REN-M03</strong></td>
+            <td>Solar Operations &amp; Maintenance</td>
+            <td>L4</td>
+            <td>20</td>
+            <td>200h (120h / 80h)</td>
+            <td>Portfolio of Evidence (PoE)</td>
+            <td>Solar O&amp;M Technician → Articulates to REN-M04</td>
+          </tr>
+          <tr>
+            <td><strong>REN-M04</strong></td>
+            <td>Microgrid Integration &amp; Controls</td>
+            <td>L5</td>
+            <td>24</td>
+            <td>240h (140h / 100h)</td>
+            <td>System Design Defense</td>
+            <td>Microgrid Specialist → Articulates to Advanced Energy Engineering</td>
+          </tr>
+          <tr>
+            <td><strong>REN-M05</strong></td>
+            <td>Energy Management &amp; BESS Systems</td>
+            <td>L5</td>
+            <td>20</td>
+            <td>200h (110h / 90h)</td>
+            <td>Simulation &amp; SCADA Audit</td>
+            <td>BESS &amp; Storage Specialist → Articulates to Microgrid Asset Manager</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Faculty 2: Livestock Production -->
+    <div class="card" style="margin-bottom: 25px;">
+      <div class="card-header">2.2 Faculty of Precision Livestock Production</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Module Code</th>
+            <th>Module Title &amp; Focus Area</th>
+            <th>NQF</th>
+            <th>Credits</th>
+            <th>Hours (Prac / Theo)</th>
+            <th>Assessment Type</th>
+            <th>Certification &amp; Articulation Pathway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>LIV-M01</strong></td>
+            <td>Poultry Production Fundamentals</td>
+            <td>L2</td>
+            <td>12</td>
+            <td>120h (80h / 40h)</td>
+            <td>On-Site Practical Assessment</td>
+            <td>Junior Poultry Attendant → Articulates to LIV-M02</td>
+          </tr>
+          <tr>
+            <td><strong>LIV-M02</strong></td>
+            <td>Advanced Poultry Husbandry</td>
+            <td>L3</td>
+            <td>18</td>
+            <td>180h (110h / 70h)</td>
+            <td>Batch Production Log &amp; Exam</td>
+            <td>Commercial Poultry Operator → Articulates to Farm Management</td>
+          </tr>
+          <tr>
+            <td><strong>LIV-M03</strong></td>
+            <td>Swine Production Fundamentals</td>
+            <td>L2</td>
+            <td>12</td>
+            <td>120h (80h / 40h)</td>
+            <td>On-Site Practical Assessment</td>
+            <td>Junior Swine Attendant → Articulates to LIV-M04</td>
+          </tr>
+          <tr>
+            <td><strong>LIV-M04</strong></td>
+            <td>Advanced Swine Operations</td>
+            <td>L3</td>
+            <td>18</td>
+            <td>180h (110h / 70h)</td>
+            <td>Herd Performance Audit</td>
+            <td>Commercial Swine Operator → Articulates to Swine Unit Manager</td>
+          </tr>
+          <tr>
+            <td><strong>LIV-M05</strong></td>
+            <td>Animal Welfare, Biosecurity &amp; Handling</td>
+            <td>L3</td>
+            <td>14</td>
+            <td>140h (90h / 50h)</td>
+            <td>Biosecurity Audit &amp; PoE</td>
+            <td>Campus Biosecurity Officer → Articulates to Veterinary Nursing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Faculty 3: Circular Economy -->
+    <div class="card" style="margin-bottom: 25px;">
+      <div class="card-header">2.3 Faculty of Circular Economy &amp; Bio-Energy</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Module Code</th>
+            <th>Module Title &amp; Focus Area</th>
+            <th>NQF</th>
+            <th>Credits</th>
+            <th>Hours (Prac / Theo)</th>
+            <th>Assessment Type</th>
+            <th>Certification &amp; Articulation Pathway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CIR-M01</strong></td>
+            <td>Waste Management Fundamentals</td>
+            <td>L2</td>
+            <td>10</td>
+            <td>100h (60h / 40h)</td>
+            <td>Practical Sorting &amp; Log</td>
+            <td>Waste Reclamation Certificate → Articulates to CIR-M02</td>
+          </tr>
+          <tr>
+            <td><strong>CIR-M02</strong></td>
+            <td>Biodigester Operations &amp; Biogas</td>
+            <td>L3</td>
+            <td>16</td>
+            <td>160h (100h / 60h)</td>
+            <td>Gas Plant Practical Exam</td>
+            <td>Biogas Plant Operator → Articulates to Bio-Energy Specialist</td>
+          </tr>
+          <tr>
+            <td><strong>CIR-M03</strong></td>
+            <td>Resource Recovery Systems &amp; CHP</td>
+            <td>L4</td>
+            <td>20</td>
+            <td>200h (120h / 80h)</td>
+            <td>Thermal &amp; Gas Audit PoE</td>
+            <td>CHP &amp; Bio-Thermal Technician → Articulates to Energy Manager</td>
+          </tr>
+          <tr>
+            <td><strong>CIR-M04</strong></td>
+            <td>Organic Bio-Fertiliser Production</td>
+            <td>L3</td>
+            <td>14</td>
+            <td>140h (90h / 50h)</td>
+            <td>Nutrient Analysis &amp; Batch</td>
+            <td>Bio-Fertiliser Processor → Articulates to Agri-Chemicals</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Faculty 4: Digital Agriculture -->
+    <div class="card" style="margin-bottom: 25px;">
+      <div class="card-header">2.4 Faculty of Digital Agriculture &amp; SCADA Systems</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Module Code</th>
+            <th>Module Title &amp; Focus Area</th>
+            <th>NQF</th>
+            <th>Credits</th>
+            <th>Hours (Prac / Theo)</th>
+            <th>Assessment Type</th>
+            <th>Certification &amp; Articulation Pathway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>DIG-M01</strong></td>
+            <td>Digital Agriculture Fundamentals</td>
+            <td>L3</td>
+            <td>12</td>
+            <td>120h (70h / 50h)</td>
+            <td>Digital Terminal Practicum</td>
+            <td>Agri-Tech Assistant → Articulates to DIG-M02</td>
+          </tr>
+          <tr>
+            <td><strong>DIG-M02</strong></td>
+            <td>SCADA Monitoring &amp; Telemetry</td>
+            <td>L4</td>
+            <td>18</td>
+            <td>180h (110h / 70h)</td>
+            <td>Live HMI Simulation Exam</td>
+            <td>Junior SCADA Operator → Articulates to DIG-M03</td>
+          </tr>
+          <tr>
+            <td><strong>DIG-M03</strong></td>
+            <td>Industrial Automation Basics</td>
+            <td>L4</td>
+            <td>18</td>
+            <td>180h (110h / 70h)</td>
+            <td>PLC Programming Test</td>
+            <td>Industrial Automation Assistant → Articulates to Control Systems</td>
+          </tr>
+          <tr>
+            <td><strong>DIG-M04</strong></td>
+            <td>Data Analytics for Agriculture</td>
+            <td>L5</td>
+            <td>22</td>
+            <td>220h (120h / 100h)</td>
+            <td>Analytics Dashboard Project</td>
+            <td>Agri-Data Analyst → Articulates to Systems Optimization</td>
+          </tr>
+          <tr>
+            <td><strong>DIG-M05</strong></td>
+            <td>Digital Twin Operational Concepts</td>
+            <td>L5</td>
+            <td>24</td>
+            <td>240h (130h / 110h)</td>
+            <td>Digital Twin Simulation</td>
+            <td>Digital Twin Specialist → Articulates to Smart Infrastructure Manager</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Faculty 5: Entrepreneurship -->
+    <div class="card" style="margin-bottom: 25px;">
+      <div class="card-header">2.5 Faculty of Green Entrepreneurship &amp; Cooperatives</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Module Code</th>
+            <th>Module Title &amp; Focus Area</th>
+            <th>NQF</th>
+            <th>Credits</th>
+            <th>Hours (Prac / Theo)</th>
+            <th>Assessment Type</th>
+            <th>Certification &amp; Articulation Pathway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ENT-M01</strong></td>
+            <td>Business Fundamentals</td>
+            <td>L2</td>
+            <td>10</td>
+            <td>100h (50h / 50h)</td>
+            <td>Basic Business Plan</td>
+            <td>Business Start-Up Certificate → Articulates to ENT-M02</td>
+          </tr>
+          <tr>
+            <td><strong>ENT-M02</strong></td>
+            <td>Cooperative Governance &amp; Ethics</td>
+            <td>L3</td>
+            <td>14</td>
+            <td>140h (70h / 70h)</td>
+            <td>Coop Constitution PoE</td>
+            <td>Cooperative Administrator → Articulates to ENT-M03</td>
+          </tr>
+          <tr>
+            <td><strong>ENT-M03</strong></td>
+            <td>Project Management Fundamentals</td>
+            <td>L4</td>
+            <td>16</td>
+            <td>160h (80h / 80h)</td>
+            <td>Project Charter &amp; Gantt</td>
+            <td>Junior Project Coordinator → Articulates to Enterprise Manager</td>
+          </tr>
+          <tr>
+            <td><strong>ENT-M04</strong></td>
+            <td>Green Enterprise Development</td>
+            <td>L4</td>
+            <td>20</td>
+            <td>200h (110h / 90h)</td>
+            <td>Commercial Pitch Defense</td>
+            <td>Green SME Founder → Articulates to Business Incubator</td>
+          </tr>
+          <tr>
+            <td><strong>ENT-M05</strong></td>
+            <td>Social Enterprise Incubation &amp; Scale</td>
+            <td>L5</td>
+            <td>24</td>
+            <td>240h (130h / 110h)</td>
+            <td>Financial Audit &amp; Pitch</td>
+            <td>Social Enterprise Executive → Articulates to Impact Investment</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Faculty 6: Accessibility -->
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="card-header">2.6 Faculty of Universal Design &amp; Accessibility Inclusion</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Module Code</th>
+            <th>Module Title &amp; Focus Area</th>
+            <th>NQF</th>
+            <th>Credits</th>
+            <th>Hours (Prac / Theo)</th>
+            <th>Assessment Type</th>
+            <th>Certification &amp; Articulation Pathway</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ACC-M01</strong></td>
+            <td>Disability Inclusion Awareness</td>
+            <td>L2</td>
+            <td>8</td>
+            <td>80h (40h / 40h)</td>
+            <td>Awareness Workshop Log</td>
+            <td>Inclusion Ambassador → Articulates to ACC-M02</td>
+          </tr>
+          <tr>
+            <td><strong>ACC-M02</strong></td>
+            <td>Universal Design Principles</td>
+            <td>L4</td>
+            <td>16</td>
+            <td>160h (90h / 70h)</td>
+            <td>Accessibility Audit PoE</td>
+            <td>Universal Design Assessor → Articulates to Infrastructure Design</td>
+          </tr>
+          <tr>
+            <td><strong>ACC-M03</strong></td>
+            <td>Accessible Enterprise Development</td>
+            <td>L4</td>
+            <td>18</td>
+            <td>180h (100h / 80h)</td>
+            <td>Inclusive Business Model</td>
+            <td>Inclusive Enterprise Specialist → Articulates to Social Policy</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 3: Campus Operator Certifications & Quick Reference Modules -->
+  <section id="sec3">
+    <h2>
+      <span>3. Campus Operator Certification Programme &amp; Quick Reference Refresher Modules</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec3')">🔊 Listen Section</button>
+    </h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">Campus Operator Certifications (Short Programmes)</div>
+        <p>5-day to 3-day intensive bootcamps preparing personnel for immediate, high-precision deployment across campus assets:</p>
+        <table class="styled-table" style="margin-top: 10px;">
+          <thead>
+            <tr>
+              <th>Certification Title</th>
+              <th>Duration</th>
+              <th>Practical Assessment Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Poultry Operator Certificate</strong></td><td>5 Days</td><td>Pod climate, feeding, water dosing &amp; mortality log.</td></tr>
+            <tr><td><strong>Swine Operator Certificate</strong></td><td>5 Days</td><td>Sow/weaner care, 2% sloped gravity cleaning &amp; feed.</td></tr>
+            <tr><td><strong>Nursery Operator Certificate</strong></td><td>3 Days</td><td>Chick/weaner brooding hydronic thermal management.</td></tr>
+            <tr><td><strong>Biodigester Operator Certificate</strong></td><td>5 Days</td><td>Macerator sumps, 70m³ slurry loading &amp; gas scrubbers.</td></tr>
+            <tr><td><strong>CHP Engine Operator Certificate</strong></td><td>5 Days</td><td>Engine start-up, thermal heat recovery &amp; gas valves.</td></tr>
+            <tr><td><strong>Solar PV Operator Certificate</strong></td><td>3 Days</td><td>Rooftop/Tracker cleaning, thermal inspection &amp; tilt.</td></tr>
+            <tr><td><strong>BESS Storage Operator Certificate</strong></td><td>3 Days</td><td>Zone L climate, SOC check &amp; aerosol fire safety.</td></tr>
+            <tr><td><strong>Microgrid Operator Certificate</strong></td><td>5 Days</td><td>Feeder switching, load balancing &amp; island control.</td></tr>
+            <tr><td><strong>SCADA Operator Certificate</strong></td><td>5 Days</td><td>Live HMI control, alarm clearing &amp; trend logging.</td></tr>
+            <tr><td><strong>Biosecurity Officer Certificate</strong></td><td>3 Days</td><td>Vehicle spray arches, shower stations &amp; PPE protocols.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Quick Reference Operational Refresher Modules</div>
+        <p>10-minute digital and physical cheat-sheets stationed at equipment control panels for rapid field execution:</p>
+        <ul>
+          <li><strong>Daily Poultry Operations:</strong> Morning feeder checks, temperature verification, water meter reading.</li>
+          <li><strong>Daily Swine Operations:</strong> Slurry channel flushing, feed hopper inspection, pen health score.</li>
+          <li><strong>Biosecurity Procedures:</strong> Shower-in/shower-out sequence, vehicle arch disinfectant mix.</li>
+          <li><strong>SCADA Alarm Response:</strong> Priority 1 emergency clearing, operator override, emergency contact.</li>
+          <li><strong>Borehole &amp; Water Systems:</strong> Pump manual start, UV filter lamp check, tank valve switching.</li>
+          <li><strong>Biodigester Start-Up:</strong> Macerator unblock procedure, pH testing, gas valve line alignment.</li>
+          <li><strong>CHP Engine Start-Up:</strong> Pre-start oil level, gas pressure check, synchronizing breaker closing.</li>
+          <li><strong>BESS Emergency Procedures:</strong> Thermal runaway alarm response, manual isolator trip, HVAC check.</li>
+          <li><strong>Microgrid Black Start:</strong> BESS control energization, 400V bus build, Tier 1 load closing.</li>
+          <li><strong>Emergency Response Procedures:</strong> Campus evacuation routes, assembly point headcount.</li>
+          <li><strong>Accessibility Support:</strong> Wheelchair charger deployment, mobility scooter assist, ramp check.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Freeze Register -->
+  <section id="sec4">
+    <h2>
+      <span>4. Academy Architecture Frozen Lock-In Register</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec4')">🔊 Listen Section</button>
+    </h2>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Ref Code</th>
+          <th>Locked Academy Parameter</th>
+          <th>Design Specification &amp; Governance Basis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>ACA-001</strong></td><td>Renewable Energy Faculty</td><td>5 formal NQF Level 2–5 modules covering Solar, BESS, CHP, and Microgrids.</td></tr>
+        <tr><td><strong>ACA-002</strong></td><td>Livestock Production Faculty</td><td>5 formal NQF Level 2–3 modules covering Poultry, Swine, and Biosecurity.</td></tr>
+        <tr><td><strong>ACA-003</strong></td><td>Circular Economy Faculty</td><td>4 formal NQF Level 2–4 modules covering Biodigesters, Waste, and Bio-Fertilisers.</td></tr>
+        <tr><td><strong>ACA-004</strong></td><td>Digital Agriculture Faculty</td><td>5 formal NQF Level 3–5 modules covering SCADA, Automation, and Digital Twin.</td></tr>
+        <tr><td><strong>ACA-005</strong></td><td>Entrepreneurship Faculty</td><td>5 formal NQF Level 2–5 modules covering Cooperatives and Green Enterprise.</td></tr>
+        <tr><td><strong>ACA-006</strong></td><td>Accessibility Faculty</td><td>3 formal NQF Level 2–4 modules covering Universal Design and Inclusive Business.</td></tr>
+        <tr><td><strong>ACA-007</strong></td><td>Campus Operator Certifications</td><td>10 short 3-to-5 day practical bootcamps for direct campus deployment.</td></tr>
+        <tr><td><strong>ACA-008</strong></td><td>Quick Reference Modules</td><td>11 field-level refresher procedures posted across all machinery stations.</td></tr>
+        <tr><td><strong>ACA-009</strong></td><td>Inclusive Participation</td><td>100% universal access for youth, women, and persons with physical disabilities.</td></tr>
+        <tr><td><strong>ACA-010</strong></td><td>JET Alignment</td><td>Full compliance with Just Energy Transition human capital and skills targets.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Signatures & Authorization -->
+  <section id="sec5">
+    <h2>
+      <span>5. Approval &amp; Authorization</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec5')">🔊 Listen Section</button>
+    </h2>
+    <div class="teachability-box" style="border-left-color: var(--sunny-gold);">
+      <div class="teachability-title" style="color: var(--navy-blue);">DOCUMENT STATUS</div>
+      <p style="font-weight: 700; color: var(--navy-blue); margin-bottom: 0;">STATUS: APPROVED BASELINE (REV 0.2) — LOCKED FOR JET SKILLS &amp; ENTERPRISE AUDIT</p>
+    </div>
+
+    <div class="signature-container">
+      <!-- Signatory 1: Sipho Wiseman Khuzwayo -->
+      <div class="signature-card">
+        <div class="signature-title">Project Steward &amp; Technical Lead</div>
+        
+        <input type="file" id="file-lead" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-lead">
+          <p id="placeholder-lead" style="display: none;">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(Pre-loading 'My Signature.jpg')</span></p>
+          <img id="img-lead" class="signature-preview-img" style="display: block;" alt="Signature Preview" src="data:image/png;base64,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">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-lead">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-lead">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Sipho Wiseman Khuzwayo</div>
+        <div class="signatory-role">Inclusive Legacy Architect / Principal Lead</div>
+        <div class="signatory-meta">Lwandile Engineering Projects (Pty) Ltd</div>
+        <div class="signature-status" id="status-lead">Status: Signature Image Loaded</div>
+      </div>
+
+      <!-- Signatory 2: Dr. Palesa Charlotte Felix-Faure -->
+      <div class="signature-card">
+        <div class="signature-title">Governance &amp; Academic Lead</div>
+        
+        <input type="file" id="file-academic" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-academic">
+          <p id="placeholder-academic">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(JPG / PNG / SVG)</span></p>
+          <img id="img-academic" class="signature-preview-img" style="display: none;" alt="Signature Preview">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-academic">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-academic">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Dr. Palesa Charlotte Felix-Faure</div>
+        <div class="signatory-role">Founder &amp; Academic Lead</div>
+        <div class="signatory-meta">Inclusive Entrepreneurial Academy</div>
+        <div class="signature-status" id="status-academic">Status: Awaiting Signature File</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutional Profile Footer Block -->
+  <footer class="institutional-block" id="secFooter">
+    <div class="institutional-grid">
+      <div class="institutional-item">
+        <strong>Consortium Leadership</strong>
+        Sipho Wiseman Khuzwayo — Lead System Architect (Lwandile Engineering)<br>
+        Dr. Palesa Charlotte Felix-Faure — Academic &amp; Governance Lead (Inclusive Entrepreneurial Academy)
+      </div>
+      <div class="institutional-item">
+        <strong>Execution Entities &amp; Standard</strong>
+        Lwandile Engineering Projects (Pty) Ltd<br>
+        Inclusive Entrepreneurial Academy<br>
+        Scapush Precision Execution Standard
+      </div>
+      <div class="institutional-item">
+        <strong>Operational Footprint</strong>
+        Sovereign Bio-Solar-Thermal Campus, Mpumalanga, South Africa
+      </div>
+      <div class="institutional-item">
+        <strong>Primary Contact &amp; Communication</strong>
+        <a href="mailto:siphokhuzwayo12@gmail.com" class="contact-link">siphokhuzwayo12@gmail.com</a><br>
+        <a href="https://www.linkedin.com/search/results/all/?keywords=sipho%20wiseman%20khuzwayo" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn Profile</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Auto-Scroll Narration & Signature Image Controller Script -->
+<script>
+  function stopSpeech() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    clearActiveHighlights();
+  }
+
+  function clearActiveHighlights() {
+    document.querySelectorAll('section, header').forEach(el => el.classList.remove('active-narration'));
+  }
+
+  function highlightAndScroll(elementId) {
+    clearActiveHighlights();
+    const target = document.getElementById(elementId);
+    if (target) {
+      target.classList.add('active-narration');
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  const academyNarrationSequence = [
+    {
+      elementId: 'secHeader',
+      text: "Section 18 Inclusive Entrepreneurship Academy for the Sovereign Bio Solar Thermal Campus under the Scapush Precision Execution Standard."
+    },
+    {
+      elementId: 'sec1',
+      text: "Section 1. Purpose, Institutional Vision and Strategic Objectives. Human capital transformation, green skills development, and inclusive enterprise incubation."
+    },
+    {
+      elementId: 'sec2',
+      text: "Section 2. Academic Faculties and Detailed Curriculum Specifications. Six specialized faculties covering renewable energy, livestock production, circular economy, digital agriculture, green entrepreneurship, and universal design."
+    },
+    {
+      elementId: 'sec3',
+      text: "Section 3. Campus Operator Certification Programme and Quick Reference Refresher Modules. Intensive short bootcamps and field-level operational cheat-sheets."
+    },
+    {
+      elementId: 'sec4',
+      text: "Section 4. Academy Architecture Frozen Lock-In Register. Traceability register covering parameters ACA-001 through ACA-010."
+    },
+    {
+      elementId: 'sec5',
+      text: "Section 5. Approval, Authorization, and Digital Signature Verification. Live vector image stamp upload slots and digital sealing framework."
+    },
+    {
+      elementId: 'secFooter',
+      text: "Institutional profile footer and communication channels for Lwandile Engineering Projects."
+    }
+  ];
+
+  function playNarrationStep(index) {
+    if (!('speechSynthesis' in window)) return;
+    if (index >= academyNarrationSequence.length) {
+      clearActiveHighlights();
+      return;
+    }
+
+    const step = academyNarrationSequence[index];
+    highlightAndScroll(step.elementId);
+
+    let utterance = new SpeechSynthesisUtterance(step.text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.95;
+    utterance.onend = function() {
+      playNarrationStep(index + 1);
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function startAutoScrollingNarration() {
+    stopSpeech();
+    playNarrationStep(0);
+  }
+
+  function speakSingleSection(sectionId) {
+    stopSpeech();
+    const foundStep = academyNarrationSequence.find(s => s.elementId === sectionId);
+    if (foundStep) {
+      highlightAndScroll(sectionId);
+      let utterance = new SpeechSynthesisUtterance(foundStep.text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.95;
+      utterance.onend = () => clearActiveHighlights();
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  // Signature Image Controller Setup
+  document.addEventListener("DOMContentLoaded", function () {
+    function setupSignatureSlot(prefix, defaultImagePath) {
+      const fileInput = document.getElementById(`file-${prefix}`);
+      const dropzone = document.getElementById(`dropzone-${prefix}`);
+      const placeholder = document.getElementById(`placeholder-${prefix}`);
+      const imgPreview = document.getElementById(`img-${prefix}`);
+      const btnUpload = document.getElementById(`btn-upload-${prefix}`);
+      const btnLock = document.getElementById(`btn-lock-${prefix}`);
+      const statusText = document.getElementById(`status-${prefix}`);
+
+      let isLocked = false;
+
+      function renderImage(src) {
+        imgPreview.src = src;
+        imgPreview.style.display = "block";
+        placeholder.style.display = "none";
+      }
+
+      dropzone.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+      btnUpload.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      dropzone.addEventListener("dragover", (e) => { e.preventDefault(); });
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        if (isLocked) return;
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          const file = e.dataTransfer.files[0];
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      btnLock.addEventListener("click", () => {
+        if (imgPreview.style.display === "none") {
+          alert("Please upload or select a signature image first.");
+          return;
+        }
+        isLocked = true;
+        btnUpload.disabled = true;
+        btnLock.disabled = true;
+        dropzone.style.cursor = "default";
+        
+        const lockTimestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+        statusText.textContent = `Status: Digitally Sealed (${lockTimestamp}) [Scapush Precision]`;
+        statusText.classList.add("locked");
+      });
+    }
+
+    setupSignatureSlot("lead", "My Signature.jpg");
+    setupSignatureSlot("academic", null);
+  });
+</script>
+
+
+</body></html>

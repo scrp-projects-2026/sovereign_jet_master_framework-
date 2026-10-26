@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)file:///C:/Users/ASUS/OneDrive/JET-EOI-JUBILEE%20DASHBOARD/00_jet-window4-eoi.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXPRESSION OF INTEREST (EOI) SUBMISSION — JET WINDOW 4</title>
+<style>
+  :root {
+    --bg-superwhite: #FFFFFF;
+    --navy-blue: #0A192F;
+    --dark-green: #1B4332;
+    --sunny-gold: #D4AF37;
+    --teal: #008080;
+    --text-primary: #1A202C;
+    --text-muted: #4A5568;
+    --card-bg: #F8FAFC;
+    --border-color: #E2E8F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg-superwhite);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; background: var(--bg-superwhite); }
+
+  /* Top Ownership Badge */
+  .ownership-bar {
+    background: var(--dark-green);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--sunny-gold);
+  }
+
+  .ownership-bar span { color: var(--sunny-gold); }
+
+  /* Main Heading Block */
+  .header-block {
+    background-color: var(--navy-blue);
+    color: var(--bg-superwhite);
+    padding: 40px 30px;
+    border-radius: 0 0 8px 8px;
+    border-bottom: 5px solid var(--sunny-gold);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  .header-block.active-narration {
+    border: 3px solid var(--sunny-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .header-block h1 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .header-block .subtitle { font-size: 1.1rem; color: var(--sunny-gold); font-weight: 500; margin-bottom: 15px; }
+  .header-block .tags { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; }
+  .header-block .tag { background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.4); color: #FFFFFF; }
+
+  /* Control Panel */
+  .control-panel {
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .control-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+  .control-title { font-weight: 700; color: #1E40AF; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .button-group { display: flex; gap: 12px; flex-wrap: wrap; }
+  
+  .btn-action {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+  }
+  .btn-action:hover { background: #1D4ED8; }
+  .btn-stop {
+    background: #DC2626;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .btn-stop:hover { background: #B91C1C; }
+
+  /* Section Styles */
+  section {
+    margin-bottom: 45px;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  section.active-narration {
+    background-color: rgba(59, 130, 246, 0.05);
+    border: 2px solid #3B82F6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+
+  h2 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  h2 .section-audio-btn {
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h2 .section-audio-btn:hover { background: #006666; }
+
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--teal);
+    border-radius: 2px;
+  }
+
+  p { color: var(--text-muted); margin-bottom: 15px; font-size: 1rem; }
+
+  /* Grid Layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+
+  .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; }
+  .card-header { font-weight: bold; color: var(--dark-green); font-size: 1.1rem; margin-bottom: 10px; }
+
+  .metric-card { background: #F0FDF4; border: 1px solid var(--dark-green); border-radius: 6px; padding: 15px; text-align: center; }
+  .metric-value { font-size: 1.3rem; font-weight: 800; color: var(--navy-blue); margin-bottom: 5px; }
+  .metric-label { font-size: 0.8rem; font-weight: 700; color: var(--dark-green); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Bullet Lists */
+  ul, ol { padding-left: 0; list-style: none; }
+  ul li { position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--text-muted); }
+  ul li::before { content: '■'; position: absolute; left: 0; color: var(--sunny-gold); font-size: 0.8rem; top: 2px; }
+
+  /* Callout Box */
+  .teachability-box {
+    background-color: #F0FDF4;
+    border-left: 4px solid var(--dark-green);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
+  }
+  .teachability-title { font-weight: 700; color: var(--dark-green); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+
+  /* Tables */
+  .styled-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+  .styled-table thead tr { background-color: var(--navy-blue); color: #FFFFFF; text-align: left; }
+  .styled-table th, .styled-table td { padding: 12px 15px; border: 1px solid var(--border-color); }
+  .styled-table tbody tr { border-bottom: 1px solid var(--border-color); }
+  .styled-table tbody tr:nth-of-type(even) { background-color: var(--card-bg); }
+  .styled-table tbody tr:last-of-type { border-bottom: 2px solid var(--dark-green); }
+  .styled-table .total-row { font-weight: bold; background-color: #F0FDF4; color: var(--dark-green); }
+
+  /* Interactive Signature Image Stamp Styles */
+  .signature-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
+  @media (max-width: 768px) { .signature-container { grid-template-columns: 1fr; } }
+  .signature-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+  .signature-title { font-size: 0.85rem; font-weight: 700; color: var(--dark-green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px; }
+  
+  .signature-dropzone {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    margin-bottom: 12px;
+    background: #FFFFFF;
+    border: 1.5px dashed var(--teal);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .signature-dropzone:hover { background: #F0FDF4; border-color: var(--dark-green); }
+  .signature-dropzone p { font-size: 0.8rem; color: var(--text-muted); margin: 0; text-align: center; }
+  
+  .signature-preview-img {
+    max-width: 90%;
+    max-height: 90px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .signature-actions { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
+  .btn-sig { padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; border: none; cursor: pointer; transition: all 0.2s ease; }
+  .btn-upload { background: #E2E8F0; color: var(--navy-blue); }
+  .btn-upload:hover { background: #CBD5E1; }
+  .btn-lock { background: var(--dark-green); color: #FFFFFF; }
+  .btn-lock:hover { background: #143225; }
+  .btn-unlock { background: #D97706; color: #FFFFFF; display: inline-block; }
+  .btn-unlock:hover { background: #B45309; }
+  .btn-sig:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .signatory-name { font-size: 1rem; font-weight: 800; color: var(--navy-blue); }
+  .signatory-role { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+  .signatory-meta { font-size: 0.78rem; color: var(--teal); font-weight: 600; }
+  .signature-status { font-size: 0.75rem; font-weight: 700; color: #D97706; margin-top: 6px; }
+  .signature-status.locked { color: #059669; }
+
+  /* Institutional Profile Footer Block */
+  .institutional-block { background-color: var(--navy-blue); color: #FFFFFF; padding: 30px; border-radius: 8px; margin-top: 40px; border-top: 4px solid var(--dark-green); }
+  .institutional-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; font-size: 0.9rem; }
+  .institutional-item strong { color: var(--sunny-gold); display: block; margin-bottom: 4px; }
+  .contact-link { color: #FFFFFF; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="container" id="documentContainer">
+
+  <!-- Ownership Header Bar -->
+  <div class="ownership-bar">
+    <div>PROPRIETARY &amp; CONFIDENTIAL — <span>LWANDILE ENGINEERING PROJECTS &amp; INCLUSIVE ENTREPRENEURIAL ACADEMY</span></div>
+    <div>SCAPUSH PRECISION STANDARD</div>
+  </div>
+
+  <!-- Main Heading Block -->
+  <header class="header-block" id="secHeader">
+    <h1>EXPRESSION OF INTEREST (EOI) SUBMISSION</h1>
+    <div class="subtitle">JET Funding Platform — Window 4: Sovereign Food  &amp; Green Energy Ecosystem.</div>
+    <div class="tags">
+      <span class="tag">Ref: JET-W4-EOI-2026</span>
+      <span class="tag">Location: Mpumalanga, South Africa</span>
+      <span class="tag">Standard: Scapush Precision</span>
+      <span class="tag">Deadline: 5 November 2026</span>
+    </div>
+  </header>
+
+  <!-- Interactive Control Panel -->
+  <div class="control-panel" role="region" aria-label="Accessibility Control Center">
+    <div class="control-row">
+      <div class="control-title">
+        <span>🔊 Auto-Scrolling Live Narration Engine</span>
+      </div>
+      <div class="button-group">
+        <button class="btn-action" onclick="startAutoScrollingNarration()">▶ Start Auto-Scroll Narration</button>
+        <button class="btn-stop" onclick="stopSpeech()">⏹ Stop / Misa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Governance Information Section -->
+  <section id="sec1">
+    <h2>
+      <span>1. Document Header &amp; Governance Information</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec1')">🔊 Listen Section</button>
+    </h2>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Governance Parameter</th>
+          <th>Reference Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lead Consortium Entity</strong></td>
+          <td>Lwandile Engineering Projects (Pty) Ltd (SMME / Technical Delivery Lead)</td>
+        </tr>
+        <tr>
+          <td><strong>Governance &amp; Skills Partner</strong></td>
+          <td>Inclusive Entrepreneurial Academy (Dr. Palesa Charlotte Felix-Faure, Founder)</td>
+        </tr>
+        <tr>
+          <td><strong>Principal / Project Lead</strong></td>
+          <td>Sipho Wiseman Khuzwayo (Inclusive Legacy Architect / Project Lead)</td>
+        </tr>
+        <tr>
+          <td><strong>Academic &amp; Governance Lead</strong></td>
+          <td>Dr. Palesa Charlotte Felix-Faure (Academic Lead &amp; Skills Transfer Principal)</td>
+        </tr>
+        <tr>
+          <td><strong>Target Region</strong></td>
+          <td>Mpumalanga, South Africa</td>
+        </tr>
+        <tr>
+          <td><strong>Submission Date</strong></td>
+          <td>October 2026</td>
+        </tr>
+        <tr>
+          <td><strong>Execution Standard</strong></td>
+          <td>Scapush Precision Execution Standard</td>
+        </tr>
+        <tr>
+          <td><strong>Funding Window</strong></td>
+          <td>JET Funding Platform — Window 4: Agriculture &amp; Food Systems</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Executive Summary -->
+  <section id="sec2">
+    <h2>
+      <span>2. Executive Summary</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec2')">🔊 Listen Section</button>
+    </h2>
+    <p>Lwandile Engineering Projects, in strategic partnership with the <strong>Inclusive Entrepreneurial Academy</strong> (founded by Dr. Palesa Charlotte Felix-Faure), formally submits this Expression of Interest (EOI) under Window 4 of the Just Energy Transition (JET) Funding Platform. Recognizing that JET funding strictly evaluates registered, high-capacity institutional partnerships rather than standalone entities, our consortium delivers an end-to-end framework combining rigorous engineering execution with accredited institutional governance and long-term skills transfer.</p>
+    <p>As coal-fired power infrastructure transitions out of service across Mpumalanga, vulnerable community ecosystems face critical economic challenges. Our consortium deploys an integrated bio-solar and circular agrifood model combining agrivoltaics and controlled-environment hydroponics with an organic waste-to-value biogas and composting pipeline.</p>
+    <p>Under the stewardship of Dr. Palesa Charlotte Felix-Faure and the Inclusive Entrepreneurial Academy, the initiative incorporates structured governance, accredited entrepreneurship curricula, and sustainable community skills transfer. Executed according to the Scapush Precision Execution Standard, this alliance guarantees institutional integrity, SARS and regulatory compliance, and measurable socioeconomic impact.</p>
+
+    <div class="grid-4">
+      <div class="metric-card">
+        <div class="metric-value">Agrivoltaics</div>
+        <div class="metric-label">Clean Energy Integration</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Hydroponics</div>
+        <div class="metric-label">Controlled Agriculture</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Academy-Led</div>
+        <div class="metric-label">Skills &amp; Governance Partner</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">36 Months</div>
+        <div class="metric-label">Implementation Horizon</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applicant Eligibility & Governance Compliance Matrix -->
+  <section id="sec3">
+    <h2>
+      <span>3. Applicant Eligibility &amp; Institutional Governance Matrix</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec3')">🔊 Listen Section</button>
+    </h2>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Compliance &amp; Partner Parameter</th>
+          <th>Institutional Role / Status</th>
+          <th>Details &amp; Strategic Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lead Execution Entity</strong></td>
+          <td>Lwandile Engineering Projects (Pty) Ltd</td>
+          <td>100% Black-owned South African private enterprise; technical engineering and infrastructure deployment lead.</td>
+        </tr>
+        <tr>
+          <td><strong>Governance &amp; Skills Partner</strong></td>
+          <td>Inclusive Entrepreneurial Academy</td>
+          <td>Founded by Dr. Palesa Charlotte Felix-Faure; drives institutional governance, curriculum accreditation, and social impact tracking.</td>
+        </tr>
+        <tr>
+          <td><strong>Tax &amp; Legal Compliance</strong></td>
+          <td>Fully Compliant / SARS Good Standing</td>
+          <td>Registered South African entities in full regulatory compliance with active SARS tax PINs.</td>
+        </tr>
+        <tr>
+          <td><strong>Geographic Target</strong></td>
+          <td>Mpumalanga Priority Zone</td>
+          <td>Direct deployment within coal-transition communities to stimulate sustainable non-fossil employment.</td>
+        </tr>
+        <tr>
+          <td><strong>JET Alignment</strong></td>
+          <td>Institutional Strategy Fit</td>
+          <td>Substantial multi-stakeholder partnership structured for direct grant readiness and governance compliance.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Key Focus Areas & Technical Scope -->
+  <section id="sec4">
+    <h2>
+      <span>4. Key Focus Areas &amp; Technical Scope</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec4')">🔊 Listen Section</button>
+    </h2>
+    
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="card-header">4.1 Climate-Smart &amp; Controlled-Environment Agriculture (Hydroponics &amp; Agrivoltaics)</div>
+      <ul>
+        <li><strong>Agrivoltaic Integration:</strong> Dual-use land development deploying elevated solar PV structures over active crop production areas, optimizing land efficiency and providing microclimate shading.</li>
+        <li><strong>Controlled-Environment Hydroponics:</strong> Closed-loop nutrient film technique (NFT) and deep water culture (DWC) systems reducing water usage by up to 90% relative to traditional open-field farming.</li>
+        <li><strong>Resilient Crop Selection:</strong> Prioritizing high-value leafy greens, tomatoes, and regional staple crops tailored for local supply chains and municipal produce markets.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="card-header">4.2 Agrifood-Related Organic Waste-to-Value (Composting &amp; Biogas)</div>
+      <ul>
+        <li><strong>Anaerobic Digestion (Biogas):</strong> Capture and conversion of agricultural residues and food waste into clean biogas for farm-level thermal and electrical energy requirements.</li>
+        <li><strong>Commercial Composting:</strong> Processing digestate and organic bypass streams into high-grade organic bio-fertilizers to rehabilitate degraded soil in surrounding farming communities.</li>
+        <li><strong>Circular Resource Loops:</strong> Complete recovery of water, nutrients, and energy within the farm boundary to minimize external inputs and operational expenditure.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">4.3 Governance, Skills Transfer &amp; Institutional Capacity Building</div>
+      <ul>
+        <li><strong>Inclusive Entrepreneurial Academy Modules:</strong> Structured capacity-building and business incubators designed by Dr. Palesa Charlotte Felix-Faure to build sustainable local green enterprises.</li>
+        <li><strong>Accredited Technical Training:</strong> Comprehensive workforce upskilling covering renewable energy maintenance, anaerobic digester management, and hydroponic operations.</li>
+        <li><strong>Community Food Hubs &amp; Outgrowers:</strong> Establishing localized aggregation centers and providing certified outgrower support to integrate smallholders into commercial value chains.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Budget & Funding Request Structure -->
+  <section id="sec5">
+    <h2>
+      <span>5. Budget &amp; Funding Request Structure</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec5')">🔊 Listen Section</button>
+    </h2>
+    <p>The proposed initiative spans a 36-month implementation lifecycle, with funding phased across critical execution milestones. The Lwandile Engineering &amp; Inclusive Entrepreneurial Academy consortium seeks catalytic financing within the JET Window 4 framework (R500,000 – R20,000,000 scaling band).</p>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Duration</th>
+          <th>Core Focus &amp; Deliverables</th>
+          <th>Estimated Allocation (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase I: Feasibility &amp; Governance Setup</strong></td>
+          <td>Months 1–6</td>
+          <td>Detailed engineering design, EIA, Academy governance charter, stakeholder alignment.</td>
+          <td>15%</td>
+        </tr>
+        <tr>
+          <td><strong>Phase II: Capital Infrastructure &amp; Facilities</strong></td>
+          <td>Months 7–18</td>
+          <td>Agrivoltaic installation, hydroponic tunnels, anaerobic digester, and Academy training facility setup.</td>
+          <td>50%</td>
+        </tr>
+        <tr>
+          <td><strong>Phase III: Operational Ramp-Up &amp; Academy Rollout</strong></td>
+          <td>Months 19–27</td>
+          <td>First crop cycles, biogas commissioning, onboarding of initial student &amp; enterprise cohorts.</td>
+          <td>20%</td>
+        </tr>
+        <tr>
+          <td><strong>Phase IV: Enterprise Scaling &amp; Ecosystem Integration</strong></td>
+          <td>Months 28–36</td>
+          <td>Outgrower expansion, commercial market distribution, full circular bioeconomy integration.</td>
+          <td>15%</td>
+        </tr>
+        <tr class="total-row">
+          <td>TOTAL PROJECT TIMELINE</td>
+          <td>36 Months</td>
+          <td>Full Bio-Solar, Food Security &amp; Academy-Led Governance Ecosystem Deployment</td>
+          <td>100%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="teachability-box">
+      <div class="teachability-title">Consortium Governance &amp; Strategy</div>
+      <p style="margin-bottom: 8px; font-size: 0.95rem; color: var(--text-primary);">
+        <strong>Institutional Governance:</strong> Overseen joint-venture escrow and financial auditing protocols led by Dr. Palesa Charlotte Felix-Faure ensuring zero capital leakage and complete alignment with JET PMU standards.
+      </p>
+      <p style="margin-bottom: 0; font-size: 0.95rem; color: var(--text-primary);">
+        <strong>Execution Oversight:</strong> Engineering and operational milestones executed strictly in accordance with the Scapush Precision Execution Standard.
+      </p>
+    </div>
+  </section>
+
+  <!-- Execution Framework & Next Steps -->
+  <section id="sec6">
+    <h2>
+      <span>6. Execution Framework &amp; Next Steps</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec6')">🔊 Listen Section</button>
+    </h2>
+    <p>The consortium will execute this project through a Joint Project Steering Committee (JPSC) co-chaired by Sipho Wiseman Khuzwayo and Dr. Palesa Charlotte Felix-Faure, incorporating technical leads, municipal representatives, and local community leadership to maintain transparent oversight and accountability.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">Key Implementation Milestones</div>
+        <ul>
+          <li><strong>Q4 2026:</strong> Execution of formal Joint Venture agreement and JET platform inception workshops.</li>
+          <li><strong>Q1 2027:</strong> Geotechnical evaluations, environmental authorizations, and Academy curriculum finalization.</li>
+          <li><strong>Q3 2027:</strong> Construction of bio-solar infrastructure and agricultural training facilities.</li>
+          <li><strong>Q1 2028:</strong> Initial agricultural yields, biogas generation, and graduation of first Academy cohort.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Crucial Timeline Alignment</div>
+        <ul>
+          <li><strong>EOI Submission Deadline:</strong> Thursday, 5 November 2026.</li>
+          <li><strong>Formal Proposal Submission:</strong> Post-EOI qualification per JET Funding Platform evaluation.</li>
+          <li><strong>Consortium Contacts:</strong> Sipho Wiseman Khuzwayo &amp; Dr. Palesa Charlotte Felix-Faure.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Signatures & Authorization -->
+    <div class="signature-container">
+      <!-- Signatory 1: Sipho Wiseman Khuzwayo (Unlocked) -->
+      <div class="signature-card">
+        <div class="signature-title">Technical &amp; Project Lead Signatory</div>
+        
+        <input type="file" id="file-lead" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-lead" style="cursor: pointer;">
+          <p id="placeholder-lead" style="display: none;">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(JPG / PNG / SVG)</span></p>
+          <img id="img-lead" class="signature-preview-img" style="display: block;" alt="Signature Preview" src="data:image/png;base64,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">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-lead">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-lead">Lock Signature</button>
+          <button type="button" class="btn-sig btn-unlock" id="btn-unlock-lead" style="display:inline-block;">Unlock Slot</button>
+        </div>
+
+        <div class="signatory-name">Sipho Wiseman Khuzwayo</div>
+        <div class="signatory-role">Inclusive Legacy Architect / Principal Lead</div>
+        <div class="signatory-meta">Lwandile Engineering Projects (Pty) Ltd</div>
+        <div class="signature-status" id="status-lead">Status: Signature Image Loaded</div>
+      </div>
+
+      <!-- Signatory 2: Dr. Palesa Charlotte Felix-Faure -->
+      <div class="signature-card">
+        <div class="signature-title">Governance &amp; Skills Partner Signatory</div>
+        
+        <input type="file" id="file-academic" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-academic">
+          <p id="placeholder-academic">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(JPG / PNG / SVG)</span></p>
+          <img id="img-academic" class="signature-preview-img" style="display: none;" alt="Signature Preview">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-academic">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-academic">Lock Signature</button>
+          <button type="button" class="btn-sig btn-unlock" id="btn-unlock-academic" style="display:none;">Unlock Slot</button>
+        </div>
+
+        <div class="signatory-name">Dr. Palesa Charlotte Felix-Faure</div>
+        <div class="signatory-role">Founder &amp; Academic Lead</div>
+        <div class="signatory-meta">Inclusive Entrepreneurial Academy</div>
+        <div class="signature-status" id="status-academic">Status: Awaiting Signature File</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutional Profile Footer Block -->
+  <footer class="institutional-block" id="secFooter">
+    <div class="institutional-grid">
+      <div class="institutional-item">
+        <strong>Consortium Leadership</strong>
+        Sipho Wiseman Khuzwayo — Lead System Architect (Lwandile Engineering)<br>
+        Dr. Palesa Charlotte Felix-Faure — Academic &amp; Governance Lead (Inclusive Entrepreneurial Academy)
+      </div>
+      <div class="institutional-item">
+        <strong>Execution Entities &amp; Standard</strong>
+        Lwandile Engineering Projects (Pty) Ltd<br>
+        Inclusive Entrepreneurial Academy<br>
+        Scapush Precision Execution Standard
+      </div>
+      <div class="institutional-item">
+        <strong>Operational Footprint</strong>
+        Mpumalanga Coal Transition Zone, South Africa
+      </div>
+      <div class="institutional-item">
+        <strong>Primary Contact &amp; Communication</strong>
+        <a href="mailto:siphokhuzwayo12@gmail.com" class="contact-link">siphokhuzwayo12@gmail.com</a><br>
+        <a href="https://www.linkedin.com/search/results/all/?keywords=sipho%20wiseman%20khuzwayo" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn Profile</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Auto-Scroll Narration & Signature Image Controller Script -->
+<script>
+  function stopSpeech() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    clearActiveHighlights();
+  }
+
+  function clearActiveHighlights() {
+    document.querySelectorAll('section, header').forEach(el => el.classList.remove('active-narration'));
+  }
+
+  function highlightAndScroll(elementId) {
+    clearActiveHighlights();
+    const target = document.getElementById(elementId);
+    if (target) {
+      target.classList.add('active-narration');
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  const eoiNarrationSequence = [
+    {
+      elementId: 'secHeader',
+      text: "Expression of Interest Submission for JET Window 4: Agriculture and Food Systems, under the Scapush Precision Execution Standard. Lwandile Engineering Projects in strategic partnership with the Inclusive Entrepreneurial Academy."
+    },
+    {
+      elementId: 'sec1',
+      text: "Section 1. Document Header and Governance Information. Outlining lead consortium leadership between Lwandile Engineering Projects, represented by Sipho Wiseman Khuzwayo as Principal and Project Lead, and the Inclusive Entrepreneurial Academy, founded by Dr. Palesa Charlotte Felix-Faure as Academic and Governance Lead. Targeting Mpumalanga, South Africa for October 2026 execution under the Scapush Precision Standard."
+    },
+    {
+      elementId: 'sec2',
+      text: "Section 2. Executive Summary. Lwandile Engineering Projects in strategic partnership with the Inclusive Entrepreneurial Academy formally submits this Expression of Interest under Window 4 of the Just Energy Transition Funding Platform. Recognizing that JET funding strictly evaluates registered, high-capacity institutional partnerships rather than standalone entities, our consortium delivers an end-to-end framework combining rigorous engineering execution with accredited institutional governance and long-term skills transfer. As coal-fired power infrastructure transitions out of service across Mpumalanga, vulnerable community ecosystems face critical economic challenges. Our consortium deploys an integrated bio-solar and circular agrifood model combining agrivoltaics and controlled-environment hydroponics with an organic waste-to-value biogas and composting pipeline. Under the stewardship of Dr. Palesa Charlotte Felix-Faure and the Inclusive Entrepreneurial Academy, the initiative incorporates structured governance, accredited entrepreneurship curricula, and sustainable community skills transfer. Executed according to the Scapush Precision Execution Standard, this alliance guarantees institutional integrity, SARS and regulatory compliance, and measurable socioeconomic impact."
+    },
+    {
+      elementId: 'sec3',
+      text: "Section 3. Applicant Eligibility and Institutional Governance Matrix. Detailing compliance parameters, Lwandile Engineering Projects as 100% Black-owned technical delivery lead, the Inclusive Entrepreneurial Academy driving governance and curriculum accreditation, full SARS tax compliance, Mpumalanga priority zone targeting, and alignment with JET PMU strategy."
+    },
+    {
+      elementId: 'sec4',
+      text: "Section 4. Key Focus Areas and Technical Scope. 4.1 Climate-Smart and Controlled-Environment Agriculture, integrating agrivoltaic dual-use solar structures, closed-loop NFT and DWC hydroponic systems reducing water use by up to 90 percent, and high-value resilient crop selections. 4.2 Agrifood-Related Organic Waste-to-Value, capturing agricultural and food waste via anaerobic biogas digestion for farm energy, commercial composting for soil rehabilitation, and complete circular resource loops. 4.3 Governance, Skills Transfer and Institutional Capacity Building, utilizing Inclusive Entrepreneurial Academy modules, accredited technical workforce training, community food hubs, and outgrower integration."
+    },
+    {
+      elementId: 'sec5',
+      text: "Section 5. Budget and Funding Request Structure. Spanning a 36-month implementation horizon within the R500,000 to R20,000,000 scaling band. Phase I Feasibility and Governance Setup at 15 percent, Phase II Capital Infrastructure and Facilities at 50 percent, Phase III Operational Ramp-Up and Academy Rollout at 20 percent, and Phase IV Enterprise Scaling and Ecosystem Integration at 15 percent. Backed by joint-venture escrow protocols ensuring zero capital leakage and alignment with JET standards."
+    },
+    {
+      elementId: 'sec6',
+      text: "Section 6. Execution Framework, Next Steps, and Official Signatures. Managed through a Joint Project Steering Committee co-chaired by Sipho Wiseman Khuzwayo and Dr. Palesa Charlotte Felix-Faure. Outlining key implementation milestones from Q4 2026 JV formation through Q1 2028 operational yield, EOI submission deadline of 5 November 2026, and secure digital signature seal verification."
+    },
+    {
+      elementId: 'secFooter',
+      text: "Institutional profile footer, consortium leadership contacts, execution entities, and official communication channels including verified email and LinkedIn profiles."
+    }
+  ];
+
+  function playNarrationStep(index) {
+    if (!('speechSynthesis' in window)) return;
+    if (index >= eoiNarrationSequence.length) {
+      clearActiveHighlights();
+      return;
+    }
+
+    const step = eoiNarrationSequence[index];
+    highlightAndScroll(step.elementId);
+
+    let utterance = new SpeechSynthesisUtterance(step.text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.95;
+    utterance.onend = function() {
+      playNarrationStep(index + 1);
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function startAutoScrollingNarration() {
+    stopSpeech();
+    playNarrationStep(0);
+  }
+
+  function speakSingleSection(sectionId) {
+    stopSpeech();
+    const foundStep = eoiNarrationSequence.find(s => s.elementId === sectionId);
+    if (foundStep) {
+      highlightAndScroll(sectionId);
+      let utterance = new SpeechSynthesisUtterance(foundStep.text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.95;
+      utterance.onend = () => clearActiveHighlights();
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  // Signature Image Controller Setup with Unlock Feature
+  document.addEventListener("DOMContentLoaded", function () {
+    function setupSignatureSlot(prefix) {
+      const fileInput = document.getElementById(`file-${prefix}`);
+      const dropzone = document.getElementById(`dropzone-${prefix}`);
+      const placeholder = document.getElementById(`placeholder-${prefix}`);
+      const imgPreview = document.getElementById(`img-${prefix}`);
+      const btnUpload = document.getElementById(`btn-upload-${prefix}`);
+      const btnLock = document.getElementById(`btn-lock-${prefix}`);
+      const btnUnlock = document.getElementById(`btn-unlock-${prefix}`);
+      const statusText = document.getElementById(`status-${prefix}`);
+
+      let isLocked = (prefix === 'lead' ? false : false); // Explicitly unlocked for Sipho's slot
+
+      function renderImage(src) {
+        imgPreview.src = src;
+        imgPreview.style.display = "block";
+        placeholder.style.display = "none";
+      }
+
+      dropzone.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+      btnUpload.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+            statusText.classList.remove("locked");
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      dropzone.addEventListener("dragover", (e) => { e.preventDefault(); });
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        if (isLocked) return;
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          const file = e.dataTransfer.files[0];
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+            statusText.classList.remove("locked");
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      btnLock.addEventListener("click", () => {
+        if (imgPreview.style.display === "none") {
+          alert("Please upload or select a signature image first.");
+          return;
+        }
+        isLocked = true;
+        btnUpload.disabled = true;
+        btnLock.disabled = true;
+        btnUnlock.style.display = "inline-block";
+        dropzone.style.cursor = "default";
+        
+        const lockTimestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+        statusText.textContent = `Status: Digitally Sealed (${lockTimestamp}) [Scapush Precision]`;
+        statusText.classList.add("locked");
+      });
+
+      btnUnlock.addEventListener("click", () => {
+        isLocked = false;
+        btnUpload.disabled = false;
+        btnLock.disabled = false;
+        btnUnlock.style.display = "none";
+        dropzone.style.cursor = "pointer";
+        statusText.textContent = "Status: Unlocked — Ready for Re-signing / Update";
+        statusText.classList.remove("locked");
+      });
+    }
+
+    setupSignatureSlot("lead");
+    setupSignatureSlot("academic");
+  });
+</script>
+
+
+</body></html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)file:///C:/Users/ASUS/OneDrive/JET-EOI-JUBILEE%20DASHBOARD/21_design_registers.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SECTION 21 — DESIGN REGISTERS &amp; GOVERNANCE | Sovereign Bio-Solar-Thermal Campus</title>
+<style>
+  :root {
+    --bg-superwhite: #FFFFFF;
+    --navy-blue: #0A192F;
+    --dark-green: #1B4332;
+    --sunny-gold: #D4AF37;
+    --teal: #008080;
+    --text-primary: #1A202C;
+    --text-muted: #4A5568;
+    --card-bg: #F8FAFC;
+    --border-color: #E2E8F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--bg-superwhite);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; background: var(--bg-superwhite); }
+
+  /* Top Ownership Badge */
+  .ownership-bar {
+    background: var(--dark-green);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--sunny-gold);
+  }
+
+  .ownership-bar span { color: var(--sunny-gold); }
+
+  /* Main Heading Block */
+  .header-block {
+    background-color: var(--navy-blue);
+    color: var(--bg-superwhite);
+    padding: 40px 30px;
+    border-radius: 0 0 8px 8px;
+    border-bottom: 5px solid var(--sunny-gold);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  .header-block.active-narration {
+    border: 3px solid var(--sunny-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .header-block h1 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .header-block .subtitle { font-size: 1.1rem; color: var(--sunny-gold); font-weight: 500; margin-bottom: 15px; }
+  .header-block .tags { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; }
+  .header-block .tag { background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.4); color: #FFFFFF; }
+
+  /* Control Panel */
+  .control-panel {
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .control-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+  .control-title { font-weight: 700; color: #1E40AF; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .button-group { display: flex; gap: 12px; flex-wrap: wrap; }
+  
+  .btn-action {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+  }
+  .btn-action:hover { background: #1D4ED8; }
+  .btn-stop {
+    background: #DC2626;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .btn-stop:hover { background: #B91C1C; }
+
+  /* Section Styles */
+  section {
+    margin-bottom: 45px;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  section.active-narration {
+    background-color: rgba(59, 130, 246, 0.05);
+    border: 2px solid #3B82F6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+
+  h2 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  h2 .section-audio-btn {
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h2 .section-audio-btn:hover { background: #006666; }
+
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--teal);
+    border-radius: 2px;
+  }
+
+  p { color: var(--text-muted); margin-bottom: 15px; font-size: 1rem; }
+
+  /* Grid Layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  }
+
+  .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; }
+  .card-header { font-weight: bold; color: var(--dark-green); font-size: 1.1rem; margin-bottom: 10px; }
+
+  /* Bullet Lists */
+  ul, ol { padding-left: 0; list-style: none; }
+  ul li { position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--text-muted); }
+  ul li::before { content: '■'; position: absolute; left: 0; color: var(--sunny-gold); font-size: 0.8rem; top: 2px; }
+
+  /* Callout Box */
+  .teachability-box {
+    background-color: #F0FDF4;
+    border-left: 4px solid var(--dark-green);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
+  }
+  .teachability-title { font-weight: 700; color: var(--dark-green); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+
+  /* Tables */
+  .styled-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+  .styled-table thead tr { background-color: var(--navy-blue); color: #FFFFFF; text-align: left; }
+  .styled-table th, .styled-table td { padding: 10px 12px; border: 1px solid var(--border-color); }
+  .styled-table tbody tr { border-bottom: 1px solid var(--border-color); }
+  .styled-table tbody tr:nth-of-type(even) { background-color: var(--card-bg); }
+  .styled-table tbody tr:last-of-type { border-bottom: 2px solid var(--dark-green); }
+
+  /* Diagram Box */
+  .diagram-box {
+    background: var(--navy-blue);
+    color: #FFFFFF;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.88rem;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--sunny-gold);
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.4;
+  }
+  .diagram-box span { color: var(--sunny-gold); font-weight: bold; }
+
+  /* Interactive Signature Image Stamp Styles */
+  .signature-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
+  @media (max-width: 768px) { .signature-container { grid-template-columns: 1fr; } }
+  .signature-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+  .signature-title { font-size: 0.85rem; font-weight: 700; color: var(--dark-green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px; }
+  
+  .signature-dropzone {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    margin-bottom: 12px;
+    background: #FFFFFF;
+    border: 1.5px dashed var(--teal);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .signature-dropzone:hover { background: #F0FDF4; border-color: var(--dark-green); }
+  .signature-dropzone p { font-size: 0.8rem; color: var(--text-muted); margin: 0; text-align: center; }
+  
+  .signature-preview-img {
+    max-width: 90%;
+    max-height: 90px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .signature-actions { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
+  .btn-sig { padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; border: none; cursor: pointer; transition: all 0.2s ease; }
+  .btn-upload { background: #E2E8F0; color: var(--navy-blue); }
+  .btn-upload:hover { background: #CBD5E1; }
+  .btn-lock { background: var(--dark-green); color: #FFFFFF; }
+  .btn-lock:hover { background: #143225; }
+  .btn-sig:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .signatory-name { font-size: 1rem; font-weight: 800; color: var(--navy-blue); }
+  .signatory-role { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+  .signatory-meta { font-size: 0.78rem; color: var(--teal); font-weight: 600; }
+  .signature-status { font-size: 0.75rem; font-weight: 700; color: #D97706; margin-top: 6px; }
+  .signature-status.locked { color: #059669; }
+
+  /* Institutional Profile Footer Block */
+  .institutional-block { background-color: var(--navy-blue); color: #FFFFFF; padding: 30px; border-radius: 8px; margin-top: 40px; border-top: 4px solid var(--dark-green); }
+  .institutional-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; font-size: 0.9rem; }
+  .institutional-item strong { color: var(--sunny-gold); display: block; margin-bottom: 4px; }
+  .contact-link { color: #FFFFFF; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="container" id="documentContainer">
+
+  <!-- Ownership Header Bar -->
+  <div class="ownership-bar">
+    <div>PROPRIETARY &amp; CONFIDENTIAL — <span>LWANDILE ENGINEERING PROJECTS &amp; INCLUSIVE ENTREPRENEURIAL ACADEMY</span></div>
+    <div>SCAPUSH PRECISION STANDARD</div>
+  </div>
+
+  <!-- Main Heading Block -->
+  <header class="header-block" id="secHeader">
+    <h1>SECTION 21 — DESIGN REGISTERS &amp; GOVERNANCE</h1>
+    <div class="subtitle">Sovereign Bio-Solar-Thermal Campus | Master Design Specification</div>
+    <div class="tags">
+      <span class="tag">Doc Ref: 21_governance.html</span>
+      <span class="tag">Status: MASTER ARCHITECTURE COMPLETE</span>
+      <span class="tag">Governance: Scapush Precision</span>
+      <span class="tag">Institutional Change Control</span>
+    </div>
+  </header>
+
+  <!-- Control Panel -->
+  <div class="control-panel" role="region" aria-label="Accessibility Control Center">
+    <div class="control-row">
+      <div class="control-title">
+        <span>🔊 Auto-Scrolling Live Narration Engine</span>
+      </div>
+      <div class="button-group">
+        <button class="btn-action" onclick="startAutoScrollingNarration()">▶ Start Auto-Scroll Narration</button>
+        <button class="btn-stop" onclick="stopSpeech()">⏹ Stop / Misa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1: Purpose & Governance Philosophy -->
+  <section id="sec1">
+    <h2>
+      <span>1. Purpose &amp; Governance Philosophy</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec1')">🔊 Listen Section</button>
+    </h2>
+    <p>This section establishes the institutional governance framework and change management structure for all engineering, operational, environmental, educational, and infrastructure decisions across the Sovereign Bio-Solar-Thermal Campus. The Design Registers provide a permanent, auditable, and traceable record of technical assumptions, baseline freezes, risk mitigations, revision logs, and commissioning milestones throughout the project lifecycle.</p>
+
+    <div class="teachability-box">
+      <div class="teachability-title">INSTITUTIONAL GOVERNANCE MANDATE</div>
+      <p style="margin-bottom: 0; color: var(--text-primary);">
+        All major engineering parameters are documented, traceable, reviewable, auditable, and strictly version-controlled under the Scapush Precision Execution Standard. No design alteration, capacity scaling, or structural change shall occur without formal approval and entry into the appropriate master register.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Core Engineering Registers -->
+  <section id="sec2">
+    <h2>
+      <span>2. Core Engineering &amp; Design Registers</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec2')">🔊 Listen Section</button>
+    </h2>
+
+    <!-- Assumptions & Freezes -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">2.1 Design Assumptions Register</div>
+        <table class="styled-table" style="margin-top: 10px;">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Engineering Assumption Parameter</th>
+              <th>Governance Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>EA-001</strong></td>
+              <td>Deep groundwater borehole yield available (1.5–2.0 m³/h target)</td>
+              <td><span style="color: var(--dark-green); font-weight: bold;">Verified / Open</span></td>
+            </tr>
+            <tr>
+              <td><strong>EA-002</strong></td>
+              <td>20,000m² leasehold footprint secured for facility development</td>
+              <td><span style="color: var(--dark-green); font-weight: bold;">Verified / Open</span></td>
+            </tr>
+            <tr>
+              <td><strong>EA-003</strong></td>
+              <td>70m³ mesophilic digester capacity suitable for Phase 1 waste inputs</td>
+              <td><span style="color: var(--teal); font-weight: bold;">Under Review</span></td>
+            </tr>
+            <tr>
+              <td><strong>EA-004</strong></td>
+              <td>100 kWp rooftop + tracker solar expansion reserve adequate for Phase 2</td>
+              <td><span style="color: var(--teal); font-weight: bold;">Under Review</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-header">2.2 Design Freeze Register</div>
+        <table class="styled-table" style="margin-top: 10px;">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Locked Master Design Parameter</th>
+              <th>Freeze Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DF-001</strong></td>
+              <td>20,000m² Master Site Boundary &amp; Zoning Grid</td>
+              <td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN (Rev 1.0)</span></td>
+            </tr>
+            <tr>
+              <td><strong>DF-002</strong></td>
+              <td>Poultry Barn 1 Footprint (12m × 32m = 384m²)</td>
+              <td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN (Rev 1.0)</span></td>
+            </tr>
+            <tr>
+              <td><strong>DF-003</strong></td>
+              <td>Swine Barn 2 Footprint (12m × 32m = 384m²)</td>
+              <td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN (Rev 1.0)</span></td>
+            </tr>
+            <tr>
+              <td><strong>DF-004</strong></td>
+              <td>500 Swine Weaner Capacity Scale (8 Pens)</td>
+              <td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN (Rev 1.0)</span></td>
+            </tr>
+            <tr>
+              <td><strong>DF-005</strong></td>
+              <td>5,720 Broiler Batch Capacity Scale</td>
+              <td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN (Rev 1.0)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Risks & Missing Items -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">2.3 Engineering Risk Register</div>
+        <table class="styled-table" style="margin-top: 10px;">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Identified Risk Vector</th>
+              <th>Engineering Mitigation Strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ER-001</strong></td>
+              <td>Low Borehole Water Yield</td>
+              <td>Geophysical resistivity survey + 20,000L elevated storage (68h autonomy).</td>
+            </tr>
+            <tr>
+              <td><strong>ER-002</strong></td>
+              <td>Insufficient Digester Feedstock</td>
+              <td>Dual-source loading (Swine slurry + Poultry litter) + organic biomass supplement.</td>
+            </tr>
+            <tr>
+              <td><strong>ER-003</strong></td>
+              <td>Solar PV Underperformance</td>
+              <td>3-way sync: LFP BESS discharge + Biogas CHP baseload generation.</td>
+            </tr>
+            <tr>
+              <td><strong>ER-004</strong></td>
+              <td>Pathogen / Disease Outbreak</td>
+              <td>10-Layer biosecurity system (Shower-in/out, vehicle spray arch, pod isolation).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-header">2.4 Missing Items Register (Pre-Lockout Review)</div>
+        <table class="styled-table" style="margin-top: 10px;">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Engineering Item Requiring Detailed Study</th>
+              <th>Current Review Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>MI-001</strong></td>
+              <td>Detailed Lightning Protection Study (SANS 62305)</td>
+              <td><span style="color: #D97706; font-weight: bold;">Pending Phase 2</span></td>
+            </tr>
+            <tr>
+              <td><strong>MI-002</strong></td>
+              <td>Dedicated Fire Water Tank Hydrant Ring Main Study</td>
+              <td><span style="color: #D97706; font-weight: bold;">Pending Phase 2</span></td>
+            </tr>
+            <tr>
+              <td><strong>MI-003</strong></td>
+              <td>Gas Detection Sensor Spatial Layout Plan</td>
+              <td><span style="color: #D97706; font-weight: bold;">Pending Phase 2</span></td>
+            </tr>
+            <tr>
+              <td><strong>MI-004</strong></td>
+              <td>Full Campus Mass &amp; Energy Balance Calculation (Doc 32)</td>
+              <td><span style="color: #D97706; font-weight: bold;">Pending Phase 2</span></td>
+            </tr>
+            <tr>
+              <td><strong>MI-005</strong></td>
+              <td>Full Campus Water Balance Calculation (Doc 31)</td>
+              <td><span style="color: #D97706; font-weight: bold;">Pending Phase 2</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Change Control -->
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="card-header">2.5 Institutional Change Control Register</div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Change ID</th>
+            <th>Proposed Engineering Revision / Modification</th>
+            <th>Technical Impact &amp; Approval Justification</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CR-001</strong></td>
+            <td>Swine Capacity Scaling from 160 to 500 Weaners</td>
+            <td>Increased manure yield supporting continuous 70m³ digester loading and 15–25 kW CHP.</td>
+            <td><span style="color: var(--dark-green); font-weight: bold;">APPROVED</span></td>
+          </tr>
+          <tr>
+            <td><strong>CR-002</strong></td>
+            <td>Integration of Zone M Accessibility &amp; EV Hub</td>
+            <td>Embedded 30 kW DC EV charger, wheelchair charging bays, and universal step-free access.</td>
+            <td><span style="color: var(--dark-green); font-weight: bold;">APPROVED</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 3: Operational, Asset & Commissioning Registers -->
+  <section id="sec3">
+    <h2>
+      <span>3. Operational, Environmental &amp; Commissioning Registers</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec3')">🔊 Listen Section</button>
+    </h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-header">3.1 Asset Register Framework</div>
+        <ul>
+          <li><strong>Energy Assets:</strong> Solar PV Arrays, LFP BESS Bank, Biogas CHP Engine, Microgrid Switchgear.</li>
+          <li><strong>Water Assets:</strong> Borehole-01, Submersible DC Pump, Treatment Plant, Elevated Tanks.</li>
+          <li><strong>Production Assets:</strong> Poultry Pods, Swine Pen Arrays, Nursery Hydronic Manifolds.</li>
+          <li><strong>Digital Assets:</strong> SCADA Servers, Industrial PLCs, Fiber Optic Network, Sensors.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">3.2 Commissioning Register</div>
+        <ul>
+          <li><strong>Phase 1:</strong> Mechanical Completion &amp; Structural Inspection.</li>
+          <li><strong>Phase 2:</strong> Electrical &amp; Microgrid Bus Energization.</li>
+          <li><strong>Phase 3:</strong> Water Treatment &amp; Hydrostatic Pressure Testing.</li>
+          <li><strong>Phase 4:</strong> Biodigester Slurry Seeding &amp; CHP Synchronization.</li>
+          <li><strong>Phase 5:</strong> SCADA Telemetry &amp; Full System Integration.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">3.3 Operational Readiness</div>
+        <ul>
+          <li><strong>Staff Certification:</strong> Operators certified via Academy bootcamps.</li>
+          <li><strong>SOP Approval:</strong> Standard Operating Procedures signed for all assets.</li>
+          <li><strong>Emergency Protocol:</strong> Emergency response and evacuation plans active.</li>
+          <li><strong>Biosecurity Active:</strong> Shower-in/out and vehicle arches operational.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Master Design Governance Freeze Register (01 to 20) -->
+  <section id="sec4">
+    <h2>
+      <span>4. Master Design Governance Freeze Register (Sections 01–20)</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec4')">🔊 Listen Section</button>
+    </h2>
+    <p>The core structural and technical specifications across all twenty infrastructure sections are locked as approved baselines:</p>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Ref Code</th>
+          <th>Locked Infrastructure Package</th>
+          <th>Governance Basis &amp; Document Reference</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>DG-001</strong></td><td>Document Control &amp; Framework</td><td>Scapush Precision Standard (Doc Ref: 01_framework.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-002</strong></td><td>Executive Summary &amp; Vision</td><td>Sovereign Campus Mandate (Doc Ref: 02_summary.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-003</strong></td><td>Design Basis Memorandum</td><td>Master System Parameters (Doc Ref: 03_design_basis.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-004</strong></td><td>Site Strategy &amp; Selection</td><td>20,000m² Leasehold Site (Doc Ref: 04_site_strategy.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-005</strong></td><td>Master Site Layout &amp; Zoning</td><td>Zones A through M Layout (Doc Ref: 05_master_layout.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-006</strong></td><td>Poultry Cluster Package</td><td>Barn 1: 5,720 Broilers (Doc Ref: 06_poultry_package.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-007</strong></td><td>Swine Cluster Package</td><td>Barn 2: 500 Weaners (Doc Ref: 07_swine_package.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-008</strong></td><td>Climate Controlled Nursery</td><td>Zone F Dual Hydronic Loop (Doc Ref: 08_nursery_package.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-009</strong></td><td>Biosecurity Architecture</td><td>10-Layer Biosecurity Grid (Doc Ref: 09_biosecurity.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-010</strong></td><td>Water Sovereignty Architecture</td><td>Borehole-01 &amp; 20,000L Storage (Doc Ref: 10_water_architecture.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-011</strong></td><td>Biodigester Architecture</td><td>70m³ Anaerobic Digester (Doc Ref: 11_biodigester.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-012</strong></td><td>CHP Thermal Architecture</td><td>15–25 kW Biogas Engine (Doc Ref: 12_chp_thermal.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-013</strong></td><td>Solar PV Architecture</td><td>30–60 kWp Trackers &amp; Roof (Doc Ref: 13_solar_pv.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-014</strong></td><td>BESS Storage Architecture</td><td>120–200 kWh LFP Storage (Doc Ref: 14_bess.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-015</strong></td><td>Microgrid Architecture</td><td>Off-Grid Power Dispatch (Doc Ref: 15_microgrid.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-016</strong></td><td>SCADA &amp; Digital Operations</td><td>Central Digital Platform (Doc Ref: 16_scada.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-017</strong></td><td>Accessibility &amp; Inclusion</td><td>Zone M Hub &amp; Universal Access (Doc Ref: 17_accessibility.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-018</strong></td><td>Entrepreneurship Academy</td><td>Human Capital Engine (Doc Ref: 18_academy.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-019</strong></td><td>Environmental Stewardship</td><td>Regenerative Circular Loop (Doc Ref: 19_environmental.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+        <tr><td><strong>DG-020</strong></td><td>Emergency Response</td><td>Life Safety &amp; Failsafes (Doc Ref: 20_emergency.html)</td><td><span style="color: var(--navy-blue); font-weight: bold;">FROZEN</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 5: Next Engineering Phase Folder Sequence -->
+  <section id="sec5">
+    <h2>
+      <span>5. Next Engineering Phase &amp; Detailed Quantification Sequence</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec5')">🔊 Listen Section</button>
+    </h2>
+    <p>With Sections 01 through 21 formally approved and frozen, the master design moves into the detailed engineering, mass/energy balancing, equipment sizing, and P&amp;ID development sequence:</p>
+
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="card-header">Detailed Engineering Phase Deliverables Sequence</div>
+      <table class="styled-table" style="margin-top: 10px;">
+        <thead>
+          <tr>
+            <th>Document Reference</th>
+            <th>Detailed Engineering Phase Deliverable</th>
+            <th>Technical Target Scope</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>31_water_balance.html</strong></td>
+            <td>Master Campus Water Balance Calculation</td>
+            <td>Detailed volumetric mass balance across borehole, tanks, pods, digester &amp; losses.</td>
+          </tr>
+          <tr>
+            <td><strong>32_energy_balance.html</strong></td>
+            <td>Master Campus Mass &amp; Energy Balance</td>
+            <td>Thermal &amp; electrical kW/kWh balancing across Solar, BESS, CHP, loads &amp; heat loops.</td>
+          </tr>
+          <tr>
+            <td><strong>33_equipment_sizing_register.html</strong></td>
+            <td>Master Equipment Sizing Register</td>
+            <td>Mechanical, electrical &amp; hydraulic sizing specifications for all pumps, motors &amp; tanks.</td>
+          </tr>
+          <tr>
+            <td><strong>34_instrumentation_register.html</strong></td>
+            <td>Master Instrumentation Register</td>
+            <td>Comprehensive tag list for all field sensors, transmitters, flow meters &amp; valves.</td>
+          </tr>
+          <tr>
+            <td><strong>35_io_schedule.html</strong></td>
+            <td>SCADA PLC Input / Output Schedule</td>
+            <td>Digital &amp; Analog I/O point allocation for all local PLCs and central SCADA nodes.</td>
+          </tr>
+          <tr>
+            <td><strong>36_p_and_id_basis.html</strong></td>
+            <td>Piping &amp; Instrumentation Diagram Basis</td>
+            <td>P&amp;ID schematics for water reticulation, gas piping, hydronic loops &amp; slurry lines.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Final Declaration -->
+  <section id="sec6">
+    <h2>
+      <span>6. Final Master Architecture Declaration</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec6')">🔊 Listen Section</button>
+    </h2>
+    <div class="diagram-box" style="font-size: 0.95rem; padding: 25px;">
+      <strong>FINAL DECLARATION &amp; INSTITUTIONAL SEAL</strong><br><br>
+      The Sovereign Bio-Solar-Thermal Campus is hereby established as a Food-Energy-Water-Accessibility Nexus Demonstration Platform, integrating regenerative agriculture, renewable energy, resource recovery, digital intelligence, inclusive entrepreneurship, and environmental stewardship into a single sovereign ecosystem.
+    </div>
+  </section>
+
+  <!-- Signatures & Authorization -->
+  <section id="sec7">
+    <h2>
+      <span>7. Approval &amp; Authorization</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec7')">🔊 Listen Section</button>
+    </h2>
+    <div class="teachability-box" style="border-left-color: var(--sunny-gold);">
+      <div class="teachability-title" style="color: var(--navy-blue);">DOCUMENT STATUS</div>
+      <p style="font-weight: 700; color: var(--navy-blue); margin-bottom: 0;">STATUS: MASTER DESIGN SPECIFICATION CORE ARCHITECTURE COMPLETE (REV 1.0) — APPROVED FOR DETAILED ENGINEERING PHASE</p>
+    </div>
+
+    <div class="signature-container">
+      <!-- Signatory 1: Sipho Wiseman Khuzwayo -->
+      <div class="signature-card">
+        <div class="signature-title">Project Steward &amp; Technical Lead</div>
+        
+        <input type="file" id="file-lead" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-lead">
+          <p id="placeholder-lead" style="display: none;">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(Pre-loading 'My Signature.jpg')</span></p>
+          <img id="img-lead" class="signature-preview-img" style="display: block;" alt="Signature Preview" src="data:image/png;base64,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">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-lead">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-lead">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Sipho Wiseman Khuzwayo</div>
+        <div class="signatory-role">Inclusive Legacy Architect / Principal Lead</div>
+        <div class="signatory-meta">Lwandile Engineering Projects (Pty) Ltd</div>
+        <div class="signature-status" id="status-lead">Status: Signature Image Loaded</div>
+      </div>
+
+      <!-- Signatory 2: Dr. Palesa Charlotte Felix-Faure -->
+      <div class="signature-card">
+        <div class="signature-title">Governance &amp; Academic Lead</div>
+        
+        <input type="file" id="file-academic" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-academic">
+          <p id="placeholder-academic">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(JPG / PNG / SVG)</span></p>
+          <img id="img-academic" class="signature-preview-img" style="display: none;" alt="Signature Preview">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-academic">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-academic">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Dr. Palesa Charlotte Felix-Faure</div>
+        <div class="signatory-role">Founder &amp; Academic Lead</div>
+        <div class="signatory-meta">Inclusive Entrepreneurial Academy</div>
+        <div class="signature-status" id="status-academic">Status: Awaiting Signature File</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutional Profile Footer Block -->
+  <footer class="institutional-block" id="secFooter">
+    <div class="institutional-grid">
+      <div class="institutional-item">
+        <strong>Consortium Leadership</strong>
+        Sipho Wiseman Khuzwayo — Lead System Architect (Lwandile Engineering)<br>
+        Dr. Palesa Charlotte Felix-Faure — Academic &amp; Governance Lead (Inclusive Entrepreneurial Academy)
+      </div>
+      <div class="institutional-item">
+        <strong>Execution Entities &amp; Standard</strong>
+        Lwandile Engineering Projects (Pty) Ltd<br>
+        Inclusive Entrepreneurial Academy<br>
+        Scapush Precision Execution Standard
+      </div>
+      <div class="institutional-item">
+        <strong>Operational Footprint</strong>
+        Sovereign Bio-Solar-Thermal Campus, Mpumalanga, South Africa
+      </div>
+      <div class="institutional-item">
+        <strong>Primary Contact &amp; Communication</strong>
+        <a href="mailto:siphokhuzwayo12@gmail.com" class="contact-link">siphokhuzwayo12@gmail.com</a><br>
+        <a href="https://www.linkedin.com/search/results/all/?keywords=sipho%20wiseman%20khuzwayo" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn Profile</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Auto-Scroll Narration & Signature Image Controller Script -->
+<script>
+  function stopSpeech() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    clearActiveHighlights();
+  }
+
+  function clearActiveHighlights() {
+    document.querySelectorAll('section, header').forEach(el => el.classList.remove('active-narration'));
+  }
+
+  function highlightAndScroll(elementId) {
+    clearActiveHighlights();
+    const target = document.getElementById(elementId);
+    if (target) {
+      target.classList.add('active-narration');
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  const governanceNarrationSequence = [
+    {
+      elementId: 'secHeader',
+      text: "Section 21 Design Registers and Governance for the Sovereign Bio Solar Thermal Campus under the Scapush Precision Execution Standard."
+    },
+    {
+      elementId: 'sec1',
+      text: "Section 1. Purpose and Governance Philosophy. Institutional change control and Scapush Precision execution mandates."
+    },
+    {
+      elementId: 'sec2',
+      text: "Section 2. Core Engineering and Design Registers. Design assumptions, baseline freezes, engineering risks, missing items, and change controls."
+    },
+    {
+      elementId: 'sec3',
+      text: "Section 3. Operational, Environmental and Commissioning Registers. Asset framework, commissioning phases, and operational readiness standards."
+    },
+    {
+      elementId: 'sec4',
+      text: "Section 4. Master Design Governance Freeze Register. Traceability freeze register covering Sections 01 through 20."
+    },
+    {
+      elementId: 'sec5',
+      text: "Section 5. Next Engineering Phase and Detailed Quantification Sequence. Roadmap for water balance, energy balance, and equipment sizing registers."
+    },
+    {
+      elementId: 'sec6',
+      text: "Section 6. Final Master Architecture Declaration. Official seal and food, energy, water, and accessibility nexus integration summary."
+    },
+    {
+      elementId: 'sec7',
+      text: "Section 7. Approval, Authorization, and Digital Signature Verification. Live vector image stamp upload slots and digital sealing framework."
+    },
+    {
+      elementId: 'secFooter',
+      text: "Institutional profile footer and communication channels for Lwandile Engineering Projects."
+    }
+  ];
+
+  function playNarrationStep(index) {
+    if (!('speechSynthesis' in window)) return;
+    if (index >= governanceNarrationSequence.length) {
+      clearActiveHighlights();
+      return;
+    }
+
+    const step = governanceNarrationSequence[index];
+    highlightAndScroll(step.elementId);
+
+    let utterance = new SpeechSynthesisUtterance(step.text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.95;
+    utterance.onend = function() {
+      playNarrationStep(index + 1);
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function startAutoScrollingNarration() {
+    stopSpeech();
+    playNarrationStep(0);
+  }
+
+  function speakSingleSection(sectionId) {
+    stopSpeech();
+    const foundStep = governanceNarrationSequence.find(s => s.elementId === sectionId);
+    if (foundStep) {
+      highlightAndScroll(sectionId);
+      let utterance = new SpeechSynthesisUtterance(foundStep.text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.95;
+      utterance.onend = () => clearActiveHighlights();
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  // Signature Image Controller Setup
+  document.addEventListener("DOMContentLoaded", function () {
+    function setupSignatureSlot(prefix, defaultImagePath) {
+      const fileInput = document.getElementById(`file-${prefix}`);
+      const dropzone = document.getElementById(`dropzone-${prefix}`);
+      const placeholder = document.getElementById(`placeholder-${prefix}`);
+      const imgPreview = document.getElementById(`img-${prefix}`);
+      const btnUpload = document.getElementById(`btn-upload-${prefix}`);
+      const btnLock = document.getElementById(`btn-lock-${prefix}`);
+      const statusText = document.getElementById(`status-${prefix}`);
+
+      let isLocked = false;
+
+      function renderImage(src) {
+        imgPreview.src = src;
+        imgPreview.style.display = "block";
+        placeholder.style.display = "none";
+      }
+
+      dropzone.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+      btnUpload.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      dropzone.addEventListener("dragover", (e) => { e.preventDefault(); });
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        if (isLocked) return;
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          const file = e.dataTransfer.files[0];
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      btnLock.addEventListener("click", () => {
+        if (imgPreview.style.display === "none") {
+          alert("Please upload or select a signature image first.");
+          return;
+        }
+        isLocked = true;
+        btnUpload.disabled = true;
+        btnLock.disabled = true;
+        dropzone.style.cursor = "default";
+        
+        const lockTimestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+        statusText.textContent = `Status: Digitally Sealed (${lockTimestamp}) [Scapush Precision]`;
+        statusText.classList.add("locked");
+      });
+    }
+
+    setupSignatureSlot("lead", "My Signature.jpg");
+    setupSignatureSlot("academic", null);
+  });
+</script>
+
+
+</body></html>

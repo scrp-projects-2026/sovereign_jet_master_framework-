@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Bio-Solar-Thermal Campus — Engineering CAD Workspace</title>
+<style>
+:root{--bg:#030712;--p:#0b1523;--c:#111f33;--t:#38bdf8;--g:#f59e0b;--l:#f8fafc;--m:#94a3b8;--b:#1e3a5f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--l);display:flex;flex-direction:column;height:100vh;overflow:hidden;user-select:none}
+header{background:#02060d;padding:10px 20px;border-bottom:2px solid var(--g);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;z-index:20}
+h1{font-size:1.1rem;letter-spacing:.08em;font-weight:700}
+.sub{font-size:.75rem;color:var(--t);font-weight:500}
+.tabs{display:flex;gap:8px;background:var(--p);padding:4px;border-radius:8px;border:1px solid var(--b);flex-wrap:wrap}
+.tab{background:none;border:0;color:var(--m);padding:6px 14px;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer}
+.tab.on{background:var(--t);color:#040a12}
+.btn{background:var(--c);border:1px solid var(--b);color:var(--l);padding:6px 14px;border-radius:6px;font-size:.8rem;font-weight:600;cursor:pointer}
+.btn:hover{border-color:var(--t)}
+.main{display:flex;flex:1;overflow:hidden}
+.side{width:300px;background:var(--p);border-right:1px solid var(--b);padding:16px;display:flex;flex-direction:column;gap:14px;overflow-y:auto}
+.sec{background:var(--c);border:1px solid var(--b);border-radius:8px;padding:12px 14px}
+.sec h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--g);margin-bottom:10px;border-bottom:1px solid var(--b);padding-bottom:4px}
+label{display:flex;justify-content:space-between;margin-bottom:8px;font-size:.82rem;cursor:pointer}
+label input{accent-color:var(--t);width:15px;height:15px}
+.lg div{display:flex;align-items:center;gap:8px;font-size:.76rem;margin-bottom:6px}
+.lg i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.spec{font-size:.78rem;color:var(--m);line-height:1.6}
+.vp{flex:1;position:relative;overflow:hidden;cursor:grab;background:var(--bg)}
+.vp:active{cursor:grabbing}
+.view{display:none;width:100%;height:100%}.view.on{display:block}
+svg{width:100%;height:100%;display:block;transform-origin:0 0}
+.ctl{position:absolute;top:16px;left:16px;display:flex;flex-direction:column;gap:6px;z-index:15}
+.ctl button{width:36px;height:36px;background:rgba(11,21,35,.9);border:1px solid var(--b);color:var(--l);border-radius:6px;font-size:1.1rem;font-weight:700;cursor:pointer}
+.ctl button:hover{border-color:var(--t);color:var(--t)}
+.coord{position:absolute;top:16px;right:16px;background:rgba(11,21,35,.9);border:1px solid var(--b);padding:6px 12px;border-radius:6px;font-family:Consolas,Menlo,monospace;font-size:.8rem;color:var(--t);z-index:15}
+.insp{position:absolute;bottom:20px;right:20px;width:310px;background:rgba(13,36,53,.95);border:1px solid #e7bd62;border-radius:10px;padding:14px;z-index:30;pointer-events:none;opacity:0;transition:opacity .2s}
+.insp.show{opacity:1}
+.ih{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #315064;padding-bottom:8px;margin-bottom:10px}
+.it{font-size:.88rem;font-weight:700;color:#e7bd62}
+.ib{background:rgba(86,208,193,.15);border:1px solid #56d0c1;color:#56d0c1;font-size:.68rem;padding:2px 6px;border-radius:4px;font-weight:600;white-space:nowrap;align-self:flex-start}
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.im{background:rgba(7,21,34,.6);border:1px solid #315064;padding:6px 8px;border-radius:6px}
+.im span{display:block;font-size:.65rem;color:#b9c8d3;text-transform:uppercase}
+.im b{display:block;font-size:.85rem;margin-top:2px}
+.note{margin-top:8px;font-size:.66rem;color:var(--m)}
+/* drawing styles */
+.bg{fill:#071522}
+.gm{stroke:#12283a;stroke-width:.3;stroke-dasharray:2 2;fill:none}
+.bound{stroke:#e7bd62;stroke-width:1;fill:none;stroke-dasharray:6 3}
+.bld,.zd,.sym{fill:#0d2435;stroke:#56d0c1;stroke-width:.5;cursor:pointer}
+.zd{fill:#0a1c2b;stroke:#315064}
+g:hover>.bld,g:hover>.zd,g:hover>.sym{fill:#153852;stroke:#e7bd62}
+.turn{fill:none;stroke:#315064;stroke-dasharray:2 1.5;stroke-width:.4}
+.pipe{fill:none;stroke-width:1.2}
+.slurry{stroke:#8b5cf6}.biogas{stroke:#f59e0b}.heat{stroke:#ef4444;stroke-dasharray:3 2}
+.raw{stroke:#38bdf8}.pot{stroke:#10b981}.wash{stroke:#f97316;stroke-dasharray:3 2}
+.flow{stroke-dasharray:4 4;animation:dash 15s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-100}}
+@media(prefers-reduced-motion:reduce){.flow{animation:none}}
+.bf,.bs{fill:#0b1523;stroke-width:.6;cursor:pointer}.bf{stroke:#38bdf8}.bs{stroke:#e7bd62}
+text{text-anchor:middle;dominant-baseline:central;pointer-events:none;font-family:sans-serif;fill:#fff;font-weight:700}
+.ls,.lm{fill:#94a3b8;font-weight:400}
+.zt{fill:#e7bd62;font-size:3px}
+.site .lt{font-size:2.3px}.site .ls{font-size:1.8px}
+.pid .lt{font-size:1.8px}.pid .ls{font-size:1.3px}.pid .bt{font-size:1.05px;font-family:monospace}
+.d3 .lt{font-size:3px}.d3 .ls{font-size:2.6px}
+@media(max-width:800px){.side{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>SOVEREIGN BIO-SOLAR-THERMAL CAMPUS</h1>
+    <div class="sub">Engineering CAD Workspace — 20,000 m² Site, Water &amp; 70 m³ Biodigester Schematics</div>
+  </div>
+  <div class="tabs">
+    <button class="tab on" onclick="sv('site-view',this)">Master Site Plan</button>
+    <button class="tab" onclick="sv('pid-view',this)">Water P&amp;ID</button>
+    <button class="tab" onclick="sv('bio-pid-view',this)">Biodigester P&amp;ID</button>
+    <button class="tab" onclick="sv('bio-3d-view',this)">3D Cutaway Structural</button>
+  </div>
+  <button class="btn" onclick="window.print()">Print Drawing</button>
+</header>
+<div class="main">
+  <div class="side">
+    <div class="sec"><h3>Layer Controls</h3>
+      <label>Grid <input type="checkbox" checked onchange="tl('grid',this.checked)"></label>
+      <label>Structures &amp; Equipment <input type="checkbox" checked onchange="tl('struct',this.checked)"></label>
+      <label>Slurry / Water Lines <input type="checkbox" checked onchange="tl('slurry',this.checked)"></label>
+      <label>Biogas Lines <input type="checkbox" checked onchange="tl('biogas',this.checked)"></label>
+      <label>Thermal / Wash Lines <input type="checkbox" checked onchange="tl('heat',this.checked)"></label>
+      <label>ISA-5.1 Instruments <input type="checkbox" checked onchange="tl('scada',this.checked)"></label>
+    </div>
+    <div class="sec"><h3>Legend</h3><div class="lg">
+      <div><i style="background:#8b5cf6"></i>Slurry line</div>
+      <div><i style="background:#f59e0b"></i>Biogas line</div>
+      <div><i style="background:#ef4444"></i>CHP heating water</div>
+      <div><i style="background:#38bdf8"></i>Raw water</div>
+      <div><i style="background:#10b981"></i>Potable water</div>
+      <div><i style="background:#f97316"></i>Wash-down water</div>
+      <div><i style="border:1px solid #38bdf8"></i>Field instrument</div>
+      <div><i style="border:1px solid #e7bd62"></i>SCADA / control board</div>
+    </div></div>
+    <div class="sec"><h3>Digester Design Basis</h3><div class="spec">
+      • Net volume: 70 m³ (CSTR)<br>• Mesophilic: 37 °C ± 0.5 °C<br>• HRT: 30 days<br>• Biogas: about 120 m³/day (60% CH₄)<br>• Agitator: 2.2 kW low-speed paddle<br>• CHP: 15 kW biogas engine, heat recovery to thermal loop
+    </div></div>
+    <div class="sec"><h3>Status</h3><div class="spec">Design-basis values only, not live readings. The water schematic is indicative until the source and demand are confirmed.</div></div>
+  </div>
+
+  <div class="vp" id="vp">
+    <div class="ctl">
+      <button onclick="zm(1.2)" title="Zoom in">+</button>
+      <button onclick="zm(.8)" title="Zoom out">−</button>
+      <button onclick="rv()" title="Reset view">⟲</button>
+    </div>
+    <div class="coord" id="co">X: – | Y: –</div>
+    <div class="insp" id="in">
+      <div class="ih"><div class="it" id="it"></div><div class="ib" id="iz"></div></div>
+      <div class="ig" id="im"></div>
+      <div class="note">Design basis</div>
+    </div>
+    <div class="view on" id="site-view" data-unit="m"></div>
+    <div class="view" id="pid-view" data-unit="u"></div>
+    <div class="view" id="bio-pid-view" data-unit="u"></div>
+    <div class="view" id="bio-3d-view" data-unit="u">
+      <svg class="d3" viewBox="0 0 240 140">
+        <rect width="240" height="140" class="bg"/>
+        <path class="L-grid gm" d="M0 20H240M0 60H240M0 100H240M40 0V140M120 0V140M200 0V140"/>
+        <g class="L-struct" transform="translate(60 10)">
+          <polygon points="10,110 110,110 130,120 30,120" fill="#1e293b" stroke="#56d0c1" stroke-width=".8"/>
+          <polygon points="10,110 30,120 30,124 10,114" fill="#0f172a"/>
+          <path d="M30 50V110H110V50Z" fill="rgba(13,36,53,.85)" stroke="#56d0c1" stroke-width="1.2"/>
+          <path d="M32 65H108V108H32Z" fill="rgba(139,92,246,.3)" stroke="#8b5cf6" stroke-dasharray="2 2"/>
+          <path d="M35 70C50 68 90 68 105 70M35 80C50 78 90 78 105 80M35 90C50 88 90 88 105 90M35 100C50 98 90 98 105 100" stroke="#ef4444" stroke-width="1.5" fill="none"/>
+          <line x1="70" y1="20" x2="70" y2="100" stroke="#f59e0b" stroke-width="2"/>
+          <polygon points="45,95 70,90 95,95 70,100" fill="#f59e0b" opacity=".8"/>
+          <polygon points="48,75 70,70 92,75 70,80" fill="#f59e0b" opacity=".8"/>
+          <rect x="62" y="8" width="16" height="12" fill="#0b1e2c" stroke="#e7bd62" rx="1"/>
+          <text x="70" y="14" class="lt" style="font-size:2.6px;fill:#e7bd62">2.2 kW</text>
+          <path d="M30 50Q70 10 110 50Z" fill="rgba(245,158,11,.25)" stroke="#f59e0b" stroke-width="1.5"/>
+          <path d="M30 50Q70 22 110 50Z" fill="none" stroke="#f59e0b" stroke-dasharray="2 2"/>
+          <text x="70" y="40" class="lt">Biogas dome</text>
+          <text x="70" y="86" class="lt">Slurry 70 m³ net</text>
+          <line x1="20" y1="50" x2="20" y2="110" stroke="#94a3b8" stroke-width=".5"/>
+          <text x="15" y="80" class="ls" transform="rotate(-90 15 80)">H = 4.5 m</text>
+          <line x1="30" y1="126" x2="110" y2="126" stroke="#94a3b8" stroke-width=".5"/>
+          <text x="70" y="131" class="ls">Ø 4.5 m × H 4.5 m (about 71.6 m³ gross)</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- drawing helpers ---------- */
+const T=(x,y,s,c,lh)=>s.split('|').map((t,i,a)=>`<text x="${x}" y="${y+(i-(a.length-1)/2)*lh}" class="${c}">${t}</text>`).join('');
+const R=(x,y,w,h,c,e='')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" class="${c}" ${e}/>`;
+const G=(k,inner)=>`<g class="L-struct" onmouseenter="inspect('${k}')" onmouseleave="hideI()">${inner}</g>`;
+const grid=(w,h,s)=>{let d='';for(let x=0;x<=w;x+=s)d+=`M${x} 0V${h}`;for(let y=0;y<=h;y+=s)d+=`M0 ${y}H${w}`;return `<path class="L-grid gm" d="${d}"/>`};
+const P=(c,d,f)=>`<path d="${d}" class="pipe ${c}${f?' flow':''}"/>`;
+const L=(n,s)=>`<g class="L-${n}">${s}</g>`;
+function box(x,y,w,h,k,l,sub){const cx=x+w/2,cy=y+h/2-(sub?1.2:0),n=l.split('|').length,lh=2.6;
+  return G(k,R(x,y,w,h,'bld')+T(cx,cy,l,'lt',lh)+(sub?T(cx,cy+(((n-1)/2)+1)*lh,sub,'ls',2):''))}
+const bub=(x,y,a,b,k,c)=>`<g onmouseenter="inspect('${k}')" onmouseleave="hideI()"><circle cx="${x}" cy="${y}" r="3.5" class="${c}"/><text x="${x}" y="${y-1}" class="bt">${a}</text><text x="${x}" y="${y+1.3}" class="bt">${b}</text></g>`;
+const svg=(vb,cls,body)=>`<svg class="${cls}" viewBox="${vb}"><rect x="-20" y="-20" width="400" height="400" class="bg"/>${body}</svg>`;
+
+/* ---------- 1. Master Site Plan: 141.4 m square = 20,000 m², fence 565 m ---------- */
+(function(){
+  const S=70.7;
+  let s=grid(141.4,141.4,10)+R(0,0,141.4,141.4,'bound');
+  s+=G('dz',R(0,S,S,S,'zd')+R(S,99,S,42.4,'zd')+`<circle cx="35" cy="92" r="10" class="turn"/>`+T(35,92,'20 m|turn','ls',2.2)+T(35,122,'Circulation, buffer|& expansion|8,000 m²','lt',2.6)+T(106,120,'Expansion|corridor','lt',2.6));
+  [
+   [0,0,25.6,24.4,'barns','2 barns|8 pods','624 m²'],
+   [25.6,0,45.1,24.4,'pv','Agrivoltaic PV|30.16 kWp','1,100 m²'],
+   [0,24.4,7.6,46.3,'tk501','TK-501',''],
+   [7.6,24.4,63.1,46.3,'bess','Services yard, BESS|& SCADA','2,926 m² (verify)'],
+   [S,0,35.35,42.4,'pavilion','Training|pavilion','1,500 m²'],
+   [106.05,0,18.9,42.4,'dock','EV dock','800 m²'],
+   [124.95,0,16.45,42.4,'bays','Assistive|bays','700 m²'],
+   [S,42.4,31.8,56.6,'hydro','Vertical|hydroponics','1,800 m²'],
+   [102.5,42.4,12.4,56.6,'uv','UV &|shower-in','700 m²'],
+   [114.9,42.4,26.5,56.6,'swale','Biosecurity|partitions|& swales','1,500 m²']
+  ].forEach(a=>s+=box(...a));
+  s+=[['A',1.5,2],['B',72.2,2],['C',72.2,44],['D',1.5,73]].map(a=>`<text x="${a[1]}" y="${a[2]}" class="zt" style="text-anchor:start">${a[0]}</text>`).join('');
+  s+=T(70.7,150,'Site 141.4 m × 141.4 m = 20,000 m²  |  Perimeter fence 565 m','ls',2.4);
+  document.getElementById('site-view').innerHTML=svg('-10 -12 161.4 168','site',s);
+})();
+
+/* ---------- 2. Water P&ID (indicative) ---------- */
+(function(){
+  let s=grid(240,120,20);
+  s+=L('slurry',P('raw','M22 57H36')+P('raw','M58 57H65')+P('raw','M75 57H84')+P('raw','M96 58H108')+P('pot','M124 58H138')+P('pot','M160 58H169')+P('pot','M179 58H190M190 27V83M190 27H200M190 58H200M190 83H200'));
+  s+=L('heat',P('wash','M149 72V102H200'));
+  const sy=(x,y,w,h,k,l)=>G(k,R(x,y,w,h,'sym')+T(x+w/2,y+h/2,l,'lt',2));
+  const pump=(x,y,k,l)=>G(k,`<circle cx="${x}" cy="${y}" r="5" class="sym"/><path d="M${x-2.5} ${y+2.5}L${x+2.5} ${y}L${x-2.5} ${y-2.5}Z" fill="#38bdf8"/>`+T(x,y+9,l,'lt',2));
+  s+=sy(8,50,14,14,'bh','BH-101')+sy(36,44,22,28,'tk101','TK-101|raw tank')+pump(70,57,'p101','P-101')+sy(84,50,12,16,'f101','F-101')+sy(108,50,16,16,'uv','UV-101')+sy(138,44,22,28,'tk102','TK-102|potable')+pump(174,58,'p102','P-102');
+  s+=sy(200,20,30,14,'wb','Barns')+sy(200,48,30,14,'wh','Hydroponics')+sy(200,76,30,14,'ws','Shower-in')+sy(200,96,30,12,'ww','Wash-down');
+  s+=L('scada',bub(47,38,'LIT','101','lit101','bf')+bub(116,44,'AIT','101','ait101','bs')+bub(149,38,'LIT','102','lit102','bf')+bub(180,48,'FIT','101','fit101','bs'));
+  s+=T(120,114,'Indicative schematic: source, treatment duty and demand to be confirmed','ls',2);
+  document.getElementById('pid-view').innerHTML=svg('0 0 240 120','pid',s);
+})();
+
+/* ---------- 3. Biodigester P&ID (ISA-5.1) ---------- */
+(function(){
+  let s=grid(260,140,20);
+  s+=L('slurry',P('slurry','M30 105H40V75H60',1)+P('slurry','M70 75H95',1)+P('slurry','M135 85H160V100',1));
+  s+=L('biogas',P('biogas','M115 35V20H152V45',1)+P('biogas','M160 70H185',1)+P('biogas','M205 70H225V25H240')+P('biogas','M225 70V95'));
+  s+=L('heat',P('heat','M205 105H125V85',1)+P('heat','M105 85V112H205'));
+  s+=G('reception',R(10,95,20,20,'sym')+T(20,105,'PIT-500','lt',2));
+  s+=G('p501',`<circle cx="65" cy="75" r="5" class="sym"/><path d="M62 78L68 75L62 72Z" fill="#8b5cf6"/>`+T(65,84,'P-501','lt',2));
+  s+=G('tk501',R(95,35,40,50,'sym','rx="2"')+`<line x1="115" y1="40" x2="115" y2="75" stroke="#56d0c1"/><path d="M107 70H123M109 60H121" stroke="#56d0c1" stroke-width="1.2"/>`+T(115,50,'TK-501|70 m³ CSTR','lt',2.4));
+  s+=G('v502',R(145,45,15,25,'sym')+T(152.5,57,'V-502','lt',2));
+  s+=G('tk503',`<path d="M185 65A10 10 0 0 1 205 65Z" class="sym"/>`+R(185,65,20,10,'sym')+T(195,70,'TK-503','lt',2));
+  s+=G('s501',`<polygon points="150,100 170,100 160,115" class="sym"/>`+T(160,96,'S-501','lt',2));
+  s+=G('f501',`<path d="M240 25L245 10L250 25Z" fill="#ef4444" stroke="#f59e0b"/>`+T(245,30,'F-501','lt',2));
+  s+=G('chp501',R(205,95,30,20,'sym')+T(220,105,'CHP-501|15 kW','lt',2.4));
+  s+=L('scada',bub(100,48,'TIT','501','tit501','bs')+bub(125,20,'PIT','501','pit501','bs')+bub(130,40,'LIT','501','lit501','bf')+bub(172,70,'FIT','502','fit502','bs'));
+  document.getElementById('bio-pid-view').innerHTML=svg('0 0 260 140','pid',s);
+})();
+
+/* ---------- inspector ---------- */
+const REG={
+ barns:['Climate barns','Zone A',[['Footprint','624 m²'],['Pods','8 (broiler + swine)']]],
+ pv:['Agrivoltaic PV','Zone A',[['Capacity','30.16 kWp'],['Area','1,100 m²']]],
+ bess:['Services yard','Zone A',[['BESS','30 kW / 60 kWh LFP'],['Area','2,926 m² (verify)']]],
+ pavilion:['Co-op training pavilion','Zone B',[['Area','1,500 m²'],['Use','Operations & training']]],
+ dock:['EV fast-charging dock','Zone B',[['Area','800 m²'],['Supply','Off-grid DC']]],
+ bays:['Assistive power bays','Zone B',[['Area','700 m²'],['Tariff','Free power']]],
+ hydro:['Vertical hydroponics','Zone C',[['Area','1,800 m²'],['Loop','Closed-loop']]],
+ uv:['UV sanitation & shower-in','Zone C',[['Area','700 m²'],['Role','Biosecurity portal']]],
+ swale:['Partitions & swales','Zone C',[['Area','1,500 m²'],['Barrier','4-pod firewall']]],
+ dz:['Circulation & expansion','Zone D',[['Area','8,000 m²'],['Turning','20 m circle']]],
+ reception:['Substrate pit PIT-500','Feed',[['Volume','8 m³ pit'],['Substrate','Swine / poultry']]],
+ p501:['Chopper pump P-501','Feed',[['Power','3.0 kW'],['Flow','15 m³/hr']]],
+ tk501:['70 m³ CSTR digester','Core digester',[['Net volume','70 m³'],['Temperature','37 °C mesophilic'],['HRT','30 days'],['Biogas','120 m³/day']]],
+ v502:['H₂S scrubber V-502','Gas purification',[['Media','Biological / iron'],['H₂S','< 100 ppm']]],
+ tk503:['Biogas holder TK-503','Storage',[['Type','Double membrane'],['Capacity','30 m³ gas']]],
+ s501:['Digestate separator S-501','Discharge',[['Type','Screw press'],['Solids','Bio-fertiliser']]],
+ f501:['Gas flare F-501','Safety',[['Type','Auto high-temp'],['Trigger','Overpressure']]],
+ chp501:['CHP engine CHP-501','Energy',[['Rating','15 kW biogas'],['Heat','Feeds thermal loop']]],
+ tit501:['Temperature TIT-501','Instrument',[['Sensor','Pt100 RTD'],['Accuracy','± 0.1 °C']]],
+ pit501:['Pressure PIT-501','Instrument',[['Range','0–100 mbar'],['Interlock','Flare start']]],
+ lit501:['Level LIT-501','Instrument',[['Type','Radar 80 GHz'],['Target fill','85% liquid']]],
+ fit502:['Biogas flow FIT-502','Instrument',[['Type','Thermal mass'],['Output','120 m³/day']]],
+ bh:['Borehole BH-101','Water',[['Source','To be confirmed'],['Yield','To be sized']]],
+ tk101:['Raw water tank TK-101','Water',[['Volume','To be sized']]],
+ p101:['Pump P-101','Water',[['Duty','To be sized']]],
+ f101:['Filter F-101','Water',[['Duty','To be sized']]],
+ uv:['UV sanitiser UV-101','Water',[['Role','Inline UV treatment'],['Duty','To be sized']]],
+ tk102:['Potable tank TK-102','Water',[['Volume','To be sized']]],
+ p102:['Pump P-102','Water',[['Duty','To be sized']]],
+ wb:['Barns supply','Water',[['Demand','To be sized']]],
+ wh:['Hydroponics supply','Water',[['Demand','To be sized']]],
+ ws:['Shower-in portal supply','Water',[['Demand','To be sized']]],
+ ww:['Wash-down supply','Water',[['Demand','To be sized']]],
+ lit101:['Level LIT-101','Instrument',[['Service','Raw tank']]],
+ ait101:['UV transmittance AIT-101','Instrument',[['Service','UV-101']]],
+ lit102:['Level LIT-102','Instrument',[['Service','Potable tank']]],
+ fit101:['Flow FIT-101','Instrument',[['Service','Distribution']]]
+};
+REG.uv=['UV sanitation & shower-in / UV-101','Zone C / Water',[['Zone C area','700 m²'],['Treatment','Inline UV, duty to be sized']]];
+const $=id=>document.getElementById(id),card=$('in');
+function inspect(k){const r=REG[k];if(!r)return;$('it').textContent=r[0];$('iz').textContent=r[1];
+  $('im').innerHTML=r[2].map(m=>`<div class="im"><span>${m[0]}</span><b>${m[1]}</b></div>`).join('');card.classList.add('show')}
+function hideI(){card.classList.remove('show')}
+
+/* ---------- views, layers ---------- */
+function sv(id,btn){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));$(id).classList.add('on');hideI();rv()}
+function tl(n,on){document.querySelectorAll('.L-'+n).forEach(e=>e.style.display=on?'':'none')}
+
+/* ---------- pan / zoom / coordinates ---------- */
+let sc=1,px=0,py=0,sx=0,sy=0,pan=false;const vp=$('vp');
+const act=()=>document.querySelector('.view.on svg');
+function apply(){const s=act();if(s)s.style.transform=`translate(${px}px,${py}px) scale(${sc})`}
+function zm(f){const r=vp.getBoundingClientRect(),cx=r.width/2,cy=r.height/2,ns=Math.min(5,Math.max(.6,sc*f));
+  px=cx-(cx-px)*ns/sc;py=cy-(cy-py)*ns/sc;sc=ns;apply()}
+function rv(){sc=1;px=0;py=0;apply()}
+vp.addEventListener('mousedown',e=>{if(e.target.closest('.ctl'))return;pan=true;sx=e.clientX-px;sy=e.clientY-py});
+window.addEventListener('mouseup',()=>pan=false);
+window.addEventListener('mousemove',e=>{if(!pan)return;px=e.clientX-sx;py=e.clientY-sy;apply()});
+vp.addEventListener('wheel',e=>{e.preventDefault();const r=vp.getBoundingClientRect(),cx=e.clientX-r.left,cy=e.clientY-r.top,
+  ns=Math.min(5,Math.max(.6,sc*(e.deltaY<0?1.1:.9)));px=cx-(cx-px)*ns/sc;py=cy-(cy-py)*ns/sc;sc=ns;apply()},{passive:false});
+vp.addEventListener('mousemove',e=>{const s=act();if(!s)return;const m=s.getScreenCTM();if(!m)return;
+  const pt=s.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(m.inverse());
+  const u=document.querySelector('.view.on').dataset.unit;$('co').textContent=`X: ${p.x.toFixed(1)} ${u} | Y: ${p.y.toFixed(1)} ${u}`});
+</script>
+</body>
+</html>

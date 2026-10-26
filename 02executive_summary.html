@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<!-- saved from url=(0084)file:///C:/Users/ASUS/OneDrive/JET-EOI-JUBILEE%20DASHBOARD/02_executive_summary.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SECTION 02 — EXECUTIVE SUMMARY | Sovereign Bio-Solar-Thermal Campus</title>
+<style>
+  :root {
+    --bg-superwhite: #FFFFFF;
+    --navy-blue: #0A192F;
+    --dark-green: #1B4332;
+    --sunny-gold: #D4AF37;
+    --teal: #008080;
+    --text-primary: #1A202C;
+    --text-muted: #4A5568;
+    --card-bg: #F8FAFC;
+    --border-color: #E2E8F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg-superwhite);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .container { max-width: 1000px; margin: 0 auto; background: var(--bg-superwhite); }
+
+  /* Top Ownership Badge */
+  .ownership-bar {
+    background: var(--dark-green);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--sunny-gold);
+  }
+
+  .ownership-bar span { color: var(--sunny-gold); }
+
+  /* Main Heading Block */
+  .header-block {
+    background-color: var(--navy-blue);
+    color: var(--bg-superwhite);
+    padding: 40px 30px;
+    border-radius: 0 0 8px 8px;
+    border-bottom: 5px solid var(--sunny-gold);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  .header-block.active-narration {
+    border: 3px solid var(--sunny-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .header-block h1 {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+  }
+
+  .header-block .subtitle { font-size: 1.1rem; color: var(--sunny-gold); font-weight: 500; margin-bottom: 15px; }
+  .header-block .tags { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; }
+  .header-block .tag { background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.4); color: #FFFFFF; }
+
+  /* Control Panel */
+  .control-panel {
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .control-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+  .control-title { font-weight: 700; color: #1E40AF; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .button-group { display: flex; gap: 12px; flex-wrap: wrap; }
+  
+  .btn-action {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+  }
+  .btn-action:hover { background: #1D4ED8; }
+  .btn-stop {
+    background: #DC2626;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .btn-stop:hover { background: #B91C1C; }
+
+  /* Section Styles */
+  section {
+    margin-bottom: 45px;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  section.active-narration {
+    background-color: rgba(59, 130, 246, 0.05);
+    border: 2px solid #3B82F6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+
+  h2 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  h2 .section-audio-btn {
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h2 .section-audio-btn:hover { background: #006666; }
+
+  h2::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--teal);
+    border-radius: 2px;
+  }
+
+  p { color: var(--text-muted); margin-bottom: 15px; font-size: 1rem; }
+
+  /* Grid Layouts */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 20px; }
+
+  @media (max-width: 768px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+
+  .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; }
+  .card-header { font-weight: bold; color: var(--dark-green); font-size: 1.1rem; margin-bottom: 10px; }
+
+  .metric-card { background: #F0FDF4; border: 1px solid var(--dark-green); border-radius: 6px; padding: 15px; text-align: center; }
+  .metric-value { font-size: 1.1rem; font-weight: 800; color: var(--navy-blue); margin-bottom: 5px; }
+  .metric-label { font-size: 0.78rem; font-weight: 700; color: var(--dark-green); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Bullet Lists */
+  ul, ol { padding-left: 0; list-style: none; }
+  ul li { position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--text-muted); }
+  ul li::before { content: '■'; position: absolute; left: 0; color: var(--sunny-gold); font-size: 0.8rem; top: 2px; }
+
+  /* Callout Box */
+  .teachability-box {
+    background-color: #F0FDF4;
+    border-left: 4px solid var(--dark-green);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
+  }
+  .teachability-title { font-weight: 700; color: var(--dark-green); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+
+  /* Tables */
+  .styled-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.95rem; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+  .styled-table thead tr { background-color: var(--navy-blue); color: #FFFFFF; text-align: left; }
+  .styled-table th, .styled-table td { padding: 12px 15px; border: 1px solid var(--border-color); }
+  .styled-table tbody tr { border-bottom: 1px solid var(--border-color); }
+  .styled-table tbody tr:nth-of-type(even) { background-color: var(--card-bg); }
+  .styled-table tbody tr:last-of-type { border-bottom: 2px solid var(--dark-green); }
+
+  /* Interactive Signature Image Stamp Styles */
+  .signature-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
+  @media (max-width: 768px) { .signature-container { grid-template-columns: 1fr; } }
+  .signature-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+  .signature-title { font-size: 0.85rem; font-weight: 700; color: var(--dark-green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px; }
+  
+  .signature-dropzone {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    margin-bottom: 12px;
+    background: #FFFFFF;
+    border: 1.5px dashed var(--teal);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .signature-dropzone:hover { background: #F0FDF4; border-color: var(--dark-green); }
+  .signature-dropzone p { font-size: 0.8rem; color: var(--text-muted); margin: 0; text-align: center; }
+  
+  .signature-preview-img {
+    max-width: 90%;
+    max-height: 90px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .signature-actions { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
+  .btn-sig { padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; border: none; cursor: pointer; transition: all 0.2s ease; }
+  .btn-upload { background: #E2E8F0; color: var(--navy-blue); }
+  .btn-upload:hover { background: #CBD5E1; }
+  .btn-lock { background: var(--dark-green); color: #FFFFFF; }
+  .btn-lock:hover { background: #143225; }
+  .btn-sig:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .signatory-name { font-size: 1rem; font-weight: 800; color: var(--navy-blue); }
+  .signatory-role { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+  .signatory-meta { font-size: 0.78rem; color: var(--teal); font-weight: 600; }
+  .signature-status { font-size: 0.75rem; font-weight: 700; color: #D97706; margin-top: 6px; }
+  .signature-status.locked { color: #059669; }
+
+  /* Institutional Profile Footer Block */
+  .institutional-block { background-color: var(--navy-blue); color: #FFFFFF; padding: 30px; border-radius: 8px; margin-top: 40px; border-top: 4px solid var(--dark-green); }
+  .institutional-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; font-size: 0.9rem; }
+  .institutional-item strong { color: var(--sunny-gold); display: block; margin-bottom: 4px; }
+  .contact-link { color: #FFFFFF; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="container" id="documentContainer">
+
+  <!-- Ownership Header Bar -->
+  <div class="ownership-bar">
+    <div>PROPRIETARY &amp; CONFIDENTIAL — <span>LWANDILE ENGINEERING PROJECTS &amp; INCLUSIVE ENTREPRENEURIAL ACADEMY</span></div>
+    <div>SCAPUSH PRECISION STANDARD</div>
+  </div>
+
+  <!-- Main Heading Block -->
+  <header class="header-block" id="secHeader">
+    <h1>SECTION 02 — EXECUTIVE SUMMARY</h1>
+    <div class="subtitle">Sovereign Bio-Solar-Thermal Campus | Master Design Specification</div>
+    <div class="tags">
+      <span class="tag">Doc Ref: 02_executive_summary.html</span>
+      <span class="tag">Status: APPROVED BASELINE</span>
+      <span class="tag">Governance: Scapush Precision</span>
+      <span class="tag">JET Window 4 Aligned</span>
+    </div>
+  </header>
+
+  <!-- Interactive Control Panel -->
+  <div class="control-panel" role="region" aria-label="Accessibility Control Center">
+    <div class="control-row">
+      <div class="control-title">
+        <span>🔊 Auto-Scrolling Live Narration Engine</span>
+      </div>
+      <div class="button-group">
+        <button class="btn-action" onclick="startAutoScrollingNarration()">▶ Start Auto-Scroll Narration</button>
+        <button class="btn-stop" onclick="stopSpeech()">⏹ Stop / Misa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Executive Control Summary / Lock-In Matrix -->
+  <section id="sec1">
+    <h2>
+      <span>1. Executive Lock-In Register</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec1')">🔊 Listen Section</button>
+    </h2>
+    <p>This section codifies the mandatory high-level project parameters locked under Master Design Specification <code>MDS-001</code> for official Just Energy Transition (JET) evaluation:</p>
+    
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Ref Code</th>
+          <th>Locked Core Parameter</th>
+          <th>Design Specification &amp; Scope Boundary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ES-001</strong></td>
+          <td>Facility Identity</td>
+          <td>Food-Energy-Water Nexus Demonstration Campus</td>
+        </tr>
+        <tr>
+          <td><strong>ES-002</strong></td>
+          <td>Site Boundary</td>
+          <td>20,000 m² (2 Hectares) Leasehold Site with 565m Secured Perimeter</td>
+        </tr>
+        <tr>
+          <td><strong>ES-003</strong></td>
+          <td>Poultry Cluster</td>
+          <td>1 Barn (12m × 32m) | 4 Biosecure Pods | 4,800 to 5,720 Broilers Capacity</td>
+        </tr>
+        <tr>
+          <td><strong>ES-004</strong></td>
+          <td>Swine Cluster</td>
+          <td>1 Barn (12m × 32m) | 8 Pens in 4 Pods | 160 to 500 Weaners (Feedstock Role)</td>
+        </tr>
+        <tr>
+          <td><strong>ES-005</strong></td>
+          <td>Energy Philosophy</td>
+          <td>100% Off-Grid Sovereignty (Independent of Utility Grid)</td>
+        </tr>
+        <tr>
+          <td><strong>ES-006</strong></td>
+          <td>Energy Architecture</td>
+          <td>Integrated Solar PV + Battery Storage (BESS) + Biogas CHP Engine</td>
+        </tr>
+        <tr>
+          <td><strong>ES-007</strong></td>
+          <td>Prohibited Energy</td>
+          <td>Zero Diesel Generators (Strictly Excluded from Design Basis)</td>
+        </tr>
+        <tr>
+          <td><strong>ES-008</strong></td>
+          <td>Accessibility Baseline</td>
+          <td>Accessibility-First Infrastructure (Universal Access, EV/Mobility Hub)</td>
+        </tr>
+        <tr>
+          <td><strong>ES-009</strong></td>
+          <td>Skills Partner</td>
+          <td>Inclusive Entrepreneurship Academy (Dr. Palesa Charlotte Felix-Faure)</td>
+        </tr>
+        <tr>
+          <td><strong>ES-010</strong></td>
+          <td>Impact Target</td>
+          <td>JET-Aligned Circular Economy &amp; Disability Beneficiation Platform</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- The Opportunity & Project Overview -->
+  <section id="sec2">
+    <h2>
+      <span>2. The Opportunity &amp; Project Overview</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec2')">🔊 Listen Section</button>
+    </h2>
+    
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">The Socioeconomic Opportunity</div>
+        <p>South Africa's Just Energy Transition presents an opportunity to demonstrate how food security, renewable energy, accessibility and entrepreneurship can be integrated into a single regenerative platform.</p>
+        <p>Many communities across the Mpumalanga coal belt face simultaneous challenges relating to:</p>
+        <ul>
+          <li>Food insecurity &amp; volatile supply chains</li>
+          <li>Energy insecurity &amp; frequent grid collapse</li>
+          <li>Unemployment &amp; coal value chain contraction</li>
+          <li>Disability exclusion &amp; physical barriers</li>
+          <li>Skills shortages in clean technology</li>
+          <li>Waste management challenges</li>
+          <li>Limited participation in the green economy</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Project Overview</div>
+        <p>The <strong>Sovereign Bio-Solar-Thermal Campus</strong> is a proposed off-grid Food-Energy-Water Nexus Demonstration Facility integrating livestock production, renewable energy, biogas generation, thermal recovery, digital monitoring, skills development and inclusive entrepreneurship.</p>
+        <p>The campus is designed as a living demonstration of how circular economy principles can support food production, energy generation and community development within a single infrastructure platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes This Project Different -->
+  <section id="sec3">
+    <h2>
+      <span>3. Resource Circulation &amp; Differentiation</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec3')">🔊 Listen Section</button>
+    </h2>
+    
+    <div class="teachability-box">
+      <div class="teachability-title">Circular Economy Core Philosophy</div>
+      <p style="margin-bottom: 0; color: var(--text-primary);">
+        Unlike conventional agricultural projects, the campus is designed around resource circulation rather than resource consumption. Each subsystem directly supports and feeds into another subsystem.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="metric-card">
+        <div class="metric-value">Waste → Biogas</div>
+        <div class="metric-label">Livestock manure becomes digester feedstock</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Biogas → Power</div>
+        <div class="metric-label">Biogas CHP generates firm electricity</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Heat → Biology</div>
+        <div class="metric-label">CHP waste heat maintains digester/barn microclimates</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Digestate → Crop</div>
+        <div class="metric-label">Digestate provides high-grade organic bio-fertilizer</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Operations → Skills</div>
+        <div class="metric-label">Daily campus operations provide practical training</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">Skills → Ventures</div>
+        <div class="metric-label">Academy training fosters community entrepreneurship</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demonstration Infrastructure & Energy Platform -->
+  <section id="sec4">
+    <h2>
+      <span>4. Technical Infrastructure &amp; Energy Platform</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec4')">🔊 Listen Section</button>
+    </h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">Biosecure Production Clusters</div>
+        <strong style="color: var(--dark-green);">Poultry Production Cluster:</strong>
+        <ul style="margin-bottom: 15px;">
+          <li>One 12m × 32m Poultry Barn</li>
+          <li>Four Biosecure Pods (4,800 to 5,720 Broiler Capacity)</li>
+          <li>Microclimate Nursery &amp; Climate Moderation</li>
+          <li>SCADA Digital Telemetry Integration</li>
+        </ul>
+        <strong style="color: var(--dark-green);">Swine Nursery Cluster:</strong>
+        <ul>
+          <li>One 12m × 32m Swine Barn</li>
+          <li>Four Biosecure Pods / 8 Pens (160 to 500 Weaner Capacity)</li>
+          <li>Primary Organic Feedstock Generation Role for Anaerobic Digester</li>
+          <li>SCADA Digital Telemetry Integration</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Energy Sovereignty Platform</div>
+        <p>The facility is designed around permanent off-grid operation supported by three integrated systems:</p>
+        <ul>
+          <li><strong>Solar PV Array:</strong> Primary daytime power generation and battery charging.</li>
+          <li><strong>Battery Energy Storage (BESS):</strong> Lithium Iron Phosphate (LFP) storage for night and peak load leveling.</li>
+          <li><strong>Biogas Combined Heat &amp; Power (CHP):</strong> Firm thermal and electrical energy support driven by anaerobic digestion.</li>
+        </ul>
+        <div class="teachability-box" style="margin-top: 15px; margin-bottom: 0; background: #FFF5F5; border-left-color: #E53E3E;">
+          <strong style="color: #9B2C2C;">MANDATORY PROHIBITION:</strong>
+          <p style="font-size: 0.88rem; color: #742A2A; margin-bottom: 0;">Diesel generators form no part of the design basis under any operational condition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessibility & Inclusive Academy -->
+  <section id="sec5">
+    <h2>
+      <span>5. Accessibility Leadership &amp; Entrepreneurship Academy</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec5')">🔊 Listen Section</button>
+    </h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">Accessibility Infrastructure Mandate</div>
+        <p>Accessibility is treated as a core infrastructure requirement, ensuring complete participation for persons with disabilities:</p>
+        <ul>
+          <li>Universal Step-Free Access Routes across 100% of campus.</li>
+          <li>Accessible Learning Spaces &amp; Administration Facilities.</li>
+          <li>Dedicated Mobility Wheelchair &amp; Scooter Charging Bays.</li>
+          <li>Off-grid DC EV Accessibility Charging Hub.</li>
+          <li>Inclusive Skills Development Programmes tailored for all abilities.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Inclusive Entrepreneurship Academy</div>
+        <p>Partnered with Dr. Palesa Charlotte Felix-Faure, the Academy provides accredited green economy training and venture development:</p>
+        <ul>
+          <li>Renewable Energy Systems &amp; Solar Maintenance</li>
+          <li>Biogas Operation &amp; Anaerobic Digestion</li>
+          <li>Controlled Agriculture &amp; Digital Farming</li>
+          <li>Livestock Systems &amp; Biosecurity Management</li>
+          <li>SCADA &amp; ArIoT Telemetry Operations</li>
+          <li>Green Enterprise &amp; Cooperative Governance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Just Energy Transition & Vision -->
+  <section id="sec6">
+    <h2>
+      <span>6. JET Alignment &amp; Executive Declaration</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec6')">🔊 Listen Section</button>
+    </h2>
+
+    <div class="card" style="margin-bottom: 20px;">
+      <div class="card-header">Just Energy Transition Alignment</div>
+      <div class="grid-2" style="margin-bottom: 0;">
+        <ul>
+          <li>Renewable Energy Adoption</li>
+          <li>Green Skills Development</li>
+          <li>Economic Inclusion &amp; Decent Jobs</li>
+          <li>Community Participation &amp; Ownership</li>
+        </ul>
+        <ul>
+          <li>Climate Resilience &amp; Adaptation</li>
+          <li>Accessibility Inclusion Leadership</li>
+          <li>Circular Economy Demonstration</li>
+          <li>Food Security Enhancement</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="teachability-box" style="border-left-color: var(--sunny-gold);">
+      <div class="teachability-title" style="color: var(--navy-blue);">Executive Declaration</div>
+      <p style="font-style: italic; font-weight: 600; color: var(--navy-blue); margin-bottom: 0;">
+        "The Sovereign Bio-Solar-Thermal Campus is not merely an agricultural project. It is a demonstration of how biological systems, renewable energy systems, digital technologies and community participation can be integrated into a single regenerative infrastructure platform capable of creating lasting social, environmental and economic value."
+      </p>
+    </div>
+  </section>
+
+  <!-- Signatures & Authorization -->
+  <section id="sec7">
+    <h2>
+      <span>7. Approval &amp; Authorization</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec7')">🔊 Listen Section</button>
+    </h2>
+    
+    <div class="signature-container">
+      <!-- Signatory 1: Sipho Wiseman Khuzwayo -->
+      <div class="signature-card">
+        <div class="signature-title">Project Steward &amp; Technical Lead</div>
+        
+        <input type="file" id="file-lead" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-lead" style="cursor: default;">
+          <p id="placeholder-lead" style="display: none;">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(Pre-loading 'My Signature.jpg')</span></p>
+          <img id="img-lead" class="signature-preview-img" style="display: block;" alt="Signature Preview" src="data:image/png;base64,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">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-lead" disabled="">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-lead" disabled="">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Sipho Wiseman Khuzwayo</div>
+        <div class="signatory-role">Inclusive Legacy Architect / Principal Lead</div>
+        <div class="signatory-meta">Lwandile Engineering Projects (Pty) Ltd</div>
+        <div class="signature-status locked" id="status-lead">Status: Digitally Sealed (2026-10-23 22:18:17 UTC) [Scapush Precision]</div>
+      </div>
+
+      <!-- Signatory 2: Dr. Palesa Charlotte Felix-Faure -->
+      <div class="signature-card">
+        <div class="signature-title">Governance &amp; Skills Partner</div>
+        
+        <input type="file" id="file-academic" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-academic">
+          <p id="placeholder-academic">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(JPG / PNG / SVG)</span></p>
+          <img id="img-academic" class="signature-preview-img" style="display: none;" alt="Signature Preview">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-academic">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-academic">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Dr. Palesa Charlotte Felix-Faure</div>
+        <div class="signatory-role">Founder &amp; Academic Lead</div>
+        <div class="signatory-meta">Inclusive Entrepreneurial Academy</div>
+        <div class="signature-status" id="status-academic">Status: Awaiting Signature File</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutional Profile Footer Block -->
+  <footer class="institutional-block" id="secFooter">
+    <div class="institutional-grid">
+      <div class="institutional-item">
+        <strong>Consortium Leadership</strong>
+        Sipho Wiseman Khuzwayo — Lead System Architect (Lwandile Engineering)<br>
+        Dr. Palesa Charlotte Felix-Faure — Academic &amp; Governance Lead (Inclusive Entrepreneurial Academy)
+      </div>
+      <div class="institutional-item">
+        <strong>Execution Entities &amp; Standard</strong>
+        Lwandile Engineering Projects (Pty) Ltd<br>
+        Inclusive Entrepreneurial Academy<br>
+        Scapush Precision Execution Standard
+      </div>
+      <div class="institutional-item">
+        <strong>Operational Footprint</strong>
+        Sovereign Bio-Solar-Thermal Campus, Mpumalanga, South Africa
+      </div>
+      <div class="institutional-item">
+        <strong>Primary Contact &amp; Communication</strong>
+        <a href="mailto:siphokhuzwayo12@gmail.com" class="contact-link">siphokhuzwayo12@gmail.com</a><br>
+        <a href="https://www.linkedin.com/search/results/all/?keywords=sipho%20wiseman%20khuzwayo" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn Profile</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Auto-Scroll Narration & Signature Image Controller Script -->
+<script>
+  function stopSpeech() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    clearActiveHighlights();
+  }
+
+  function clearActiveHighlights() {
+    document.querySelectorAll('section, header').forEach(el => el.classList.remove('active-narration'));
+  }
+
+  function highlightAndScroll(elementId) {
+    clearActiveHighlights();
+    const target = document.getElementById(elementId);
+    if (target) {
+      target.classList.add('active-narration');
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  const executiveSummaryNarrationSequence = [
+    {
+      elementId: 'secHeader',
+      text: "Section 02 Executive Summary for the Sovereign Bio Solar Thermal Campus Master Design Specification under the Scapush Precision Execution Standard."
+    },
+    {
+      elementId: 'sec1',
+      text: "Section 1. Executive Lock-In Register. Codifying core parameters including 100 percent off-grid energy sovereignty, zero diesel generators, and inclusive accessibility mandates."
+    },
+    {
+      elementId: 'sec2',
+      text: "Section 2. The Opportunity and Project Overview. Demonstrating a Food-Energy-Water Nexus facility tailored for Mpumalanga's coal transition communities."
+    },
+    {
+      elementId: 'sec3',
+      text: "Section 3. Resource Circulation and Differentiation. Highlighting circular resource loops converting livestock manure into biogas power, waste heat, and organic bio-fertilizers."
+    },
+    {
+      elementId: 'sec4',
+      text: "Section 4. Technical Infrastructure and Energy Platform. Biosecure poultry and swine clusters coupled with Solar PV, LFP Battery Storage, and Biogas CHP engines."
+    },
+    {
+      elementId: 'sec5',
+      text: "Section 5. Accessibility Leadership and Entrepreneurship Academy. Step-free campus infrastructure and accredited green economy training with Dr. Palesa Charlotte Felix-Faure."
+    },
+    {
+      elementId: 'sec6',
+      text: "Section 6. JET Alignment and Executive Declaration. Complete alignment with Just Energy Transition core values and sustainable community impact."
+    },
+    {
+      elementId: 'sec7',
+      text: "Section 7. Approval, Authorization, and Digital Signature Verification. Live vector image stamp and digital lock framework."
+    },
+    {
+      elementId: 'secFooter',
+      text: "Institutional profile footer and communication channels for Lwandile Engineering Projects."
+    }
+  ];
+
+  function playNarrationStep(index) {
+    if (!('speechSynthesis' in window)) return;
+    if (index >= executiveSummaryNarrationSequence.length) {
+      clearActiveHighlights();
+      return;
+    }
+
+    const step = executiveSummaryNarrationSequence[index];
+    highlightAndScroll(step.elementId);
+
+    let utterance = new SpeechSynthesisUtterance(step.text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.95;
+    utterance.onend = function() {
+      playNarrationStep(index + 1);
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function startAutoScrollingNarration() {
+    stopSpeech();
+    playNarrationStep(0);
+  }
+
+  function speakSingleSection(sectionId) {
+    stopSpeech();
+    const foundStep = executiveSummaryNarrationSequence.find(s => s.elementId === sectionId);
+    if (foundStep) {
+      highlightAndScroll(sectionId);
+      let utterance = new SpeechSynthesisUtterance(foundStep.text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.95;
+      utterance.onend = () => clearActiveHighlights();
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  // Signature Image Controller Setup
+  document.addEventListener("DOMContentLoaded", function () {
+    function setupSignatureSlot(prefix, defaultImagePath) {
+      const fileInput = document.getElementById(`file-${prefix}`);
+      const dropzone = document.getElementById(`dropzone-${prefix}`);
+      const placeholder = document.getElementById(`placeholder-${prefix}`);
+      const imgPreview = document.getElementById(`img-${prefix}`);
+      const btnUpload = document.getElementById(`btn-upload-${prefix}`);
+      const btnLock = document.getElementById(`btn-lock-${prefix}`);
+      const statusText = document.getElementById(`status-${prefix}`);
+
+      let isLocked = false;
+
+      function renderImage(src) {
+        imgPreview.src = src;
+        imgPreview.style.display = "block";
+        placeholder.style.display = "none";
+      }
+
+      dropzone.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+      btnUpload.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      dropzone.addEventListener("dragover", (e) => { e.preventDefault(); });
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        if (isLocked) return;
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          const file = e.dataTransfer.files[0];
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      btnLock.addEventListener("click", () => {
+        if (imgPreview.style.display === "none") {
+          alert("Please upload or select a signature image first.");
+          return;
+        }
+        isLocked = true;
+        btnUpload.disabled = true;
+        btnLock.disabled = true;
+        dropzone.style.cursor = "default";
+        
+        const lockTimestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+        statusText.textContent = `Status: Digitally Sealed (${lockTimestamp}) [Scapush Precision]`;
+        statusText.classList.add("locked");
+      });
+    }
+
+    setupSignatureSlot("lead", "My Signature.jpg");
+    setupSignatureSlot("academic", null);
+  });
+</script>
+
+
+</body></html>

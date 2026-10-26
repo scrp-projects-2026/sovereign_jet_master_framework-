@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/ASUS/Downloads/gemini-code-1792784390328.html -->
+<html lang="en" style="--theme-accent: 34, 211, 238; --theme-accent-rgb: 34, 211, 238; --theme-secondary: 251, 191, 36; --theme-secondary-rgb: 251, 191, 36; --theme-bg-glow: rgba(34, 211, 238, 0.08);"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lwandile Integrated Agrivoltaic Master Control Center | Prestige Suite</title>
+    
+    <!-- Tailwind CSS for utility-first styling tokenization -->
+    <script src="./unified_master_control_center1_files/saved_resource"></script>
+    <!-- FontAwesome for robust engineering and biological icons -->
+    <link rel="stylesheet" href="./unified_master_control_center1_files/all.min.css">
+    
+    <!-- MathJax for rendering elegant LaTeX scientific formulas -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async="" src="./unified_master_control_center1_files/tex-svg.js.download"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+        
+        :root {
+            --theme-accent: #22d3ee;
+            --theme-accent-rgb: 34, 211, 238;
+            --theme-secondary: #fbbf24;
+            --theme-secondary-rgb: 251, 191, 36;
+            --theme-bg-glow: rgba(34, 211, 238, 0.08);
+            --theme-dark-bg: #030712;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--theme-dark-bg);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(var(--theme-accent-rgb), 0.12) 0%, transparent 75%),
+                linear-gradient(to bottom, rgba(var(--theme-accent-rgb), 0.015) 1px, transparent 1px);
+            background-size: 100% 40px, 40px 40px;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .blueprint-grid {
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, rgba(var(--theme-accent-rgb), 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(var(--theme-accent-rgb), 0.03) 1px, transparent 1px);
+        }
+
+        .glow-accent {
+            filter: drop-shadow(0 0 10px rgba(var(--theme-accent-rgb), 0.7));
+        }
+        .glow-secondary {
+            filter: drop-shadow(0 0 12px rgba(var(--theme-secondary-rgb), 0.8));
+        }
+
+        .wire-flow {
+            stroke-dasharray: 8;
+            animation: flow 1.2s linear infinite;
+        }
+        @keyframes flow {
+            to {
+                stroke-dashoffset: -16;
+            }
+        }
+
+        .audio-bar-pulse {
+            box-shadow: 0 0 25px rgba(var(--theme-accent-rgb), 0.25), inset 0 0 12px rgba(var(--theme-accent-rgb), 0.1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(var(--theme-accent-rgb), 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(var(--theme-accent-rgb), 0.6);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-4{bottom:1rem}.left-1\/2{left:50%}.right-0{right:0px}.top-0{top:0px}.bottom-6{bottom:1.5rem}.right-6{right:1.5rem}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mr-1{margin-right:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-auto{height:auto}.h-\[180px\]{height:180px}.min-h-screen{min-height:100vh}.w-1\.5{width:0.375rem}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-9{width:2.25rem}.w-\[92\%\]{width:92%}.w-full{width:100%}.min-w-\[700px\]{min-width:700px}.max-w-4xl{max-width:56rem}.max-w-5xl{max-width:64rem}.max-w-7xl{max-width:80rem}.max-w-md{max-width:28rem}.max-w-\[750px\]{max-width:750px}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-24{--tw-translate-y:6rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-\[1\.01\]{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-800\/40 > :not([hidden]) ~ :not([hidden]){border-color:rgb(30 41 59 / 0.4)}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-x-auto{overflow-x:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-bl-xl{border-bottom-left-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-l-4{border-left-width:4px}.border-rose-500\/40{border-color:rgb(244 63 94 / 0.4)}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-slate-800\/80{border-color:rgb(30 41 59 / 0.8)}.border-slate-900{--tw-border-opacity:1;border-color:rgb(15 23 42 / var(--tw-border-opacity, 1))}.border-slate-800\/50{border-color:rgb(30 41 59 / 0.5)}.border-slate-500{--tw-border-opacity:1;border-color:rgb(100 116 139 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.bg-\[rgba\(var\(--theme-accent-rgb\)\2c 0\.1\)\]{background-color:rgba(var(--theme-accent-rgb),0.1)}.bg-rose-500\/20{background-color:rgb(244 63 94 / 0.2)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/40{background-color:rgb(15 23 42 / 0.4)}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-slate-900\/60{background-color:rgb(15 23 42 / 0.6)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-slate-950\/60{background-color:rgb(2 6 23 / 0.6)}.bg-slate-950\/80{background-color:rgb(2 6 23 / 0.8)}.bg-slate-950\/90{background-color:rgb(2 6 23 / 0.9)}.bg-slate-950\/95{background-color:rgb(2 6 23 / 0.95)}.bg-slate-900\/30{background-color:rgb(15 23 42 / 0.3)}.bg-slate-800\/60{background-color:rgb(30 41 59 / 0.6)}.bg-slate-900\/10{background-color:rgb(15 23 42 / 0.1)}.bg-\[rgba\(var\(--theme-accent-rgb\)\2c 0\.05\)\]{background-color:rgba(var(--theme-accent-rgb),0.05)}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.pb-32{padding-bottom:8rem}.pb-2{padding-bottom:0.5rem}.pb-3{padding-bottom:0.75rem}.pb-6{padding-bottom:1.5rem}.pl-3{padding-left:0.75rem}.pr-3{padding-right:0.75rem}.pt-2{padding-top:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[9px\]{font-size:9px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tracking-\[0\.4em\]{letter-spacing:0.4em}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-\[\#d4af37\]{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94 / var(--tw-text-opacity, 1))}.opacity-85{opacity:0.85}.opacity-0{opacity:0}.opacity-100{opacity:1}.opacity-40{opacity:0.4}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-500{transition-duration:500ms}.duration-300{transition-duration:300ms}.duration-200{transition-duration:200ms}.duration-150{transition-duration:150ms}.after\:absolute::after{content:var(--tw-content);position:absolute}.after\:left-\[2px\]::after{content:var(--tw-content);left:2px}.after\:top-0\.5::after{content:var(--tw-content);top:0.125rem}.after\:top-\[2px\]::after{content:var(--tw-content);top:2px}.after\:h-4::after{content:var(--tw-content);height:1rem}.after\:h-5::after{content:var(--tw-content);height:1.25rem}.after\:w-4::after{content:var(--tw-content);width:1rem}.after\:w-5::after{content:var(--tw-content);width:1.25rem}.after\:rounded-full::after{content:var(--tw-content);border-radius:9999px}.after\:border::after{content:var(--tw-content);border-width:1px}.after\:border-slate-300::after{content:var(--tw-content);--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.after\:bg-slate-400::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(148 163 184 / var(--tw-bg-opacity, 1))}.after\:transition-all::after{content:var(--tw-content);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.after\:content-\[\'\'\]::after{--tw-content:'';content:var(--tw-content)}.hover\:border-\[rgba\(var\(--theme-accent-rgb\)\2c 0\.5\)\]:hover{border-color:rgba(var(--theme-accent-rgb),0.5)}.hover\:border-slate-700:hover{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.hover\:bg-rose-500\/30:hover{background-color:rgb(244 63 94 / 0.3)}.hover\:bg-slate-900:hover{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:opacity-100:hover{opacity:1}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:hover .group-hover\:text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.peer:checked ~ .peer-checked\:bg-\[rgba\(var\(--theme-accent-rgb\)\2c 1\)\]{background-color:rgba(var(--theme-accent-rgb),1)}.peer:checked ~ .peer-checked\:after\:translate-x-full::after{content:var(--tw-content);--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.peer:checked ~ .peer-checked\:after\:border-white::after{content:var(--tw-content);--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.peer:checked ~ .peer-checked\:after\:bg-slate-950::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:border-r{border-right-width:1px}.sm\:border-t-0{border-top-width:0px}.sm\:pt-0{padding-top:0px}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:p-4{padding:1rem}.md\:p-6{padding:1.5rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:flex{display:flex}.lg\:w-auto{width:auto}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}}</style><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-SVG-styles">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style></head>
+<body class="min-h-screen text-slate-100 py-8 px-4 md:px-8 blueprint-grid transition-colors duration-500 pb-32">
+
+    <!-- FIXED ACCESSIBLE DYNAMIC AUDIO NARRATOR DOCK -->
+    <aside aria-label="Audio Narration Control Center" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl bg-slate-950/95 border-2 rounded-2xl p-3 md:p-4 backdrop-blur-xl shadow-2xl audio-bar-pulse flex flex-col sm:flex-row items-center justify-between gap-3 transition-colors duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.4)">
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div id="narratorStatusIcon" class="w-10 h-10 rounded-xl bg-slate-900 border flex items-center justify-center shrink-0 transition-colors duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.4)">
+                <i class="fa-solid fa-volume-high text-lg transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)"></i>
+            </div>
+            <div class="overflow-hidden">
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-slate-900 border font-bold transition-colors duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.3); color: rgba(var(--theme-accent-rgb), 1)">Prestige Audio Narrator</span>
+                    <span id="speechStateBadge" class="text-[9px] font-mono uppercase tracking-wider text-slate-400">Finished</span>
+                </div>
+                <p id="floatingCommentaryText" class="text-xs text-slate-200 font-semibold truncate max-w-md mt-0.5">Manual Switch Override: Sensor A is 0, Sensor B is 1, Safety C is 0. Output primary is 0, output secondary is 0.</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-end border-t sm:border-t-0 border-slate-800 pt-2 sm:pt-0">
+            <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800 mr-1">
+                <span class="text-xs font-bold text-slate-300">Voice</span>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="narratorToggle" class="sr-only peer" checked="">
+                    <div class="w-9 h-5 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[rgba(var(--theme-accent-rgb),1)] peer-checked:after:bg-slate-950"></div>
+                </label>
+            </div>
+
+            <button onclick="replayCurrentNarration()" class="px-3.5 py-1.5 border rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all duration-300 bg-slate-900/60 hover:bg-slate-900" style="border-color: rgba(var(--theme-accent-rgb), 0.4); color: rgba(var(--theme-accent-rgb), 1)">
+                <i class="fa-solid fa-play"></i> Read Aloud
+            </button>
+            <button onclick="stopSpeech()" class="px-3.5 py-1.5 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/40 text-rose-300 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all">
+                <i class="fa-solid fa-stop"></i> Stop
+            </button>
+        </div>
+    </aside>
+
+    <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Header -->
+        <header class="flex flex-col lg:flex-row justify-between items-start lg:items-center border-b pb-6 gap-6 transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.3)">
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs uppercase tracking-[0.4em] font-bold transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">Lwandile Engineering Projects</span>
+                    <span class="text-[10px] bg-slate-900 text-slate-300 px-2 py-0.5 rounded border font-bold uppercase tracking-wider transition-colors duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.3)">Beijing Prestige Suite</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold tracking-tight mt-1 text-white flex items-center gap-3">
+                    <i class="fa-solid fa-microchip transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)"></i> Unified Bio-Solar Command Center
+                </h1>
+                <p class="text-slate-400 text-sm mt-1">
+                    Integrated environmental, electrical, and thermal logical replication suite calibrated for the R 3,734,500.00 Baseline MVP.
+                </p>
+            </div>
+            
+            <!-- Metadata Registry Panel -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:flex items-center gap-3 bg-slate-950/80 p-4 rounded-2xl border w-full lg:w-auto text-xs mono transition-colors duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+                <div class="pr-3 border-r border-slate-800">
+                    <span class="text-slate-500 block text-[9px] uppercase">DOC ID</span>
+                    <span class="font-bold text-slate-300">LEP-UMC-001</span>
+                </div>
+                <div class="px-3 sm:border-r border-slate-800">
+                    <span class="text-slate-500 block text-[9px] uppercase">VERSION</span>
+                    <span class="font-bold transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">v3.0-PRESTIGE</span>
+                </div>
+                <div class="px-3 border-r border-slate-800">
+                    <span class="text-slate-500 block text-[9px] uppercase">STATUS</span>
+                    <span class="font-bold flex items-center gap-1 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">
+                        <span class="w-1.5 h-1.5 rounded-full animate-ping" style="background-color: rgba(var(--theme-accent-rgb), 1)"></span> SECURE
+                    </span>
+                </div>
+                <div class="pl-3">
+                    <span class="text-slate-500 block text-[9px] uppercase">AUTHORIZATION</span>
+                    <span class="font-bold text-[#d4af37]">S.W. KHUZWAYO</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Global Diurnal Overlord Control Panel -->
+        <section class="bg-slate-950/90 border-2 rounded-2xl p-6 shadow-2xl relative overflow-hidden transition-all duration-300" style="border-color: rgba(var(--theme-secondary-rgb), 0.3)">
+            <div class="absolute top-0 right-0 px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-bl-xl border-l border-b transition-all duration-300" style="background-color: rgba(var(--theme-secondary-rgb), 0.1); border-color: rgba(var(--theme-secondary-rgb), 0.2); color: rgba(var(--theme-secondary-rgb), 1)">
+                Global Diurnal Overlord v3.0
+            </div>
+            
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2 transition-colors duration-300" style="color: rgba(var(--theme-secondary-rgb), 1)">
+                <i class="fa-solid fa-clock"></i> 24-Hour Synced Lifecycle Overlord
+            </h2>
+            <p class="text-slate-300 text-sm mb-6 max-w-4xl">
+                Command the unified diurnal timeline. Triggering any stage below automatically recalibrates sensory registers, switches logic routes, and calculates biological outputs across **all three modules simultaneously**.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <button onclick="setGlobalDiurnal('dawn')" class="text-left bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:bg-slate-900 transition-all group hover:border-[rgba(var(--theme-accent-rgb),0.5)]">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-amber-500 font-mono uppercase">06:00 AM — Dawn Sweep</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-amber-500 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Ammonia Flush &amp; Solar Start</h3>
+                    <p class="text-xs text-slate-400">Solar starts charging; toxic gases are exhausted. Drip networks stay offline.</p>
+                </button>
+
+                <button onclick="setGlobalDiurnal('midday')" class="text-left bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:bg-slate-900 transition-all group hover:border-[rgba(var(--theme-accent-rgb),0.5)]">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-yellow-400 font-mono uppercase">12:00 PM — Midday Peak</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-yellow-400 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Extreme Heat Stress Shield</h3>
+                    <p class="text-xs text-slate-400">Photon capture hits maximum. Automated misting and skin-wetting drippers ignite.</p>
+                </button>
+
+                <button onclick="setGlobalDiurnal('dusk')" class="text-left bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:bg-slate-900 transition-all group hover:border-[rgba(var(--theme-accent-rgb),0.5)]">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-indigo-400 font-mono uppercase">18:00 PM — Dusk Sweep</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-indigo-400 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Steady State Comfort</h3>
+                    <p class="text-xs text-slate-400">Solar drops to standby. Environmental controls stabilize to optimal temperatures.</p>
+                </button>
+
+                <button onclick="setGlobalDiurnal('freeze')" class="text-left bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:bg-slate-900 transition-all group hover:border-[rgba(var(--theme-accent-rgb),0.5)]">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-sky-400 font-mono uppercase">02:00 AM — Night Freeze</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-sky-400 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Highveld Freeze Override</h3>
+                    <p class="text-xs text-slate-400">Extreme cold danger. Biogas thermal valves flood the underfloor battery structure.</p>
+                </button>
+            </div>
+
+            <!-- Global Commentary Board -->
+            <div class="mt-4 bg-slate-900/60 border rounded-xl p-4 text-sm text-slate-200 transition-colors duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+                <span class="text-[10px] uppercase font-mono tracking-wider block mb-1 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">Unified Simulation Commentary</span>
+                <p id="globalNarrative">Manual Switch Override: Sensor A is 0, Sensor B is 1, Safety C is 0. Output primary is 0, output secondary is 0.</p>
+            </div>
+        </section>
+
+        <!-- Module Select Tabs -->
+        <div class="flex flex-col sm:flex-row gap-3 bg-slate-950/80 p-2 rounded-2xl border transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+            <button onclick="switchModule('thermal')" id="tab-thermal" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold uppercase tracking-wider font-mono flex items-center justify-center gap-2 transition-all duration-300 bg-[rgba(var(--theme-accent-rgb),0.1)] border text-white" style="border-color: rgba(34, 211, 238, 0.3);">
+                <i class="fa-solid fa-fire"></i> Thermal Valve (Biogas)
+            </button>
+            <button onclick="switchModule('broiler')" id="tab-broiler" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold uppercase tracking-wider font-mono flex items-center justify-center gap-2 transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900" style="border-color: transparent;">
+                <i class="fa-solid fa-feather"></i> Broiler MC (4,800 Birds)
+            </button>
+            <button onclick="switchModule('porcine')" id="tab-porcine" class="flex-1 py-3 px-4 rounded-xl text-sm font-bold uppercase tracking-wider font-mono flex items-center justify-center gap-2 transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900" style="border-color: transparent;">
+                <i class="fa-solid fa-piggy-bank"></i> Swine MC (160 Finisher)
+            </button>
+        </div>
+
+        <!-- Main Workspace Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Left Panel: Parameter Controls -->
+            <div class="lg:col-span-4 space-y-4">
+                
+                <div class="bg-slate-950/90 backdrop-blur-md border rounded-2xl p-5 shadow-2xl transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+                    <h2 class="text-lg font-bold mb-4 flex items-center justify-between border-b border-slate-800 pb-2 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">
+                        <span><i class="fa-solid fa-sliders"></i> Sensor Calibration</span>
+                        <span class="text-xs uppercase font-mono text-slate-500">Node Override</span>
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:border-slate-700 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <label id="labelA" class="font-bold text-sm text-slate-200 flex items-center gap-2"><i class="fa-solid fa-sun text-amber-500"></i> A: Solar Harnessing</label>
+                                <span id="valA" class="mono text-xs px-2 py-0.5 rounded font-bold bg-slate-950 text-slate-500" style="border-color: rgba(var(--theme-accent-rgb), 0.3);">0 (GND)</span>
+                            </div>
+                            <p id="descA" class="text-xs text-slate-400 mb-3">High (5V) when photon collection exceeds <mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="0" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="10.289ex" height="2.71ex" role="img" focusable="false" viewBox="0 -948 4547.6 1198" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-TEX-N-31"></use><use data-c="32" xlink:href="#MJX-TEX-N-32" transform="translate(500,0)"></use><use data-c="30" xlink:href="#MJX-TEX-N-30" transform="translate(1000,0)"></use></g><g data-mml-node="msup" transform="translate(1500,0)"><g data-mml-node="mtext"><use data-c="A0" xlink:href="#MJX-TEX-N-A0"></use><use data-c="57" xlink:href="#MJX-TEX-N-57" transform="translate(250,0)"></use><use data-c="2F" xlink:href="#MJX-TEX-N-2F" transform="translate(1278,0)"></use><use data-c="6D" xlink:href="#MJX-TEX-N-6D" transform="translate(1778,0)"></use></g><g data-mml-node="mn" transform="translate(2644,477.1) scale(0.707)"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>120</mn><msup><mtext>&nbsp;W/m</mtext><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container>.</p>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="switchA" class="sr-only peer" onchange="updateSystemState(true)">
+                                <div class="w-11 h-6 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[rgba(var(--theme-accent-rgb),1)] peer-checked:after:bg-slate-950"></div>
+                            </label>
+                        </div>
+
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:border-slate-700 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <label id="labelB" class="font-bold text-sm text-slate-200 flex items-center gap-2"><i class="fa-solid fa-bolt text-emerald-400"></i> B: Grid Interconnection (Y_GEN)</label>
+                                <span id="valB" class="mono text-xs px-2 py-0.5 rounded font-bold bg-slate-900 text-white border" style="border-color: rgba(var(--theme-accent-rgb), 0.3);">1 (5V)</span>
+                            </div>
+                            <p id="descB" class="text-xs text-slate-400 mb-3">High (5V) when grid interconnected node or Biogas Gen is active.</p>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="switchB" class="sr-only peer" onchange="updateSystemState(true)">
+                                <div class="w-11 h-6 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[rgba(var(--theme-accent-rgb),1)] peer-checked:after:bg-slate-950"></div>
+                            </label>
+                        </div>
+
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:border-slate-700 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <label id="labelC" class="font-bold text-sm text-slate-200 flex items-center gap-2"><i class="fa-solid fa-snowflake text-sky-400"></i> C: Freeze Safeguard</label>
+                                <span id="valC" class="mono text-xs px-2 py-0.5 rounded font-bold bg-slate-950 text-slate-500" style="border-color: rgba(var(--theme-accent-rgb), 0.3);">0 (GND)</span>
+                            </div>
+                            <p id="descC" class="text-xs text-slate-400 mb-3">High (5V) when temperature drop threatens system arrays (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="1" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="8.362ex" height="1.907ex" role="img" focusable="false" viewBox="0 -705 3696.1 843" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.312ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mo" transform="translate(981.8,0)"><use data-c="2264" xlink:href="#MJX-TEX-N-2264"></use></g><g data-mml-node="msup" transform="translate(2037.6,0)"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use></g><g data-mml-node="mo" transform="translate(533,363) scale(0.707)"><use data-c="2218" xlink:href="#MJX-TEX-N-2218"></use></g></g><g data-mml-node="mtext" transform="translate(2974.1,0)"><use data-c="43" xlink:href="#MJX-TEX-N-43"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo>≤</mo><msup><mn>2</mn><mo>∘</mo></msup><mtext>C</mtext></math></mjx-assistive-mml></mjx-container>).</p>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="switchC" class="sr-only peer" onchange="updateSystemState(true)">
+                                <div class="w-11 h-6 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[rgba(var(--theme-accent-rgb),1)] peer-checked:after:bg-slate-950"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Physical Engine Block -->
+                <div class="bg-slate-950/90 backdrop-blur-md border rounded-2xl p-5 shadow-2xl space-y-4 transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+                    <h2 class="text-lg font-bold flex items-center justify-between border-b border-slate-800 pb-2 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">
+                        <span><i class="fa-solid fa-calculator"></i> Physics Diagnostics</span>
+                        <span class="text-xs uppercase font-mono text-slate-500">Live Engine</span>
+                    </h2>
+                    
+                    <div class="flex items-center justify-between bg-slate-900/50 p-2.5 rounded-lg border border-slate-800">
+                        <span class="text-xs text-slate-400 font-sans">Core Voltage (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="2" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="3.938ex" height="1.92ex" role="img" focusable="false" viewBox="0 -683 1740.8 848.6" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.375ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D449" xlink:href="#MJX-TEX-I-1D449"></use></g><g data-mml-node="TeXAtom" transform="translate(616,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g><g data-mml-node="mi" transform="translate(760,0)"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>V</mi><mrow data-mjx-texclass="ORD"><mi>C</mi><mi>C</mi></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span>
+                        <select id="voltageSelect" onchange="updateSystemState(false)" class="bg-slate-950 border rounded text-xs px-2 py-1 focus:outline-none font-bold mono transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.3); color: rgba(var(--theme-accent-rgb), 1)">
+                            <option value="5.0" selected="">5.0V (Standard)</option>
+                            <option value="3.3">3.3V (Low-Power)</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span id="labelMetric1" class="text-xs text-slate-400 font-sans">Dynamic Power Consumption</span>
+                            <span id="valMetric1" class="text-xs font-bold transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">55.0 μW</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span id="labelMetric2" class="text-xs text-slate-400 font-sans">Thermal Water delivery rate</span>
+                            <span id="valMetric2" class="text-xs font-bold transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">0.0 L/hr</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs mono">
+                        <div class="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
+                            <span id="labelBox1" class="text-slate-500 block text-[9px] uppercase">PROP DELAY (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="3" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.658ex" height="2.069ex" role="img" focusable="false" viewBox="0 -626 1174.8 914.6" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.653ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D461" xlink:href="#MJX-TEX-I-1D461"></use></g><g data-mml-node="TeXAtom" transform="translate(394,-150) scale(0.714)" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D45D" xlink:href="#MJX-TEX-I-1D45D"></use></g><g data-mml-node="mi" transform="translate(503,0)"><use data-c="1D451" xlink:href="#MJX-TEX-I-1D451"></use></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>t</mi><mrow data-mjx-texclass="ORD"><mi>p</mi><mi>d</mi></mrow></msub></math></mjx-assistive-mml></mjx-container>)</span>
+                            <span id="valBox1" class="font-bold text-sm transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">30 ns</span>
+                            <span class="text-[9px] text-slate-500 block mt-0.5">Dual-cascade latency</span>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
+                            <span id="labelBox2" class="text-slate-500 block text-[9px] uppercase">THERMAL SHIELD STATUS</span>
+                            <span id="valBox2" class="font-bold text-sm transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)"><span class="text-slate-500">STANDBY</span></span>
+                            <span class="text-[9px] text-slate-500 block mt-0.5">Ecological envelope</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Dynamic Blueprint Canvas & Timing Analyzer -->
+            <div class="lg:col-span-8 space-y-4">
+                
+                <div class="bg-slate-950/95 border rounded-2xl p-4 md:p-6 shadow-2xl relative overflow-hidden transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2 border-b border-slate-800 pb-3">
+                        <h2 class="text-lg font-bold flex items-center gap-2 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">
+                            <i class="fa-solid fa-diagram-project"></i> Dynamic CMOS Logic Schematic Visualizer
+                        </h2>
+                        <div class="flex gap-2">
+                            <button onclick="resetUnifiedCircuit()" class="px-3 py-1.5 text-xs font-semibold bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-lg transition-all flex items-center gap-1">
+                                <i class="fa-solid fa-arrow-rotate-left"></i> Reset
+                            </button>
+                            <button onclick="copyMasterFormula()" class="px-3 py-1.5 text-xs font-semibold bg-slate-900/50 border hover:bg-slate-900 rounded-lg transition-all flex items-center gap-1 transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb),0.3); color: rgba(var(--theme-accent-rgb), 1)">
+                                <i class="fa-solid fa-copy"></i> Copy Formula
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SVG Canvas -->
+                    <div class="w-full bg-slate-950/60 p-3 rounded-xl border border-slate-900 relative overflow-x-auto">
+                        <svg viewBox="0 0 800 400" class="w-full min-w-[700px] h-auto overflow-visible select-none">
+                            <defs>
+                                <pattern id="blueprint-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <circle cx="10" cy="10" r="0.8" fill="rgba(var(--theme-accent-rgb), 0.15)"></circle>
+                                </pattern>
+                                
+                                <g id="ieee-or-gate">
+                                    <path d="M 0,-25 C 12,-25 22,-18 32,-10 C 42,-2 48,0 52,0 C 48,0 42,2 32,10 C 22,18 12,25 0,25 C 8,12 8,-12 0,-25 Z" fill="#020617" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2.5"></path>
+                                    <path d="M 0,-25 C 12,-25 22,-18 32,-10 C 42,-2 48,0 52,0" fill="none" stroke="rgba(var(--theme-accent-rgb), 0.4)" stroke-width="6" class="glow-accent"></path>
+                                    <text x="18" y="5" font-family="sans-serif" font-size="11" font-weight="bold" fill="rgba(var(--theme-accent-rgb),1)" text-anchor="middle" class="mono">OR</text>
+                                </g>
+
+                                <g id="ieee-and-gate">
+                                    <path d="M 0,-25 L 25,-25 C 45,-25 45,25 25,25 L 0,25 Z" fill="#020617" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2.5"></path>
+                                    <path d="M 0,-25 L 25,-25 C 45,-25 45,25 25,25" fill="none" stroke="rgba(var(--theme-accent-rgb), 0.4)" stroke-width="6" class="glow-accent"></path>
+                                    <text x="18" y="5" font-family="sans-serif" font-size="11" font-weight="bold" fill="rgba(var(--theme-accent-rgb),1)" text-anchor="middle" class="mono">AND</text>
+                                </g>
+                            </defs>
+
+                            <rect width="800" height="400" fill="url(#blueprint-dots)" rx="8"></rect>
+
+                            <path id="wireA" d="M 120,60 L 220,60 L 220,85 L 250,85" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round" class="transition-all duration-200"></path>
+                            <path id="flowA" d="M 120,60 L 220,60 L 220,85 L 250,85" fill="none" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85 hidden"></path>
+
+                            <path id="wireB" d="M 120,130 L 220,130 L 220,105 L 250,105" fill="none" stroke="rgba(34, 211, 238, 1)" stroke-width="4.5" stroke-linecap="round" class="transition-all duration-200"></path>
+                            <path id="flowB" d="M 120,130 L 220,130 L 220,105 L 250,105" fill="none" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireOROut" d="M 302,95 L 390,95 L 390,195 L 430,195" fill="none" stroke="rgba(34, 211, 238, 1)" stroke-width="4.5" stroke-linecap="round" class="transition-all duration-200"></path>
+                            <path id="flowOROut" d="M 302,95 L 390,95 L 390,195 L 430,195" fill="none" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireC" d="M 120,215 L 430,215" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round" class="transition-all duration-200"></path>
+                            <path id="flowC" d="M 120,215 L 430,215" fill="none" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85 hidden"></path>
+
+                            <path id="wireYPrimary" d="M 482,205 L 560,205 M 560,205 L 680,205 M 560,205 L 560,315 L 600,315" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round" class="transition-all duration-200"></path>
+                            <path id="flowYPrimary" d="M 482,205 L 560,205 M 560,205 L 680,205 M 560,205 L 560,315 L 600,315" fill="none" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85 hidden"></path>
+
+                            <path id="wireTapA" d="M 180,60 L 180,335 L 370,335 L 370,295 L 600,295" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round" class="transition-all duration-200"></path>
+                            <path id="flowTapA" d="M 180,60 L 180,335 L 370,335 L 370,295 L 600,295" fill="none" stroke="rgba(var(--theme-accent-rgb), 1)" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85 hidden"></path>
+
+                            <path id="wireYSecondary" d="M 652,305 L 680,305" fill="none" stroke="#1e293b" stroke-width="4.5" stroke-linecap="round" class="transition-all duration-200"></path>
+                            <path id="flowYSecondary" d="M 652,305 L 680,305" fill="none" stroke="rgba(var(--theme-secondary-rgb), 1)" stroke-width="2" stroke-linecap="round" class="wire-flow hidden opacity-85"></path>
+
+                            <g transform="translate(250, 95)" id="gateOR" class="transition-transform duration-200">
+                                <use href="#ieee-or-gate"></use>
+                                <text x="-12" y="-14" font-size="8" fill="#64748b" font-weight="bold" class="mono">U1A PIN1</text>
+                                <text x="-12" y="19" font-size="8" fill="#64748b" font-weight="bold" class="mono">U1A PIN2</text>
+                                <text x="63" y="-6" font-size="8" fill="#64748b" font-weight="bold" class="mono">U1A PIN3</text>
+                                <text x="28" y="-32" font-size="11" fill="rgba(var(--theme-accent-rgb), 1)" font-weight="bold" class="mono" text-anchor="middle">74HC32 (OR)</text>
+                            </g>
+
+                            <g transform="translate(430, 205)" id="gateAND1" class="transition-transform duration-200">
+                                <use href="#ieee-and-gate"></use>
+                                <text x="-12" y="-14" font-size="8" fill="#64748b" font-weight="bold" class="mono">U2A PIN1</text>
+                                <text x="-12" y="19" font-size="8" fill="#64748b" font-weight="bold" class="mono">U2A PIN2</text>
+                                <text x="63" y="-6" font-size="8" fill="#64748b" font-weight="bold" class="mono">U2A PIN3</text>
+                                <text x="25" y="-32" font-size="11" fill="rgba(var(--theme-accent-rgb), 1)" font-weight="bold" class="mono" text-anchor="middle">74HC08 (AND)</text>
+                            </g>
+
+                            <g transform="translate(600, 305)" id="gateAND2" class="transition-all duration-300" opacity="0.25">
+                                <use href="#ieee-and-gate"></use>
+                                <text x="-12" y="-14" font-size="8" fill="#64748b" font-weight="bold" class="mono">U2B PIN1</text>
+                                <text x="-12" y="19" font-size="8" fill="#64748b" font-weight="bold" class="mono">U2B PIN2</text>
+                                <text x="63" y="-6" font-size="8" fill="#64748b" font-weight="bold" class="mono">U2B PIN3</text>
+                                <text x="25" y="-32" font-size="11" fill="rgba(var(--theme-accent-rgb), 1)" font-weight="bold" class="mono" text-anchor="middle">74HC08 (AND)</text>
+                            </g>
+
+                            <g transform="translate(120, 60)">
+                                <circle r="13" fill="#020617" stroke="#475569" stroke-width="3.5" id="nodeA" class="transition-all duration-200"></circle>
+                                <text y="4" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" class="mono" id="txtA">0</text>
+                                <text x="-25" y="-20" font-size="11" font-weight="bold" fill="rgba(var(--theme-accent-rgb), 1)" text-anchor="start" class="mono" id="labelNodeA">SOLAR (A)</text>
+                            </g>
+
+                            <g transform="translate(120, 130)">
+                                <circle r="13" fill="rgba(34, 211, 238, 0.15)" stroke="rgba(34, 211, 238, 1)" stroke-width="3.5" id="nodeB" class="transition-all duration-200"></circle>
+                                <text y="4" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" class="mono" id="txtB">1</text>
+                                <text x="-25" y="-20" font-size="11" font-weight="bold" fill="rgba(var(--theme-accent-rgb), 1)" text-anchor="start" class="mono" id="labelNodeB">Y_GEN (B)</text>
+                            </g>
+
+                            <g transform="translate(120, 215)">
+                                <circle r="13" fill="#020617" stroke="#475569" stroke-width="3.5" id="nodeC" class="transition-all duration-200"></circle>
+                                <text y="4" font-size="10" font-weight="bold" fill="#94a3b8" text-anchor="middle" class="mono" id="txtC">0</text>
+                                <text x="-25" y="-20" font-size="11" font-weight="bold" fill="rgba(var(--theme-accent-rgb), 1)" text-anchor="start" class="mono" id="labelNodeC">FREEZE (C)</text>
+                            </g>
+
+                            <g transform="translate(705, 205)">
+                                <circle r="22" fill="#020617" stroke="#475569" stroke-width="4" id="nodeY1" class="transition-all duration-200"></circle>
+                                <text y="5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle" class="mono" id="txtY1">0</text>
+                                <text x="-30" y="-32" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="start" class="mono" id="labelNodeY1">Y_HEAT</text>
+                            </g>
+
+                            <g transform="translate(705, 305)" id="grpNodeY2" class="transition-all duration-300" opacity="0.25">
+                                <circle r="22" fill="#020617" stroke="#475569" stroke-width="4" id="nodeY2" class="transition-all duration-200"></circle>
+                                <text y="5" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle" class="mono" id="txtY2">0</text>
+                                <text x="-30" y="-32" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="start" class="mono" id="labelNodeY2">Y_BYPASS</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div id="statusPrimary" class="bg-slate-900/40 p-4 rounded-xl border border-slate-800 text-sm flex items-center justify-between transition-all duration-200" style="border-color: rgba(var(--theme-accent-rgb), 0.3);">
+                            <div>
+                                <span id="labelFormulaPrimary" class="text-[9px] uppercase tracking-wider text-slate-500 font-bold block">Biogas Thermal Valve Output</span>
+                                <span id="eqFormulaPrimary" class="font-bold mono" style="color: rgba(var(--theme-accent-rgb), 1)">Y_HEAT = (A ∨ B) ∧ C</span>
+                            </div>
+                            <span id="diagnosticPrimary" class="font-mono bg-slate-950 px-3 py-1 rounded text-slate-500 font-bold text-lg border border-slate-800" style="color: rgba(var(--theme-accent-rgb), 1); border-color: rgba(var(--theme-accent-rgb), 0.3);">0</span>
+                        </div>
+                        <div id="statusSecondary" class="bg-slate-900/40 p-4 rounded-xl border border-slate-800 text-sm flex items-center justify-between transition-all duration-200">
+                            <div>
+                                <span id="labelFormulaSecondary" class="text-[9px] uppercase tracking-wider text-slate-500 font-bold block">Cascade Bypass State</span>
+                                <span id="eqFormulaSecondary" class="font-bold mono" style="color: rgba(var(--theme-secondary-rgb), 1)">Y_BYPASS = Unused</span>
+                            </div>
+                            <span id="diagnosticSecondary" class="font-mono bg-slate-950 px-3 py-1 rounded text-slate-500 font-bold text-lg border border-slate-800">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950/95 border rounded-2xl p-5 shadow-2xl space-y-3 transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                        <h3 class="text-sm font-bold flex items-center gap-2 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">
+                            <i class="fa-solid fa-chart-line"></i> Dynamic Scrolling Waveform Logic Analyzer
+                        </h3>
+                        <span class="text-[10px] uppercase font-mono text-slate-500">Real-time Oscilloscope Stream</span>
+                    </div>
+                    <div class="relative bg-slate-950/80 p-2 rounded-xl border border-slate-900 overflow-hidden flex justify-center">
+                        <canvas id="waveformCanvas" width="750" height="180" class="w-full max-w-[750px] h-[180px] block"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Science Portal -->
+        <section class="bg-slate-950/90 border rounded-2xl p-6 shadow-2xl space-y-6 transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+            <h2 class="text-xl font-bold border-b border-slate-800 pb-3 flex items-center gap-2 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">
+                <i class="fa-solid fa-graduation-cap"></i> Unified Agrivoltaics Science Portal &amp; Teachability Engine
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                <div class="space-y-2 bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                    <h3 class="font-bold uppercase tracking-wider text-xs text-amber-500" id="portalTitle1">Lesson 1: The Sovereign Objective</h3>
+                    <p class="text-slate-300" id="portalText1">In livestock projects (such as 4,800-broiler batches or 160-porcine cycles), standard heaters fail during South African grid failures (Load Shedding). Rapid thermal shifts cause mortality.</p>
+                    <p class="text-slate-400 text-xs italic">
+                        Provides up to 14 hours of continuous thermal radiation without active fuel burning.
+                    </p>
+                </div>
+
+                <div class="space-y-2 bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                    <h3 class="font-bold uppercase tracking-wider text-xs transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)" id="portalTitle2">Lesson 2: CMOS Logical Guardians</h3>
+                    <p class="text-slate-300" id="portalText2">We utilize structural 3-sensor hardware gate cascades to compute thermal distribution safely, preventing animal huddling or hypothermic stress without grid dependence.</p>
+                    <div id="portalMath" class="text-slate-400 text-xs py-1"><mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" display="true" tabindex="0" ctxtmenu_counter="4" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="25.467ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 11256.4 1000" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.566ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><use data-c="59" xlink:href="#MJX-TEX-N-59"></use><use data-c="5C" xlink:href="#MJX-TEX-N-5C" transform="translate(750,0)"></use><use data-c="5F" xlink:href="#MJX-TEX-N-5F" transform="translate(1250,0)"></use><use data-c="48" xlink:href="#MJX-TEX-N-48" transform="translate(1750,0)"></use><use data-c="45" xlink:href="#MJX-TEX-N-45" transform="translate(2500,0)"></use><use data-c="41" xlink:href="#MJX-TEX-N-41" transform="translate(3181,0)"></use><use data-c="54" xlink:href="#MJX-TEX-N-54" transform="translate(3931,0)"></use></g><g data-mml-node="mo" transform="translate(4930.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(5986.6,0)"><use data-c="28" xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(6375.6,0)"><use data-c="1D434" xlink:href="#MJX-TEX-I-1D434"></use></g><g data-mml-node="mo" transform="translate(7347.8,0)"><use data-c="2228" xlink:href="#MJX-TEX-N-2228"></use></g><g data-mml-node="mi" transform="translate(8237,0)"><use data-c="1D435" xlink:href="#MJX-TEX-I-1D435"></use></g><g data-mml-node="mo" transform="translate(8996,0)"><use data-c="29" xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mo" transform="translate(9607.2,0)"><use data-c="2227" xlink:href="#MJX-TEX-N-2227"></use></g><g data-mml-node="mi" transform="translate(10496.4,0)"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtext>Y\_HEAT</mtext><mo>=</mo><mo stretchy="false">(</mo><mi>A</mi><mo>∨</mo><mi>B</mi><mo stretchy="false">)</mo><mo>∧</mo><mi>C</mi></math></mjx-assistive-mml></mjx-container></div>
+                </div>
+
+                <div class="space-y-2 bg-slate-900/40 p-4 rounded-xl border border-slate-800">
+                    <h3 class="font-bold uppercase tracking-wider text-xs text-rose-500" id="portalTitle3">Lesson 3: The Actuator Valve</h3>
+                    <p class="text-slate-300" id="portalText3">When output Y_HEAT triggers, motorized PEX valves flood concrete flooring battery zones with water heat pulled directly from the Biogas water jacket.</p>
+                    <p class="text-slate-400 text-xs italic">
+                        Certified for 4,800-broiler and 160-porcine cohort operations.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnostic Table -->
+        <div class="bg-slate-950/90 backdrop-blur-md border rounded-2xl p-6 shadow-2xl transition-all duration-300" style="border-color: rgba(var(--theme-accent-rgb), 0.2)">
+            <h2 class="text-xl font-bold mb-4 flex items-center gap-2 border-b border-slate-800 pb-3 transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb), 1)">
+                <i class="fa-solid fa-table"></i> Diagnostic Verification Matrix
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm">
+                    <thead>
+                        <tr class="border-b border-slate-800 text-slate-400 uppercase tracking-widest text-xs">
+                            <th class="py-3 px-3" id="thA">Solar (A)</th>
+                            <th class="py-3 px-3" id="thB">Y_GEN (B)</th>
+                            <th class="py-3 px-3" id="thC">Freeze (C)</th>
+                            <th class="py-3 px-3 text-center bg-slate-900/30 border-r border-slate-800/50" id="thY1">Thermal Valve (Y_HEAT)</th>
+                            <th class="py-3 px-3 text-center" id="thY2">Unused Line (Bypass)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="truthTableBody" class="mono text-slate-300 divide-y divide-slate-800/40"><tr id="row-000" class="transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent">
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: #475569">0</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr><tr id="row-001" class="transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent">
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: #475569">0</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr><tr id="row-010" class="text-white font-bold opacity-100 scale-[1.01] bg-slate-800/60 border-l-4 border-slate-500">
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: #475569">0</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr><tr id="row-011" class="transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent" style="border-left-color: rgba(var(--theme-accent-rgb), 1);">
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: rgba(var(--theme-accent-rgb),1)">1</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr><tr id="row-100" class="transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent">
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: #475569">0</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr><tr id="row-101" class="transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent" style="border-left-color: rgba(var(--theme-accent-rgb), 1);">
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: rgba(var(--theme-accent-rgb),1)">1</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr><tr id="row-110" class="transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent">
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">0</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: #475569">0</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr><tr id="row-111" class="transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent" style="border-left-color: rgba(var(--theme-accent-rgb), 1);">
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3">1</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: rgba(var(--theme-accent-rgb),1)">1</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: #475569">0</td>
+                </tr></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="toast" class="fixed bottom-6 right-6 border px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-24 opacity-0 flex items-center gap-3 bg-slate-950" style="border-color: rgba(var(--theme-accent-rgb),0.3)">
+            <i class="fa-solid fa-circle-check text-lg transition-colors duration-300" style="color: rgba(var(--theme-accent-rgb),1)"></i>
+            <span id="toastText" class="text-xs font-semibold tracking-wider uppercase text-slate-200">Formula Copied</span>
+        </div>
+
+        <footer class="text-center py-6 border-t border-slate-900 text-xs text-slate-600 uppercase tracking-widest italic">
+            "Harnessing the Power of the Sunbeam" — Scapush Precision Execution
+        </footer>
+    </div>
+
+    <!-- JavaScript Interactive Logic & Text-to-Speech Engine -->
+    <script>
+        let activeModule = 'thermal';
+        const canvas = document.getElementById('waveformCanvas');
+        const ctx = canvas.getContext('2d');
+        const historyData = [];
+        const maxHistoryPoints = 80;
+
+        const palettes = {
+            thermal: { accent: '34, 211, 238', secondary: '251, 191, 36', glow: 'rgba(34, 211, 238, 0.08)' },
+            broiler: { accent: '16, 185, 129', secondary: '6, 182, 212', glow: 'rgba(16, 185, 129, 0.08)' },
+            porcine: { accent: '219, 39, 119', secondary: '244, 63, 94', glow: 'rgba(219, 39, 119, 0.08)' }
+        };
+
+        const configData = {
+            thermal: {
+                labelA: '<i class="fa-solid fa-sun text-amber-500"></i> A: Solar Harnessing',
+                descA: 'High (5V) when photon collection exceeds $120\\text{ W/m}^2$.',
+                labelB: '<i class="fa-solid fa-bolt text-emerald-400"></i> B: Grid Interconnection (Y_GEN)',
+                descB: 'High (5V) when grid interconnected node or Biogas Gen is active.',
+                labelC: '<i class="fa-solid fa-snowflake text-sky-400"></i> C: Freeze Safeguard',
+                descC: 'High (5V) when temperature drop threatens system arrays ($T \\le 2^\\circ\\text{C}$).',
+                labelNodeA: 'SOLAR (A)', labelNodeB: 'Y_GEN (B)', labelNodeC: 'FREEZE (C)',
+                labelNodeY1: 'Y_HEAT', labelNodeY2: 'Y_BYPASS',
+                labelMetric1: 'Dynamic Power Consumption', labelMetric2: 'Thermal Water delivery rate',
+                labelBox1: 'PROP DELAY ($t_{pd}$)', labelBox2: 'THERMAL SHIELD STATUS',
+                thA: 'Solar (A)', thB: 'Y_GEN (B)', thC: 'Freeze (C)', thY1: 'Thermal Valve (Y_HEAT)', thY2: 'Unused Line (Bypass)',
+                portalTitle1: 'Lesson 1: The Sovereign Objective', portalText1: 'In livestock projects (such as 1,920-broiler batches or 160-porcine cycles), standard heaters fail during South African grid failures (Load Shedding). Rapid thermal shifts cause mortality.',
+                portalTitle2: 'Lesson 2: CMOS Logical Guardians', portalText2: 'We utilize structural 3-sensor hardware gate cascades to compute thermal distribution safely, preventing animal huddling or hypothermic stress without grid dependence.',
+                portalTitle3: 'Lesson 3: The Actuator Valve', portalText3: 'When output Y_HEAT triggers, motorized PEX valves flood concrete flooring battery zones with water heat pulled directly from the Biogas water jacket.',
+                formulaPrimary: 'Y_HEAT = (A ∨ B) ∧ C', formulaSecondary: 'Y_BYPASS = Unused',
+                primaryEqLabel: 'Biogas Thermal Valve Output', secondaryEqLabel: 'Cascade Bypass State'
+            },
+            broiler: {
+                labelA: '<i class="fa-solid fa-temperature-high text-amber-500"></i> A: Heat Threshold ($T_{\\text{HIGH}}$)',
+                descA: 'High (5V) when temperature inside broiler housing exceeds $30^\\circ\\text{C}$.',
+                labelB: '<i class="fa-solid fa-biohazard text-cyan-400"></i> B: Toxic Air Overwrite ($A_{\\text{TOX}}$)',
+                descB: 'High (5V) when ammonia level exceeds $15\\text{ ppm}$ or $CO_2$ is dense.',
+                labelC: '<i class="fa-solid fa-shield-halved text-emerald-400"></i> C: Safe Temperature Zone ($C_{\\text{SAFE}}$)',
+                descC: 'High (5V) when ambient temperature is clear of cold stress danger ($T > 18^\\circ\\text{C}$).',
+                labelNodeA: 'TEMP (A)', labelNodeB: 'TOXIC (B)', labelNodeC: 'C_SAFE (C)',
+                labelNodeY1: 'Y_VENT', labelNodeY2: 'Y_MIST',
+                labelMetric1: 'Air Changes Per Hour (ACH)', labelMetric2: 'Misting Output Flow',
+                labelBox1: 'PROP DELAY ($t_{pd}$)', labelBox2: 'COGNITIVE HEAT INDEX',
+                thA: 'Temp Threshold (A)', thB: 'Toxic Air (B)', thC: 'C_SAFE Override (C)', thY1: 'Ventilation Fans (Y_VENT)', thY2: 'Evaporative Misting (Y_MIST)',
+                portalTitle1: 'Lesson 1: Biological Vulnerability', portalText1: 'Broiler chickens do not have sweat glands. They release heat through panting. If ambient humidity exceeds 75% or temps hit 30°C without wind movement, mortality strikes within hours.',
+                portalTitle2: 'Lesson 2: Cascaded Boolean Gates', portalText2: 'The node couples misting directly with ventilation, protecting chicks from suffocating in high humidity. Mist lines can physically only fire if active ventilation is high.',
+                portalTitle3: 'Lesson 3: The Cold Overwrite', portalText3: 'During freezing winter nights, safe temperature deactivates (C=0). This locks out misting and ventilation instantly, protecting fragile chicks from respiratory shock.',
+                formulaPrimary: 'Y_VENT = (A ∨ B) ∧ C', formulaSecondary: 'Y_MIST = A ∧ Y_VENT',
+                primaryEqLabel: 'Ventilation Fan Output', secondaryEqLabel: 'Evaporative Misting Output'
+            },
+            porcine: {
+                labelA: '<i class="fa-solid fa-temperature-high text-amber-500"></i> A: Heat Threshold ($T_{\\text{HIGH}}$)',
+                descA: 'High (5V) when temperature inside swine housing exceeds $27^\\circ\\text{C}$.',
+                labelB: '<i class="fa-solid fa-biohazard text-pink-400"></i> B: Toxic Air Overwrite ($A_{\\text{TOX}}$)',
+                descB: 'High (5V) when ammonia ($NH_3$) or hydrogen sulfide ($H_2S$) build-up is dense.',
+                labelC: '<i class="fa-solid fa-shield-halved text-emerald-400"></i> C: Safe Temperature Zone ($C_{\\text{SAFE}}$)',
+                descC: 'High (5V) when ambient temperature is clear of cold draft danger ($T > 16^\\circ\\text{C}$).',
+                labelNodeA: 'TEMP (A)', labelNodeB: 'TOXIC (B)', labelNodeC: 'C_SAFE (C)',
+                labelNodeY1: 'Y_FAN', labelNodeY2: 'Y_DRIP',
+                labelMetric1: 'Air Changes Per Hour (ACH)', labelMetric2: 'Water Drip Delivery Rate',
+                labelBox1: 'PROP DELAY ($t_{pd}$)', labelBox2: 'SWINE HEAT INDEX',
+                thA: 'Temp Threshold (A)', thB: 'Toxic Air (B)', thC: 'C_SAFE Override (C)', thY1: 'Exhaust Fans (Y_FAN)', thY2: 'Skin Wetting Drip (Y_DRIP)',
+                portalTitle1: 'Lesson 1: Swine Thermal Inability', portalText1: 'Large White swine do not possess functional sweat glands. Evaporative cooling must be facilitated artificially via skin-wetting drip lines and concurrent high-velocity airflow.',
+                portalTitle2: 'Lesson 2: Integrated Logical Safeguards', portalText2: 'Stage 1 handles exhaust fan ventilation during heat or gas hazards. Stage 2 drippers open ONLY if the High Temperature sensor is active AND active ventilation is running.',
+                portalTitle3: 'Lesson 3: The Cold Draft Guard', portalText3: 'Cold Draft sensor transitions to 0 during cold Mpumalanga winter nights, deactivating all gates to prevent pneumonia and hypothermia in our 160-Finisher swine cohort.',
+                formulaPrimary: 'Y_FAN = (A ∨ B) ∧ C', formulaSecondary: 'Y_DRIP = A ∧ Y_FAN',
+                primaryEqLabel: 'Exhaust Ventilation Output', secondaryEqLabel: 'Skin-Wetting Drip Output'
+            }
+        };
+
+        const scenarios = {
+            dawn: {
+                thermal: { A: true, B: false, C: false, desc: "06:00 AM Dawn Awakening Phase: The sun rises over Mpumalanga. Solar array registers active photon flux. Freeze safeguard is inactive, keeping the thermal biogas valve safely closed." },
+                broiler: { A: false, B: true, C: true, desc: "06:00 AM Dawn Gas Sweep Phase: Overnight closed curtains caused toxic ammonia build-up. Sensor B detects high gas levels. Fans ignite to exhaust ammonia while misting remains locked out." },
+                porcine: { A: false, B: true, C: true, desc: "06:00 AM Dawn Gas Sweep Phase: Toxic gases accumulated overnight over the swine cohort. Exhaust fans trigger immediately to purge carbon dioxide and ammonia." }
+            },
+            midday: {
+                thermal: { A: true, B: false, C: false, desc: "12:00 PM Midday Solar Peak Phase: Solar collection hits peak power output. Energy is directed to battery banks while thermal floor heating remains standby." },
+                broiler: { A: true, B: false, C: true, desc: "12:00 PM Peak Heat Mitigation Phase: Temperatures reach 33°C inside broiler housing. High-speed fans activate alongside evaporative misting arrays to cool birds safely." },
+                porcine: { A: true, B: false, C: true, desc: "12:00 PM Peak Heat Mitigation Phase: Heat index hits 32°C inside swine housing. Exhaust fans run full force and skin-wetting drip lines activate to prevent heat stroke." }
+            },
+            dusk: {
+                thermal: { A: false, B: false, C: false, desc: "18:00 PM Dusk Transition Phase: Solar generation drops off as dusk approaches. System parameters stabilize into normal nighttime standby mode." },
+                broiler: { A: false, B: false, C: true, desc: "18:00 PM Dusk Operations Phase: Temperatures cool to a comfortable 24°C. Environmental conditions remain stable with ventilation and misting on standby." },
+                porcine: { A: false, B: false, C: true, desc: "18:00 PM Dusk Standby Phase: Housing temperature settles into an optimal comfort zone. All cooling actuators rest in low-power monitoring mode." }
+            },
+            freeze: {
+                thermal: { A: false, B: true, C: true, desc: "02:00 AM Winter Night Baseload Phase: Highveld freezing night triggers freeze safeguard. The biogas generator runs and the thermal valve opens to flood concrete heat batteries." },
+                broiler: { A: false, B: false, C: false, desc: "02:00 AM Highveld Freeze Guard Phase: Freezing night temperatures drop below safety thresholds. Master safety lockout disables all fans and misting to prevent flock hypothermia." },
+                porcine: { A: false, B: false, C: false, desc: "02:00 AM Winter Cold Draft Guard Phase: Cold drafts threaten swine housing. Master lockout disables ventilation and drip lines to protect finishers from pneumonia." }
+            }
+        };
+
+        let currentScript = scenarios.dusk.thermal.desc;
+
+        function updateSpeechStateBadge(stateText) {
+            const badge = document.getElementById('speechStateBadge');
+            if (badge) badge.innerText = stateText;
+        }
+
+        function speakText(text) {
+            const toggle = document.getElementById('narratorToggle');
+            if (!toggle || !toggle.checked) return;
+
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                const cleanText = text.replace(/<[^>]*>/g, '');
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.rate = 0.95;
+                utterance.pitch = 1.0;
+                
+                utterance.onstart = () => updateSpeechStateBadge('Speaking...');
+                utterance.onend = () => updateSpeechStateBadge('Finished');
+                utterance.onerror = () => updateSpeechStateBadge('Error');
+
+                const voices = window.speechSynthesis.getVoices();
+                const preferredVoice = voices.find(v => v.lang.includes('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')));
+                if (preferredVoice) utterance.voice = preferredVoice;
+
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function stopSpeech() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                updateSpeechStateBadge('Stopped');
+            }
+        }
+
+        function replayCurrentNarration() {
+            speakText(currentScript);
+        }
+
+        function syncFloatingBarText(text) {
+            const cleanText = text.replace(/<[^>]*>/g, '');
+            const el = document.getElementById('floatingCommentaryText');
+            if (el) el.innerText = cleanText;
+            const desc = document.getElementById('globalNarrative');
+            if (desc) desc.innerHTML = text;
+        }
+
+        function switchModule(moduleKey) {
+            activeModule = moduleKey;
+            
+            const palette = palettes[moduleKey];
+            document.documentElement.style.setProperty('--theme-accent', palette.accent);
+            document.documentElement.style.setProperty('--theme-accent-rgb', palette.accent);
+            document.documentElement.style.setProperty('--theme-secondary', palette.secondary);
+            document.documentElement.style.setProperty('--theme-secondary-rgb', palette.secondary);
+            document.documentElement.style.setProperty('--theme-bg-glow', palette.glow);
+
+            ['thermal', 'broiler', 'porcine'].forEach(k => {
+                const tab = document.getElementById(`tab-${k}`);
+                if (k === moduleKey) {
+                    tab.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold uppercase tracking-wider font-mono flex items-center justify-center gap-2 transition-all duration-300 bg-[rgba(var(--theme-accent-rgb),0.1)] border text-white";
+                    tab.style.borderColor = `rgba(${palette.accent}, 0.3)`;
+                } else {
+                    tab.className = "flex-1 py-3 px-4 rounded-xl text-sm font-bold uppercase tracking-wider font-mono flex items-center justify-center gap-2 transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-900";
+                    tab.style.borderColor = 'transparent';
+                }
+            });
+
+            const info = configData[moduleKey];
+            document.getElementById('labelA').innerHTML = info.labelA;
+            document.getElementById('descA').textContent = info.descA;
+            document.getElementById('labelB').innerHTML = info.labelB;
+            document.getElementById('descB').textContent = info.descB;
+            document.getElementById('labelC').innerHTML = info.labelC;
+            document.getElementById('descC').textContent = info.descC;
+
+            document.getElementById('labelNodeA').textContent = info.labelNodeA;
+            document.getElementById('labelNodeB').textContent = info.labelNodeB;
+            document.getElementById('labelNodeC').textContent = info.labelNodeC;
+            document.getElementById('labelNodeY1').textContent = info.labelNodeY1;
+            document.getElementById('labelNodeY2').textContent = info.labelNodeY2;
+
+            document.getElementById('labelMetric1').textContent = info.labelMetric1;
+            document.getElementById('labelMetric2').textContent = info.labelMetric2;
+            document.getElementById('labelBox1').innerHTML = info.labelBox1;
+            document.getElementById('labelBox2').innerHTML = info.labelBox2;
+
+            document.getElementById('thA').textContent = info.thA;
+            document.getElementById('thB').textContent = info.thB;
+            document.getElementById('thC').textContent = info.thC;
+            document.getElementById('thY1').textContent = info.thY1;
+            document.getElementById('thY2').textContent = info.thY2;
+
+            document.getElementById('portalTitle1').textContent = info.portalTitle1;
+            document.getElementById('portalText1').textContent = info.portalText1;
+            document.getElementById('portalTitle2').textContent = info.portalTitle2;
+            document.getElementById('portalText2').textContent = info.portalText2;
+            document.getElementById('portalTitle3').textContent = info.portalTitle3;
+            document.getElementById('portalText3').textContent = info.portalText3;
+
+            document.getElementById('labelFormulaPrimary').textContent = info.primaryEqLabel;
+            document.getElementById('eqFormulaPrimary').textContent = info.formulaPrimary;
+            document.getElementById('labelFormulaSecondary').textContent = info.secondaryEqLabel;
+            document.getElementById('eqFormulaSecondary').textContent = info.formulaSecondary;
+
+            if (moduleKey === 'thermal') {
+                document.getElementById('gateAND2').setAttribute('opacity', '0.25');
+                document.getElementById('grpNodeY2').setAttribute('opacity', '0.25');
+            } else {
+                document.getElementById('gateAND2').setAttribute('opacity', '1.0');
+                document.getElementById('grpNodeY2').setAttribute('opacity', '1.0');
+            }
+
+            buildTruthTable();
+            updateSystemState(false);
+
+            const mathContainer = document.getElementById('portalMath');
+            if (mathContainer) {
+                const mathFormula = moduleKey === 'thermal' ? 'Y\\_HEAT' : (moduleKey === 'broiler' ? 'Y\\_VENT' : 'Y\\_FAN');
+                mathContainer.innerHTML = `$$\\text{${mathFormula}} = (A \\lor B) \\land C$$`;
+                if (typeof MathJax !== 'undefined' && typeof MathJax.typesetPromise === 'function') {
+                    MathJax.typesetPromise([mathContainer]).catch(err => console.warn(err));
+                }
+            }
+        }
+
+        function buildTruthTable() {
+            const body = document.getElementById('truthTableBody');
+            body.innerHTML = '';
+
+            const rowsData = [
+                [0,0,0], [0,0,1], [0,1,0], [0,1,1],
+                [1,0,0], [1,0,1], [1,1,0], [1,1,1]
+            ];
+
+            rowsData.forEach(row => {
+                const [a, b, c] = row;
+                const orOut = (a || b) ? 1 : 0;
+                const y1 = (orOut && c) ? 1 : 0;
+                let y2 = 0;
+                if (activeModule === 'broiler' || activeModule === 'porcine') {
+                    y2 = (a && y1) ? 1 : 0;
+                }
+
+                const tr = document.createElement('tr');
+                tr.id = `row-${a}${b}${c}`;
+                tr.className = "transition-all duration-150 opacity-40 hover:opacity-100";
+                tr.innerHTML = `
+                    <td class="py-2.5 px-3">${a}</td>
+                    <td class="py-2.5 px-3">${b}</td>
+                    <td class="py-2.5 px-3">${c}</td>
+                    <td class="py-2.5 px-3 text-center bg-slate-900/10 border-r border-slate-800/50 font-bold" style="color: ${y1 ? 'rgba(var(--theme-accent-rgb),1)' : '#475569'}">${y1}</td>
+                    <td class="py-2.5 px-3 text-center font-bold" style="color: ${y2 ? 'rgba(var(--theme-secondary-rgb),1)' : '#475569'}">${y2}</td>
+                `;
+                body.appendChild(tr);
+            });
+        }
+
+        function setGlobalDiurnal(scenKey) {
+            const mScenarios = scenarios[scenKey];
+            if (!mScenarios) return;
+
+            const currentScenario = mScenarios[activeModule];
+            
+            document.getElementById('switchA').checked = currentScenario.A;
+            document.getElementById('switchB').checked = currentScenario.B;
+            document.getElementById('switchC').checked = currentScenario.C;
+
+            currentScript = currentScenario.desc;
+            syncFloatingBarText(currentScript);
+            speakText(currentScript);
+
+            updateSystemState(false);
+        }
+
+        function updateSystemState(userInteractive = false) {
+            const activeA = document.getElementById('switchA').checked;
+            const activeB = document.getElementById('switchB').checked;
+            const activeC = document.getElementById('switchC').checked;
+            const coreVoltage = parseFloat(document.getElementById('voltageSelect').value);
+
+            const valA = activeA ? 1 : 0;
+            const valB = activeB ? 1 : 0;
+            const valC = activeC ? 1 : 0;
+
+            const valOR = (activeA || activeB) ? 1 : 0;
+            const valY1 = (valOR && activeC) ? 1 : 0;
+            
+            let valY2 = 0;
+            if (activeModule === 'broiler' || activeModule === 'porcine') {
+                valY2 = (activeA && valY1) ? 1 : 0;
+            }
+
+            if (userInteractive) {
+                currentScript = `Manual Switch Override: Sensor A is ${valA}, Sensor B is ${valB}, Safety C is ${valC}. Output primary is ${valY1}, output secondary is ${valY2}.`;
+                syncFloatingBarText(currentScript);
+                speakText(currentScript);
+            }
+
+            updateDynamicPhysics(coreVoltage, activeA, activeB, activeC, valY1, valY2);
+
+            document.getElementById('valA').innerText = activeA ? `1 (${coreVoltage}V)` : "0 (GND)";
+            document.getElementById('valB').innerText = activeB ? `1 (${coreVoltage}V)` : "0 (GND)";
+            document.getElementById('valC').innerText = activeC ? `1 (${coreVoltage}V)` : "0 (GND)";
+
+            document.getElementById('valA').className = `mono text-xs px-2 py-0.5 rounded font-bold ${activeA ? 'bg-slate-900 text-white border' : 'bg-slate-950 text-slate-500'}`;
+            if (activeA) document.getElementById('valA').style.borderColor = 'rgba(var(--theme-accent-rgb), 0.3)';
+            
+            document.getElementById('valB').className = `mono text-xs px-2 py-0.5 rounded font-bold ${activeB ? 'bg-slate-900 text-white border' : 'bg-slate-950 text-slate-500'}`;
+            if (activeB) document.getElementById('valB').style.borderColor = 'rgba(var(--theme-accent-rgb), 0.3)';
+
+            document.getElementById('valC').className = `mono text-xs px-2 py-0.5 rounded font-bold ${activeC ? 'bg-slate-900 text-white border' : 'bg-slate-950 text-slate-500'}`;
+            if (activeC) document.getElementById('valC').style.borderColor = 'rgba(var(--theme-accent-rgb), 0.3)';
+
+            document.getElementById('txtA').textContent = valA;
+            document.getElementById('txtB').textContent = valB;
+            document.getElementById('txtC').textContent = valC;
+            document.getElementById('txtY1').textContent = valY1;
+            document.getElementById('txtY2').textContent = valY2;
+
+            setSVGNode('nodeA', activeA);
+            setSVGNode('nodeB', activeB);
+            setSVGNode('nodeC', activeC);
+
+            const colorActive = `rgba(${palettes[activeModule].accent}, 1)`;
+            const colorSecondary = `rgba(${palettes[activeModule].secondary}, 1)`;
+            const colorInactive = "#1e293b";
+
+            document.getElementById('wireA').setAttribute('stroke', activeA ? colorActive : colorInactive);
+            toggleFlowLine('flowA', activeA);
+
+            document.getElementById('wireB').setAttribute('stroke', activeB ? colorActive : colorInactive);
+            toggleFlowLine('flowB', activeB);
+
+            document.getElementById('wireC').setAttribute('stroke', activeC ? colorActive : colorInactive);
+            toggleFlowLine('flowC', activeC);
+
+            document.getElementById('wireOROut').setAttribute('stroke', valOR ? colorActive : colorInactive);
+            toggleFlowLine('flowOROut', valOR);
+
+            document.getElementById('wireYPrimary').setAttribute('stroke', valY1 ? colorActive : colorInactive);
+            toggleFlowLine('flowYPrimary', valY1);
+
+            document.getElementById('wireTapA').setAttribute('stroke', activeA ? colorActive : colorInactive);
+            toggleFlowLine('flowTapA', activeA);
+
+            document.getElementById('wireYSecondary').setAttribute('stroke', valY2 ? colorSecondary : colorInactive);
+            toggleFlowLine('flowYSecondary', valY2);
+
+            const nodeY1 = document.getElementById('nodeY1');
+            if (valY1) {
+                nodeY1.setAttribute('stroke', colorActive);
+                nodeY1.setAttribute('fill', `rgba(${palettes[activeModule].accent}, 0.1)`);
+                nodeY1.classList.add('glow-accent');
+            } else {
+                nodeY1.setAttribute('stroke', '#475569');
+                nodeY1.setAttribute('fill', '#020617');
+                nodeY1.classList.remove('glow-accent');
+            }
+
+            const nodeY2 = document.getElementById('nodeY2');
+            if (valY2) {
+                nodeY2.setAttribute('stroke', colorSecondary);
+                nodeY2.setAttribute('fill', `rgba(${palettes[activeModule].secondary}, 0.1)`);
+                nodeY2.classList.add('glow-secondary');
+            } else {
+                nodeY2.setAttribute('stroke', '#475569');
+                nodeY2.setAttribute('fill', '#020617');
+                nodeY2.classList.remove('glow-secondary');
+            }
+
+            document.getElementById('diagnosticPrimary').textContent = valY1;
+            document.getElementById('diagnosticSecondary').textContent = valY2;
+
+            const boxPrimary = document.getElementById('statusPrimary');
+            const boxSecondary = document.getElementById('statusSecondary');
+
+            if (valY1) {
+                boxPrimary.className = "p-4 rounded-xl border text-sm flex items-center justify-between transition-all duration-200 bg-[rgba(var(--theme-accent-rgb),0.05)]";
+                boxPrimary.style.borderColor = "rgba(var(--theme-accent-rgb), 0.3)";
+                document.getElementById('diagnosticPrimary').className = "font-mono px-3 py-1 rounded font-bold text-lg border bg-slate-950";
+                document.getElementById('diagnosticPrimary').style.color = "rgba(var(--theme-accent-rgb), 1)";
+                document.getElementById('diagnosticPrimary').style.borderColor = "rgba(var(--theme-accent-rgb), 0.3)";
+            } else {
+                boxPrimary.className = "bg-slate-900/40 p-4 rounded-xl border border-slate-800 text-sm flex items-center justify-between transition-all duration-200";
+                document.getElementById('diagnosticPrimary').className = "font-mono bg-slate-950 px-3 py-1 rounded text-slate-500 font-bold text-lg border border-slate-800";
+            }
+
+            if (valY2) {
+                boxSecondary.className = "p-4 rounded-xl border text-sm flex items-center justify-between transition-all duration-200 bg-[rgba(var(--theme-secondary-rgb),0.05)]";
+                boxSecondary.style.borderColor = "rgba(var(--theme-secondary-rgb), 0.3)";
+                document.getElementById('diagnosticSecondary').className = "font-mono px-3 py-1 rounded font-bold text-lg border bg-slate-950 shadow-[0_0_15px_rgba(var(--theme-secondary-rgb),0.15)]";
+                document.getElementById('diagnosticSecondary').style.color = "rgba(var(--theme-secondary-rgb), 1)";
+                document.getElementById('diagnosticSecondary').style.borderColor = "rgba(var(--theme-secondary-rgb), 0.3)";
+            } else {
+                boxSecondary.className = "bg-slate-900/40 p-4 rounded-xl border border-slate-800 text-sm flex items-center justify-between transition-all duration-200";
+                document.getElementById('diagnosticSecondary').className = "font-mono bg-slate-950 px-3 py-1 rounded text-slate-500 font-bold text-lg border border-slate-800";
+            }
+
+            const rows = document.querySelectorAll('#truthTableBody tr');
+            rows.forEach(r => r.className = "transition-all duration-150 opacity-40 hover:opacity-100 border-l-4 border-transparent");
+
+            const activeRow = document.getElementById(`row-${valA}${valB}${valC}`);
+            if (activeRow) {
+                if (valY2) {
+                    activeRow.className = "text-white font-bold opacity-100 scale-[1.01] bg-[rgba(var(--theme-secondary-rgb),0.1)] border-l-4";
+                    activeRow.style.borderLeftColor = "rgba(var(--theme-secondary-rgb), 1)";
+                } else if (valY1) {
+                    activeRow.className = "text-white font-bold opacity-100 scale-[1.01] bg-[rgba(var(--theme-accent-rgb),0.1)] border-l-4";
+                    activeRow.style.borderLeftColor = "rgba(var(--theme-accent-rgb), 1)";
+                } else {
+                    activeRow.className = "text-white font-bold opacity-100 scale-[1.01] bg-slate-800/60 border-l-4 border-slate-500";
+                }
+            }
+
+            historyData.push({ A: valA, B: valB, C: valC, Y1: valY1, Y2: valY2 });
+            if (historyData.length > maxHistoryPoints) historyData.shift();
+            drawWaveforms();
+        }
+
+        function updateDynamicPhysics(volts, a, b, c, y1, y2) {
+            const baseDelay = volts === 3.3 ? 20 : 15;
+            const totalDelay = baseDelay * 2;
+            document.getElementById('valBox1').innerText = `${totalDelay} ns`;
+
+            let terminalCount = (a ? 1 : 0) + (b ? 1 : 0) + (c ? 1 : 0);
+            const capFactor = 22;
+            const powerCoeff = activeModule === 'thermal' ? 0.1 : 0.15;
+            const dynPower = terminalCount * capFactor * (volts * volts) * powerCoeff;
+            document.getElementById('valMetric1').innerText = `${dynPower.toFixed(1)} μW`;
+
+            if (activeModule === 'thermal') {
+                document.getElementById('valMetric2').innerText = y1 ? "45.0 L/hr" : "0.0 L/hr";
+                
+                let thermalState = "STANDBY";
+                let colorClass = "text-slate-500";
+                if (y1) {
+                    thermalState = "FLOODING BATTERY";
+                    colorClass = "text-amber-500 font-bold glow-secondary";
+                } else if (c) {
+                    thermalState = "MONITORING (FREEZE THREAT)";
+                    colorClass = "text-sky-400";
+                }
+                document.getElementById('valBox2').innerHTML = `<span class="${colorClass}">${thermalState}</span>`;
+            } 
+            else if (activeModule === 'broiler') {
+                document.getElementById('valMetric2').innerText = y2 ? "3.2 L/min" : "0.0 L/min";
+                document.getElementById('valMetric1').innerText = y1 ? "18.5 ACH" : "2.4 ACH";
+
+                let broilerState = "Comfortable (24°C)";
+                let colorClass = "text-emerald-400";
+                if (a) {
+                    broilerState = "Heat Warning (33°C)";
+                    colorClass = "text-amber-500 font-bold glow-secondary";
+                } else if (!c) {
+                    broilerState = "Freezing Guard active (4°C)";
+                    colorClass = "text-sky-400 font-bold";
+                }
+                document.getElementById('valBox2').innerHTML = `<span class="${colorClass}">${broilerState}</span>`;
+            } 
+            else if (activeModule === 'porcine') {
+                document.getElementById('valMetric2').innerText = y2 ? "45.0 L/hr" : "0.0 L/hr";
+                document.getElementById('valMetric1').innerText = y1 ? "12.5 ACH" : "1.2 ACH";
+
+                let swineState = "Comfortable (20°C)";
+                let colorClass = "text-emerald-400";
+                if (a) {
+                    swineState = "Heat Warning (32°C)";
+                    colorClass = "text-amber-500 font-bold glow-secondary";
+                } else if (!c) {
+                    swineState = "Draft Guard active (5°C)";
+                    colorClass = "text-sky-400 font-bold";
+                }
+                document.getElementById('valBox2').innerHTML = `<span class="${colorClass}">${swineState}</span>`;
+            }
+        }
+
+        function setSVGNode(id, isActive) {
+            const node = document.getElementById(id);
+            if (isActive) {
+                node.setAttribute('stroke', `rgba(${palettes[activeModule].accent}, 1)`);
+                node.setAttribute('fill', `rgba(${palettes[activeModule].accent}, 0.15)`);
+            } else {
+                node.setAttribute('stroke', '#475569');
+                node.setAttribute('fill', '#020617');
+            }
+        }
+
+        function toggleFlowLine(id, isActive) {
+            const el = document.getElementById(id);
+            if (isActive) el.classList.remove('hidden');
+            else el.classList.add('hidden');
+        }
+
+        function drawWaveforms() {
+            if (!canvas) return;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const channels = ['A', 'B', 'C', 'Y1', 'Y2'];
+            const channelHeight = 24;
+            const channelSpacing = 6;
+            const startX = 90;
+            const availableWidth = canvas.width - startX - 10;
+
+            const accentColor = `rgba(${palettes[activeModule].accent}, 1)`;
+            const secondaryColor = `rgba(${palettes[activeModule].secondary}, 1)`;
+
+            channels.forEach((ch, idx) => {
+                const yOffset = idx * (channelHeight + channelSpacing) + 8;
+
+                ctx.strokeStyle = `rgba(${palettes[activeModule].accent}, 0.08)`;
+                ctx.lineWidth = 1;
+                ctx.strokeRect(startX, yOffset, availableWidth, channelHeight);
+
+                let chLabel = configData[activeModule][`labelNode${ch === 'Y1' ? 'Y1' : ch === 'Y2' ? 'Y2' : ch}`] || ch;
+                
+                if (ch === 'Y1') ctx.fillStyle = accentColor;
+                else if (ch === 'Y2') ctx.fillStyle = secondaryColor;
+                else ctx.fillStyle = '#94a3b8';
+
+                ctx.font = '10px JetBrains Mono';
+                ctx.fillText(`${chLabel}:`, 10, yOffset + 16);
+
+                if (historyData.length > 1) {
+                    ctx.beginPath();
+                    if (ch === 'Y1') ctx.strokeStyle = accentColor;
+                    else if (ch === 'Y2') ctx.strokeStyle = secondaryColor;
+                    else ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+
+                    ctx.lineWidth = 2;
+                    const stepSize = availableWidth / maxHistoryPoints;
+
+                    for (let i = 0; i < historyData.length; i++) {
+                        const val = historyData[i][ch];
+                        const x = startX + i * stepSize;
+                        const y = yOffset + channelHeight - (val * (channelHeight - 6)) - 3;
+
+                        if (i === 0) {
+                            ctx.moveTo(x, y);
+                        } else {
+                            const prevVal = historyData[i - 1][ch];
+                            const prevY = yOffset + channelHeight - (prevVal * (channelHeight - 6)) - 3;
+                            ctx.lineTo(x, prevY);
+                            ctx.lineTo(x, y);
+                        }
+                    }
+                    ctx.stroke();
+                }
+            });
+        }
+
+        function resetUnifiedCircuit() {
+            document.getElementById('switchA').checked = false;
+            document.getElementById('switchB').checked = false;
+            document.getElementById('switchC').checked = activeModule === 'thermal' ? false : true;
+            currentScript = "System Reset: Logic gates returned to baseline standby defaults.";
+            syncFloatingBarText(currentScript);
+            speakText(currentScript);
+            updateSystemState(false);
+        }
+
+        function showDynamicToast(text) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastText').innerText = text;
+            toast.className = "fixed bottom-6 right-6 border px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-0 opacity-100 flex items-center gap-3 bg-slate-950";
+            setTimeout(() => {
+                toast.className = "fixed bottom-6 right-6 border px-6 py-3 rounded-xl shadow-2xl transition-all duration-300 transform translate-y-24 opacity-0 flex items-center gap-3 bg-slate-950";
+            }, 2500);
+        }
+
+        function copyMasterFormula() {
+            const formulaText = configData[activeModule].formulaPrimary;
+            navigator.clipboard.writeText(formulaText).then(() => {
+                showDynamicToast(`${activeModule.toUpperCase()} Formula Copied`);
+            });
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
+        }
+
+        for (let i = 0; i < maxHistoryPoints; i++) {
+            historyData.push({ A: 0, B: 0, C: 1, Y1: 0, Y2: 0 });
+        }
+
+        switchModule('thermal');
+
+        setInterval(() => {
+            const activeA = document.getElementById('switchA').checked ? 1 : 0;
+            const activeB = document.getElementById('switchB').checked ? 1 : 0;
+            const activeC = document.getElementById('switchC').checked ? 1 : 0;
+
+            const valOR = (activeA || activeB) ? 1 : 0;
+            const valY1 = (valOR && activeC) ? 1 : 0;
+            
+            let valY2 = 0;
+            if (activeModule === 'broiler' || activeModule === 'porcine') {
+                valY2 = (activeA && valY1) ? 1 : 0;
+            }
+
+            historyData.push({ A: activeA, B: activeB, C: activeC, Y1: valY1, Y2: valY2 });
+            if (historyData.length > maxHistoryPoints) historyData.shift();
+            drawWaveforms();
+        }, 300);
+    </script>
+
+<svg id="MJX-SVG-global-cache" style="display: none;"><defs><path id="MJX-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-TEX-N-A0" d=""></path><path id="MJX-TEX-N-57" d="M792 683Q810 680 914 680Q991 680 1003 683H1009V637H996Q931 633 915 598Q912 591 863 438T766 135T716 -17Q711 -22 694 -22Q676 -22 673 -15Q671 -13 593 231L514 477L435 234Q416 174 391 92T358 -6T341 -22H331Q314 -21 310 -15Q309 -14 208 302T104 622Q98 632 87 633Q73 637 35 637H18V683H27Q69 681 154 681Q164 681 181 681T216 681T249 682T276 683H287H298V637H285Q213 637 213 620Q213 616 289 381L364 144L427 339Q490 535 492 546Q487 560 482 578T475 602T468 618T461 628T449 633T433 636T408 637H380V683H388Q397 680 508 680Q629 680 650 683H660V637H647Q576 637 576 619L727 146Q869 580 869 600Q869 605 863 612T839 627T794 637H783V683H792Z"></path><path id="MJX-TEX-N-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path id="MJX-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-TEX-N-2264" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJX-TEX-N-2218" d="M55 251Q55 328 112 386T249 444T386 388T444 249Q444 171 388 113T250 55Q170 55 113 112T55 251ZM245 403Q188 403 142 361T96 250Q96 183 141 140T250 96Q284 96 313 109T354 135T375 160Q403 197 403 250Q403 313 360 358T245 403Z"></path><path id="MJX-TEX-N-43" d="M56 342Q56 428 89 500T174 615T283 681T391 705Q394 705 400 705T408 704Q499 704 569 636L582 624L612 663Q639 700 643 704Q644 704 647 704T653 705H657Q660 705 666 699V419L660 413H626Q620 419 619 430Q610 512 571 572T476 651Q457 658 426 658Q322 658 252 588Q173 509 173 342Q173 221 211 151Q232 111 263 84T328 45T384 29T428 24Q517 24 571 93T626 244Q626 251 632 257H660L666 251V236Q661 133 590 56T403 -21Q262 -21 159 83T56 342Z"></path><path id="MJX-TEX-I-1D449" d="M52 648Q52 670 65 683H76Q118 680 181 680Q299 680 320 683H330Q336 677 336 674T334 656Q329 641 325 637H304Q282 635 274 635Q245 630 242 620Q242 618 271 369T301 118L374 235Q447 352 520 471T595 594Q599 601 599 609Q599 633 555 637Q537 637 537 648Q537 649 539 661Q542 675 545 679T558 683Q560 683 570 683T604 682T668 681Q737 681 755 683H762Q769 676 769 672Q769 655 760 640Q757 637 743 637Q730 636 719 635T698 630T682 623T670 615T660 608T652 599T645 592L452 282Q272 -9 266 -16Q263 -18 259 -21L241 -22H234Q216 -22 216 -15Q213 -9 177 305Q139 623 138 626Q133 637 76 637H59Q52 642 52 648Z"></path><path id="MJX-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path id="MJX-TEX-I-1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path id="MJX-TEX-I-1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path id="MJX-TEX-I-1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path id="MJX-TEX-N-59" d="M518 0Q497 3 374 3Q253 3 232 0H221V46H254Q313 47 321 58Q324 62 324 167V273L221 446Q117 620 114 623Q106 631 91 634T31 637H11V683H20Q29 680 148 680Q273 680 294 683H305V637H287Q239 636 236 621Q236 619 321 475L407 332L483 460Q502 492 527 534Q563 594 563 604Q563 632 517 637H508V683H517H525Q533 683 545 683T571 682T600 681T626 681Q695 681 731 683H738V637H723Q640 633 613 588Q612 587 517 427L425 273V169V95Q425 66 428 59T444 49Q459 46 506 46H528V0H518Z"></path><path id="MJX-TEX-N-5C" d="M56 731Q56 740 62 745T75 750Q85 750 92 740Q96 733 270 255T444 -231Q444 -239 438 -244T424 -250Q414 -250 407 -240Q404 -236 230 242T56 731Z"></path><path id="MJX-TEX-N-5F" d="M0 -62V-25H499V-62H0Z"></path><path id="MJX-TEX-N-48" d="M128 622Q121 629 117 631T101 634T58 637H25V683H36Q57 680 180 680Q315 680 324 683H335V637H302Q262 636 251 634T233 622L232 500V378H517V622Q510 629 506 631T490 634T447 637H414V683H425Q446 680 569 680Q704 680 713 683H724V637H691Q651 636 640 634T622 622V61Q628 51 639 49T691 46H724V0H713Q692 3 569 3Q434 3 425 0H414V46H447Q489 47 498 49T517 61V332H232V197L233 61Q239 51 250 49T302 46H335V0H324Q303 3 180 3Q45 3 36 0H25V46H58Q100 47 109 49T128 61V622Z"></path><path id="MJX-TEX-N-45" d="M128 619Q121 626 117 628T101 631T58 634H25V680H597V676Q599 670 611 560T625 444V440H585V444Q584 447 582 465Q578 500 570 526T553 571T528 601T498 619T457 629T411 633T353 634Q266 634 251 633T233 622Q233 622 233 621Q232 619 232 497V376H286Q359 378 377 385Q413 401 416 469Q416 471 416 473V493H456V213H416V233Q415 268 408 288T383 317T349 328T297 330Q290 330 286 330H232V196V114Q232 57 237 52Q243 47 289 47H340H391Q428 47 452 50T505 62T552 92T584 146Q594 172 599 200T607 247T612 270V273H652V270Q651 267 632 137T610 3V0H25V46H58Q100 47 109 49T128 61V619Z"></path><path id="MJX-TEX-N-41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"></path><path id="MJX-TEX-N-54" d="M36 443Q37 448 46 558T55 671V677H666V671Q667 666 676 556T685 443V437H645V443Q645 445 642 478T631 544T610 593Q593 614 555 625Q534 630 478 630H451H443Q417 630 414 618Q413 616 413 339V63Q420 53 439 50T528 46H558V0H545L361 3Q186 1 177 0H164V46H194Q264 46 283 49T309 63V339V550Q309 620 304 625T271 630H244H224Q154 630 119 601Q101 585 93 554T81 486T76 443V437H36V443Z"></path><path id="MJX-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><path id="MJX-TEX-N-2228" d="M55 580Q56 587 61 592T75 598Q86 598 96 580L333 48L570 580Q579 596 586 597Q588 598 591 598Q609 598 611 580Q611 574 546 426T415 132T348 -15Q343 -22 333 -22T318 -15Q317 -14 252 131T121 425T55 580Z"></path><path id="MJX-TEX-I-1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path><path id="MJX-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-TEX-N-2227" d="M318 591Q325 598 333 598Q344 598 348 591Q349 590 414 445T545 151T611 -4Q609 -22 591 -22Q588 -22 586 -21T581 -20T577 -17T575 -13T572 -9T570 -4L333 528L96 -4Q87 -20 80 -21Q78 -22 75 -22Q57 -22 55 -4Q55 2 120 150T251 444T318 591Z"></path></defs></svg></body></html>

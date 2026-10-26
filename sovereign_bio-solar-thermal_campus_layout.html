@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<!-- saved from url=(0141)file:///C:/Users/ASUS/OneDrive/%F0%9F%93%82JET-EOI-PREP/Sovereign%20Bio-Solar-Thermal%20Campus%20%E2%80%94%202%20Ha%20Engineering%20Plan.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Bio-Solar-Thermal Campus — 2 Ha Engineering Plan</title>
+<style>
+  :root {
+    --bg-dark: #030712;
+    --navy-panel: #0b1523;
+    --navy-card: #111f33;
+    --accent-teal: #38bdf8;
+    --accent-gold: #f59e0b;
+    --accent-green: #10b981;
+    --accent-red: #ef4444;
+    --accent-purple: #a855f7;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #1e3a5f;
+    --grid-line: #0d2138;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  /* Header Bar */
+  header {
+    background: #02060d;
+    padding: 10px 20px;
+    border-bottom: 2px solid var(--accent-gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 20;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  }
+
+  .title-block h1 {
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .title-block .subtitle {
+    font-size: 0.78rem;
+    color: var(--accent-teal);
+    font-weight: 500;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn {
+    background: var(--navy-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .btn:hover {
+    background: #142e4a;
+    border-color: var(--accent-teal);
+    color: #fff;
+  }
+
+  .btn-gold {
+    background: var(--accent-gold);
+    color: #040a12;
+    border: none;
+  }
+
+  .btn-gold:hover {
+    background: #d97706;
+    color: #fff;
+  }
+
+  /* Main Workspace Layout */
+  .main-container {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Sidebar Controls */
+  .sidebar {
+    width: 310px;
+    background: var(--navy-panel);
+    border-right: 1px solid var(--border-color);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    z-index: 10;
+  }
+
+  .panel-section {
+    background: var(--navy-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .panel-section h3 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 4px;
+  }
+
+  .layer-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    color: var(--text-light);
+  }
+
+  .layer-toggle input {
+    cursor: pointer;
+    accent-color: var(--accent-teal);
+    width: 15px;
+    height: 15px;
+  }
+
+  .layer-toggle:hover {
+    color: var(--accent-teal);
+  }
+
+  .legend-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.78rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  /* Viewport Container */
+  .viewport-container {
+    flex: 1;
+    position: relative;
+    background: var(--bg-dark);
+    overflow: hidden;
+    cursor: grab;
+  }
+
+  .viewport-container:active {
+    cursor: grabbing;
+  }
+
+  svg#cad-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* On-Canvas Controls */
+  .viewport-controls {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    z-index: 15;
+  }
+
+  .control-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(11, 21, 35, 0.9);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s;
+  }
+
+  .control-btn:hover {
+    background: var(--navy-card);
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+  }
+
+  .coord-display {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(11, 21, 35, 0.9);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.8rem;
+    color: var(--accent-teal);
+    backdrop-filter: blur(4px);
+    z-index: 15;
+  }
+
+  /* Export Modal Drawer */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    backdrop-filter: blur(6px);
+  }
+
+  .modal-box {
+    background: var(--navy-panel);
+    border: 1px solid var(--accent-gold);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 750px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .modal-header h2 { font-size: 1.1rem; color: var(--accent-gold); }
+
+  textarea.cad-output {
+    width: 100%;
+    height: 350px;
+    background: #02060d;
+    border: 1px solid var(--border-color);
+    color: var(--accent-teal);
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding: 12px;
+    border-radius: 6px;
+    resize: none;
+    outline: none;
+  }
+
+  /* SVG CAD Styling */
+  .cad-bg { fill: #071522; }
+  .grid-line-minor { stroke: #12283a; stroke-width: 0.35; stroke-dasharray: 2,2; }
+  .grid-line-major { stroke: #1c3b54; stroke-width: 0.7; }
+  .boundary-line { stroke: #e7bd62; stroke-width: 1.6; fill: none; stroke-dasharray: 8,4; }
+  
+  .road-way { fill: #0e2233; stroke: #234866; stroke-width: 0.8; }
+  .walkway { fill: none; stroke: #315e85; stroke-width: 0.6; stroke-dasharray: 1,1; }
+
+  /* Structures */
+  .building-shape {
+    fill: #0d2435;
+    stroke: #56d0c1;
+    stroke-width: 1.2;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .building-shape:hover {
+    fill: #153852;
+    stroke: #e7bd62;
+    filter: drop-shadow(0 0 6px rgba(86, 208, 193, 0.4));
+  }
+
+  .zone-boundary {
+    stroke-width: 0.8;
+    stroke-dasharray: 4,4;
+    pointer-events: none;
+  }
+
+  /* Reticulation Pipe Overlays */
+  .pipe-water { stroke: #38bdf8; stroke-width: 1.2; fill: none; stroke-dasharray: 4,2; cursor: pointer; }
+  .pipe-gas { stroke: #f97316; stroke-width: 1.2; fill: none; stroke-dasharray: 4,2; cursor: pointer; }
+  .pipe-power { stroke: #e7bd62; stroke-width: 1.2; fill: none; cursor: pointer; }
+
+  .pipe-water:hover, .pipe-gas:hover, .pipe-power:hover {
+    stroke-width: 2.2;
+    filter: drop-shadow(0 0 4px currentColor);
+  }
+
+  /* Reduced & Refined Direct Text Labels */
+  .label-title { font-size: 1.8px; font-weight: 700; fill: #ffffff; text-anchor: middle; font-family: sans-serif; pointer-events: none; }
+  .label-sub { font-size: 1.3px; fill: #94a3b8; text-anchor: middle; font-family: sans-serif; pointer-events: none; }
+
+  /* Dynamic Teachability Inspector Card */
+  .inspector-card {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: rgba(13, 36, 53, 0.95);
+    border: 1px solid #e7bd62;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 30;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .inspector-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #315064;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+  }
+
+  .inspector-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #e7bd62;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .inspector-badge {
+    background: rgba(86, 208, 193, 0.15);
+    border: 1px solid #56d0c1;
+    color: #56d0c1;
+    font-size: 0.68rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .inspector-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .inspector-metric {
+    background: rgba(7, 21, 34, 0.6);
+    border: 1px solid #315064;
+    padding: 6px 8px;
+    border-radius: 6px;
+  }
+
+  .inspector-label {
+    font-size: 0.65rem;
+    color: #b9c8d3;
+    text-transform: uppercase;
+  }
+
+  .inspector-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="title-block">
+    <h1>SOVEREIGN BIO-SOLAR-THERMAL CAMPUS</h1>
+    <div class="subtitle">2-Hectare (20,000 m²) Master Site Layout — Interactive Engineering Plan</div>
+  </div>
+  <div class="header-actions">
+    <button class="btn" onclick="openCadExportModal()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Export DXF Data</button>
+    <button class="btn btn-gold" onclick="window.print()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg> Print Drawing</button>
+  </div>
+</header>
+
+<div class="main-container">
+  <!-- Sidebar Layer Control -->
+  <div class="sidebar">
+    <div class="panel-section">
+      <h3>Layer Controls</h3>
+      <label class="layer-toggle"><input type="checkbox" id="chk-grid" checked="" onchange="toggleLayer('g-grid')"> Grid &amp; Coordinates (10m/50m)</label>
+      <label class="layer-toggle"><input type="checkbox" id="chk-zones" checked="" onchange="toggleLayer('g-zones')"> Biosecurity &amp; Functional Zones</label>
+      <label class="layer-toggle"><input type="checkbox" id="chk-civils" checked="" onchange="toggleLayer('g-civils')"> Roads &amp; Walkways</label>
+      <label class="layer-toggle"><input type="checkbox" id="chk-structures" checked="" onchange="toggleLayer('g-structures')"> Campus Facilities</label>
+      <label class="layer-toggle"><input type="checkbox" id="chk-water" checked="" onchange="toggleLayer('g-pipe-water')"> Water Reticulation (Blue)</label>
+      <label class="layer-toggle"><input type="checkbox" id="chk-gas" checked="" onchange="toggleLayer('g-pipe-gas')"> Biogas &amp; Thermal Network (Orange)</label>
+      <label class="layer-toggle"><input type="checkbox" id="chk-power" checked="" onchange="toggleLayer('g-pipe-power')"> Electrical Microgrid Bus (Gold)</label>
+      <label class="layer-toggle"><input type="checkbox" id="chk-labels" checked="" onchange="toggleLayer('g-labels')"> Direct Text Labels</label>
+    </div>
+
+    <div class="panel-section">
+      <h3>Zoning Legend</h3>
+      <div class="legend-grid">
+        <div class="legend-item"><div class="legend-color" style="background: rgba(239, 68, 68, 0.4); border:1px solid #ef4444;"></div> Zone A: Biosecure Production</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(245, 158, 11, 0.4); border:1px solid #f59e0b;"></div> Zone B: Energy Sovereignty Hub</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(2, 132, 199, 0.4); border:1px solid #0284c7;"></div> Zone C: Water Sovereignty Hub</div>
+        <div class="legend-item"><div class="legend-color" style="background: rgba(16, 185, 129, 0.4); border:1px solid #10b981;"></div> Zone D: Academy &amp; Admin Hub</div>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <h3>Envelope Parameters</h3>
+      <div style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.6;">
+        • Site Boundary: 200 m × 100 m (20,000 m²)<br>
+        • Coordinate Origin: (0.00, 0.00) SW Corner<br>
+        • North Vector: +90° Vertical<br>
+        • Annual Target: 80,000 kg Combined Dispatch
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive SVG Canvas Viewport -->
+  <div class="viewport-container" id="viewport">
+    <div class="viewport-controls">
+      <button class="control-btn" onclick="zoom(1.2)" title="Zoom In">+</button>
+      <button class="control-btn" onclick="zoom(0.8)" title="Zoom Out">−</button>
+      <button class="control-btn" onclick="resetView()" title="Reset View">⟲</button>
+    </div>
+
+    <div class="coord-display" id="coord-readout">X: 187.50 m | Y: 58.91 m</div>
+
+    <!-- Hovering Teachability Inspector Block -->
+    <div class="inspector-card" id="inspector-card">
+      <div class="inspector-header">
+        <div class="inspector-title" id="insp-title">Campus Overview</div>
+        <div class="inspector-badge" id="insp-zone">Master Plan</div>
+      </div>
+      <div class="inspector-grid" id="insp-metrics">
+      <div class="inspector-metric"><div class="inspector-label">Total Land</div><div class="inspector-val">20,000 m²</div></div>
+      <div class="inspector-metric"><div class="inspector-label">Dispatch Target</div><div class="inspector-val">80,000 kg/yr</div></div>
+      <div class="inspector-metric"><div class="inspector-label">Microgrid Power</div><div class="inspector-val">30kWp / 60kWh</div></div>
+      <div class="inspector-metric"><div class="inspector-label">Water Reserve</div><div class="inspector-val">20,000 L Tank</div></div>
+    </div>
+    </div>
+
+    <svg id="cad-canvas" viewBox="-15 -20 230 140" onmousemove="trackCoordinates(event)" style="transform: translate(0px, 0px) scale(0.768); transform-origin: 0px 0px;">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#e7bd62"></path>
+        </marker>
+      </defs>
+
+      <!-- Canvas Dark Background -->
+      <rect x="-15" y="-20" width="230" height="140" class="cad-bg"></rect>
+
+      <!-- Layer: Grid & Coordinates -->
+      <g id="g-grid">
+        <!-- Minor 10m Grid Lines -->
+        <path d="
+          M 0,10 H 200 M 0,20 H 200 M 0,30 H 200 M 0,40 H 200 M 0,60 H 200 M 0,70 H 200 M 0,80 H 200 M 0,90 H 200
+          M 10,0 V 100 M 20,0 V 100 M 30,0 V 100 M 40,0 V 100 M 60,0 V 100 M 70,0 V 100 M 80,0 V 100 M 90,0 V 100
+          M 110,0 V 100 M 120,0 V 100 M 130,0 V 100 M 140,0 V 100 M 160,0 V 100 M 170,0 V 100 M 180,0 V 100 M 190,0 V 100
+        " class="grid-line-minor"></path>
+
+        <!-- Major 50m Grid Lines -->
+        <path d="
+          M 0,0 H 200 M 0,50 H 200 M 0,100 H 200
+          M 0,0 V 100 M 50,0 V 100 M 100,0 V 100 M 150,0 V 100 M 200,0 V 100
+        " class="grid-line-major"></path>
+
+        <!-- Axis Coordinate Ticks -->
+        <text x="0" y="105" class="label-sub">0m</text>
+        <text x="50" y="105" class="label-sub">50m</text>
+        <text x="100" y="105" class="label-sub">100m</text>
+        <text x="150" y="105" class="label-sub">150m</text>
+        <text x="200" y="105" class="label-sub">200m (X-Axis)</text>
+
+        <text x="-3" y="100" class="label-sub" text-anchor="end">0m</text>
+        <text x="-3" y="50" class="label-sub" text-anchor="end">50m</text>
+        <text x="-3" y="0" class="label-sub" text-anchor="end">100m (Y-Axis)</text>
+
+        <!-- North Vector Indicator -->
+        <g transform="translate(195, -8)">
+          <line x1="0" y1="10" x2="0" y2="-2" stroke="#e7bd62" stroke-width="1.2" marker-end="url(#arrow)"></line>
+          <text x="0" y="-5" class="label-title" fill="#e7bd62">N</text>
+        </g>
+
+        <!-- Metric Scale Bar -->
+        <g transform="translate(10, -10)">
+          <rect x="0" y="0" width="40" height="2" fill="#0d2435" stroke="#315064" stroke-width="0.5"></rect>
+          <rect x="0" y="0" width="20" height="2" fill="#56d0c1"></rect>
+          <text x="0" y="-2" class="label-sub" text-anchor="start">0</text>
+          <text x="20" y="-2" class="label-sub">20m</text>
+          <text x="40" y="-2" class="label-sub">40m Scale</text>
+        </g>
+      </g>
+
+      <!-- Boundary Line -->
+      <rect x="0" y="0" width="200" height="100" class="boundary-line"></rect>
+
+      <!-- Layer: Functional Zones -->
+      <g id="g-zones">
+        <rect x="5" y="5" width="105" height="90" fill="rgba(239, 68, 68, 0.04)" class="zone-boundary" stroke="#ef4444"></rect>
+        <rect x="115" y="5" width="40" height="40" fill="rgba(245, 158, 11, 0.04)" class="zone-boundary" stroke="#f59e0b"></rect>
+        <rect x="115" y="50" width="40" height="45" fill="rgba(2, 132, 199, 0.04)" class="zone-boundary" stroke="#0284c7"></rect>
+        <rect x="160" y="5" width="35" height="90" fill="rgba(16, 185, 129, 0.04)" class="zone-boundary" stroke="#10b981"></rect>
+      </g>
+
+      <!-- Layer: Civils & Roads -->
+      <g id="g-civils">
+        <path d="M 170 100 L 170 88 L 15 88 L 15 15 L 180 15 L 180 88 L 170 88" class="road-way"></path>
+        <rect x="162" y="90" width="16" height="8" fill="#1e293b" stroke="#e7bd62" stroke-width="0.6" rx="1" onmouseenter="inspectElement('vehicle_dip')" onmouseleave="resetInspector()"></rect>
+        <path d="M 170 50 L 135 50 L 135 25 M 135 50 L 70 50 L 70 25 M 70 50 L 70 75" class="walkway"></path>
+      </g>
+
+      <!-- Layer: Reticulation Pipe Networks -->
+      <g id="g-pipe-water">
+        <path d="M 125 80 L 125 65 L 40 65 L 40 32" class="pipe-water" onmouseenter="inspectElement('pipe_water')" onmouseleave="resetInspector()"></path>
+        <path d="M 40 65 L 40 52" class="pipe-water" onmouseenter="inspectElement('pipe_water')" onmouseleave="resetInspector()"></path>
+      </g>
+
+      <g id="g-pipe-gas">
+        <path d="M 135 30 L 135 18 L 142 18" class="pipe-gas" onmouseenter="inspectElement('pipe_gas')" onmouseleave="resetInspector()"></path>
+      </g>
+
+      <g id="g-pipe-power">
+        <path d="M 125 18 L 125 50 L 170 50 M 125 35 L 40 35 M 125 70 L 170 70" class="pipe-power" onmouseenter="inspectElement('pipe_power')" onmouseleave="resetInspector()"></path>
+      </g>
+
+      <!-- Layer: Facilities -->
+      <g id="g-structures">
+        <!-- 1. Poultry Barn -->
+        <g transform="translate(20, 20)" onmouseenter="inspectElement('poultry')" onmouseleave="resetInspector()">
+          <rect width="32" height="12" class="building-shape" rx="1"></rect>
+          <line x1="8" y1="0" x2="8" y2="12" stroke="#315064" stroke-width="0.5"></line>
+          <line x1="16" y1="0" x2="16" y2="12" stroke="#315064" stroke-width="0.5"></line>
+          <line x1="24" y1="0" x2="24" y2="12" stroke="#315064" stroke-width="0.5"></line>
+        </g>
+
+        <!-- 2. Swine Barn -->
+        <g transform="translate(20, 40)" onmouseenter="inspectElement('swine')" onmouseleave="resetInspector()">
+          <rect width="32" height="12" class="building-shape" rx="1"></rect>
+          <line x1="8" y1="0" x2="8" y2="12" stroke="#315064" stroke-width="0.5"></line>
+          <line x1="16" y1="0" x2="16" y2="12" stroke="#315064" stroke-width="0.5"></line>
+          <line x1="24" y1="0" x2="24" y2="12" stroke="#315064" stroke-width="0.5"></line>
+        </g>
+
+        <!-- 3. Nursery Isolation -->
+        <g transform="translate(60, 20)" onmouseenter="inspectElement('nursery')" onmouseleave="resetInspector()">
+          <rect width="20" height="15" class="building-shape" style="stroke: #ef4444;" rx="1"></rect>
+        </g>
+
+        <!-- 4. Water Sovereignty Hub -->
+        <g transform="translate(120, 60)" onmouseenter="inspectElement('water')" onmouseleave="resetInspector()">
+          <rect width="18" height="22" class="building-shape" style="stroke: #0284c7;" rx="1"></rect>
+          <circle cx="9" cy="8" r="4" fill="#0369a1" stroke="#38bdf8" stroke-width="0.5"></circle>
+        </g>
+
+        <!-- 5. Energy Hub -->
+        <g transform="translate(120, 10)" onmouseenter="inspectElement('energy')" onmouseleave="resetInspector()">
+          <rect width="25" height="25" class="building-shape" style="stroke: #e7bd62;" rx="1"></rect>
+          <circle cx="18" cy="18" r="5" fill="#b45309" stroke="#e7bd62" stroke-width="0.5"></circle>
+        </g>
+
+        <!-- 6. Entrepreneurship Academy & Admin -->
+        <g transform="translate(165, 20)" onmouseenter="inspectElement('academy')" onmouseleave="resetInspector()">
+          <rect width="25" height="35" class="building-shape" style="stroke: #10b981;" rx="1"></rect>
+        </g>
+
+        <!-- 7. Assembly Points & Accessibility -->
+        <g transform="translate(165, 65)" onmouseenter="inspectElement('accessibility')" onmouseleave="resetInspector()">
+          <rect width="25" height="18" class="building-shape" style="stroke: #a855f7;" rx="1"></rect>
+        </g>
+
+        <!-- 8. Expansion Reserve -->
+        <g transform="translate(60, 45)" onmouseenter="inspectElement('expansion')" onmouseleave="resetInspector()">
+          <rect width="35" height="30" fill="none" stroke="#475569" stroke-width="0.8" stroke-dasharray="2,2" rx="1"></rect>
+        </g>
+      </g>
+
+      <!-- Layer: Direct Inline Typography (Reduced Font Size) -->
+      <g id="g-labels">
+        <text x="36" y="27" class="label-title">POULTRY BARN</text>
+        <text x="36" y="47" class="label-title">SWINE BARN</text>
+
+        <text x="70" y="28" class="label-title" fill="#ef4444">NURSERY &amp; BIO-LOCK</text>
+
+        <text x="132.5" y="23" class="label-title" fill="#e7bd62">ENERGY HUB</text>
+        <text x="129" y="72" class="label-title" fill="#0284c7">WATER HUB</text>
+
+        <text x="177.5" y="38" class="label-title" fill="#10b981">ACADEMY &amp; HUB</text>
+        <text x="177.5" y="74" class="label-title" fill="#a855f7">ACCESSIBILITY &amp; ASSEMBLY</text>
+
+        <text x="77.5" y="60" class="label-sub">EXPANSION RESERVE</text>
+
+        <text x="170" y="95" class="label-sub" fill="#e7bd62">BIOSECURITY DIP</text>
+      </g>
+
+    </svg>
+  </div>
+</div>
+
+<!-- Modal Dialog for CAD Coordinates Data -->
+<div class="modal-overlay" id="cad-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>Sovereign Campus — Master DXF / GIS Coordinate Data</h2>
+      <button class="btn" onclick="closeCadExportModal()">Close</button>
+    </div>
+    <textarea class="cad-output" id="cad-json-display" readonly=""></textarea>
+  </div>
+</div>
+
+<script>
+  // Pan and Zoom Handler
+  let scale = 1;
+  let pointX = 0;
+  let pointY = 0;
+  let startX = 0;
+  let startY = 0;
+  let isPanning = false;
+
+  const viewport = document.getElementById('viewport');
+  const svg = document.getElementById('cad-canvas');
+
+  viewport.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.control-btn') || e.target.closest('.inspector-card')) return;
+    isPanning = true;
+    startX = e.clientX - pointX;
+    startY = e.clientY - pointY;
+  });
+
+  window.addEventListener('mouseup', () => { isPanning = false; });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isPanning) return;
+    pointX = e.clientX - startX;
+    pointY = e.clientY - startY;
+    updateTransform();
+  });
+
+  viewport.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const xs = (e.clientX - pointX) / scale;
+    const ys = (e.clientY - pointY) / scale;
+    const delta = e.deltaY < 0 ? 1.1 : 0.9;
+    scale *= delta;
+    scale = Math.min(Math.max(0.6, scale), 5);
+    pointX = e.clientX - xs * scale;
+    pointY = e.clientY - ys * scale;
+    updateTransform();
+  });
+
+  function zoom(factor) {
+    scale *= factor;
+    scale = Math.min(Math.max(0.6, scale), 5);
+    updateTransform();
+  }
+
+  function resetView() {
+    scale = 1;
+    pointX = 0;
+    pointY = 0;
+    updateTransform();
+  }
+
+  function updateTransform() {
+    svg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+    svg.style.transformOrigin = '0 0';
+  }
+
+  // Coordinate Readout Tracker
+  function trackCoordinates(event) {
+    const rect = svg.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 230 - 15;
+    const y = ((event.clientY - rect.top) / rect.height) * 140 - 20;
+
+    if (x >= 0 && x <= 200 && y >= 0 && y <= 100) {
+      document.getElementById('coord-readout').innerText = `X: ${x.toFixed(2)} m | Y: ${(100 - y).toFixed(2)} m`;
+    }
+  }
+
+  // Teachability Inspector Data Registry
+  const inspectorRegistry = {
+    poultry: {
+      title: "Poultry Cluster",
+      zone: "Zone A: Biosecure",
+      metrics: [
+        { label: "Dimensions", val: "12m × 32m" },
+        { label: "Pods Count", val: "4 Biosecure" },
+        { label: "Capacity", val: "4,800 Broilers" },
+        { label: "Annual Output", val: "52,800 kg" }
+      ]
+    },
+    swine: {
+      title: "Swine Cluster",
+      zone: "Zone A: Biosecure",
+      metrics: [
+        { label: "Dimensions", val: "12m × 32m" },
+        { label: "Pods Count", val: "4 Biosecure" },
+        { label: "Capacity", val: "160 Weaners" },
+        { label: "Annual Output", val: "27,200 kg" }
+      ]
+    },
+    nursery: {
+      title: "Nursery & Isolation",
+      zone: "Zone A: Biosecure",
+      metrics: [
+        { label: "Functions", val: "Brooding / Isolation" },
+        { label: "Biosecurity", val: "Single Air-Lock Pass" },
+        { label: "Target", val: "Morbidity Reduction" },
+        { label: "Thermal Loop", val: "Biogas CHP Heat" }
+      ]
+    },
+    energy: {
+      title: "Energy Sovereignty Hub",
+      zone: "Zone B: Microgrid",
+      metrics: [
+        { label: "Rooftop PV", val: "30 kWp Solar" },
+        { label: "BESS Capacity", val: "60 kWh LFP" },
+        { label: "Biodigester", val: "70 m³ Digester" },
+        { label: "CHP Unit", val: "15 kW Combined Heat" }
+      ]
+    },
+    water: {
+      title: "Water Sovereignty Hub",
+      zone: "Zone C: Water Hub",
+      metrics: [
+        { label: "Primary Source", val: "1 Borehole" },
+        { label: "Submersible Pump", val: "1.5 kW Pump Duty" },
+        { label: "Storage Capacity", val: "2× 10,000L Tanks" },
+        { label: "Elevation", val: "3m Gravity Head" }
+      ]
+    },
+    academy: {
+      title: "Academy & SCADA Center",
+      zone: "Zone D: Education",
+      metrics: [
+        { label: "Core Faculties", val: "Energy / SCADA / Ag" },
+        { label: "Digital Twin", val: "Live IoT Telemetry" },
+        { label: "Operator Training", val: "6 Vocational Paths" },
+        { label: "Admin Hub", val: "Central Operations" }
+      ]
+    },
+    accessibility: {
+      title: "Accessibility & Assembly",
+      zone: "Zone D: Public",
+      metrics: [
+        { label: "Evacuation", val: "Muster Points A, B, C" },
+        { label: "Mobility", val: "Accessible Routes" },
+        { label: "EV Charging", val: "Wheelchair / Scooters" },
+        { label: "Public Access", val: "Inclusive Hub" }
+      ]
+    },
+    expansion: {
+      title: "Expansion Reserve",
+      zone: "Future Phase 2",
+      metrics: [
+        { label: "Reserved Area", val: "4,200 m² Area" },
+        { label: "Trigger Rule", val: "80% Capacity Limit" },
+        { label: "Potential Use", val: "Agrivoltaics / Hydro" },
+        { label: "Status", val: "Frozen Baseline" }
+      ]
+    },
+    vehicle_dip: {
+      title: "Vehicle Biosecurity Station",
+      zone: "Access Control",
+      metrics: [
+        { label: "Sanitisation", val: "Wheel Wash & Spray" },
+        { label: "Screening", val: "Visitor Screening" },
+        { label: "Logistics", val: "Dispatch Control" },
+        { label: "Security", val: "Gatehouse Access" }
+      ]
+    },
+    pipe_water: {
+      title: "Water Distribution Loop",
+      zone: "Reticulation",
+      metrics: [
+        { label: "Pipe Type", val: "HDPE Pressurised" },
+        { label: "Primary Feed", val: "Elevated Tanks" },
+        { label: "Destinations", val: "Barns, Nursery, Admin" },
+        { label: "Monitored", val: "SCADA Flow Rate" }
+      ]
+    },
+    pipe_gas: {
+      title: "Biogas Thermal Network",
+      zone: "Reticulation",
+      metrics: [
+        { label: "Medium", val: "Methane / Heat Loop" },
+        { label: "Source", val: "70 m³ Biodigester" },
+        { label: "Destination", val: "Nursery / CHP" },
+        { label: "Safety", val: "Flame Arresters" }
+      ]
+    },
+    pipe_power: {
+      title: "Microgrid Power Bus",
+      zone: "Electrical Grid",
+      metrics: [
+        { label: "System", val: "AC Bus Microgrid" },
+        { label: "Sources", val: "PV + BESS + CHP" },
+        { label: "Priority Loads", val: "SCADA, Water, Nursery" },
+        { label: "Valuation", val: "R1.80/kWh Offset" }
+      ]
+    }
+  };
+
+  function inspectElement(key) {
+    const item = inspectorRegistry[key];
+    if (!item) return;
+
+    document.getElementById('insp-title').innerText = item.title;
+    document.getElementById('insp-zone').innerText = item.zone;
+
+    const metricsContainer = document.getElementById('insp-metrics');
+    metricsContainer.innerHTML = item.metrics.map(m => `
+      <div class="inspector-metric">
+        <div class="inspector-label">${m.label}</div>
+        <div class="inspector-val">${m.val}</div>
+      </div>
+    `).join('');
+  }
+
+  function resetInspector() {
+    document.getElementById('insp-title').innerText = "Campus Overview";
+    document.getElementById('insp-zone').innerText = "Master Plan";
+    document.getElementById('insp-metrics').innerHTML = `
+      <div class="inspector-metric"><div class="inspector-label">Total Land</div><div class="inspector-val">20,000 m²</div></div>
+      <div class="inspector-metric"><div class="inspector-label">Dispatch Target</div><div class="inspector-val">80,000 kg/yr</div></div>
+      <div class="inspector-metric"><div class="inspector-label">Microgrid Power</div><div class="inspector-val">30kWp / 60kWh</div></div>
+      <div class="inspector-metric"><div class="inspector-label">Water Reserve</div><div class="inspector-val">20,000 L Tank</div></div>
+    `;
+  }
+
+  // Layer Visibility Toggle
+  function toggleLayer(layerId) {
+    const layer = document.getElementById(layerId);
+    if (layer) {
+      layer.style.display = layer.style.display === 'none' ? 'block' : 'none';
+    }
+  }
+
+  // CAD Export Coordinates Generator
+  function openCadExportModal() {
+    const exportData = {
+      project: "Sovereign Bio-Solar-Thermal Campus",
+      site_area_m2: 20000,
+      bbox: [0, 0, 200, 100],
+      facilities: [
+        { id: "POULTRY_BARN", x: 20, y: 20, width: 32, height: 12 },
+        { id: "SWINE_BARN", x: 20, y: 40, width: 32, height: 12 },
+        { id: "NURSERY_ISOLATION", x: 60, y: 20, width: 20, height: 15 },
+        { id: "WATER_SOVEREIGNTY_HUB", x: 120, y: 60, width: 18, height: 22 },
+        { id: "ENERGY_HUB", x: 120, y: 10, width: 25, height: 25 },
+        { id: "ACADEMY_ADMIN", x: 165, y: 20, width: 25, height: 35 }
+      ]
+    };
+
+    document.getElementById('cad-json-display').value = JSON.stringify(exportData, null, 2);
+    document.getElementById('cad-modal').style.display = 'flex';
+  }
+
+  function closeCadExportModal() {
+    document.getElementById('cad-modal').style.display = 'none';
+  }
+</script>
+
+</body></html>

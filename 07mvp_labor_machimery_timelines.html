@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)file:///C:/Users/ASUS/OneDrive/JET-EOI-JUBILEE%20DASHBOARD/24_mvp_execution_timeline_labor_machinery.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IDEAL MVP LABOR, MACHINERY &amp; 12-MONTH TIMELINE ARCHITECTURE | Sovereign Bio-Solar-Thermal Campus</title>
+<style>
+  :root {
+    --bg-superwhite: #FFFFFF;
+    --navy-blue: #0A192F;
+    --dark-green: #1B4332;
+    --sunny-gold: #D4AF37;
+    --teal: #008080;
+    --text-primary: #1A202C;
+    --text-muted: #4A5568;
+    --card-bg: #F8FAFC;
+    --border-color: #E2E8F0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--bg-superwhite); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 40px 20px; }
+  .container { max-width: 1000px; margin: 0 auto; background: var(--bg-superwhite); }
+
+  .ownership-bar {
+    background: var(--dark-green);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 6px 6px 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--sunny-gold);
+  }
+  .ownership-bar span { color: var(--sunny-gold); }
+
+  .header-block {
+    background-color: var(--navy-blue);
+    color: var(--bg-superwhite);
+    padding: 40px 30px;
+    border-radius: 0 0 8px 8px;
+    border-bottom: 5px solid var(--sunny-gold);
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  .header-block.active-narration {
+    border: 3px solid var(--sunny-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  }
+  .header-block h1 { font-size: 2.1rem; font-weight: 800; letter-spacing: 0.5px; line-height: 1.2; margin-bottom: 10px; text-transform: uppercase; color: #FFFFFF; }
+  .header-block .subtitle { font-size: 1.1rem; color: var(--sunny-gold); font-weight: 500; margin-bottom: 15px; }
+  .header-block .tags { display: flex; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; }
+  .header-block .tag { background: rgba(255, 255, 255, 0.1); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(212, 175, 55, 0.4); color: #FFFFFF; }
+
+  /* Control Panel */
+  .control-panel {
+    background: #EFF6FF;
+    border: 2px solid #3B82F6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .control-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+  .control-title { font-weight: 700; color: #1E40AF; font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .button-group { display: flex; gap: 12px; flex-wrap: wrap; }
+  
+  .btn-action {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+  }
+  .btn-action:hover { background: #1D4ED8; }
+  .btn-stop {
+    background: #DC2626;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  .btn-stop:hover { background: #B91C1C; }
+
+  section {
+    margin-bottom: 45px;
+    transition: all 0.3s ease;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  section.active-narration {
+    background-color: rgba(59, 130, 246, 0.05);
+    border: 2px solid #3B82F6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+
+  h2 {
+    color: var(--navy-blue);
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  h2 .section-audio-btn {
+    background: var(--teal);
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  h2 .section-audio-btn:hover { background: #006666; }
+  h2::before { content: ''; display: inline-block; width: 12px; height: 12px; background-color: var(--teal); border-radius: 2px; }
+  p { color: var(--text-muted); margin-bottom: 15px; font-size: 1rem; }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  .card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px; }
+  .card-header { font-weight: bold; color: var(--dark-green); font-size: 1.1rem; margin-bottom: 10px; }
+
+  ul { padding-left: 0; list-style: none; }
+  ul li { position: relative; padding-left: 20px; margin-bottom: 10px; color: var(--text-muted); }
+  ul li::before { content: '■'; position: absolute; left: 0; color: var(--sunny-gold); font-size: 0.8rem; top: 2px; }
+
+  .teachability-box {
+    background-color: #F0FDF4;
+    border-left: 4px solid var(--dark-green);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 20px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
+  }
+  .teachability-title { font-weight: 700; color: var(--dark-green); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+
+  .styled-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; background: #FFFFFF; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+  .styled-table thead tr { background-color: var(--navy-blue); color: #FFFFFF; text-align: left; }
+  .styled-table th, .styled-table td { padding: 10px 12px; border: 1px solid var(--border-color); }
+  .styled-table tbody tr { border-bottom: 1px solid var(--border-color); }
+  .styled-table tbody tr:nth-of-type(even) { background-color: var(--card-bg); }
+
+  .diagram-box {
+    background: var(--navy-blue);
+    color: #FFFFFF;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.88rem;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid var(--sunny-gold);
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.4;
+  }
+  .diagram-box span { color: var(--sunny-gold); font-weight: bold; }
+
+  /* Interactive Signature Image Stamp Styles */
+  .signature-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px; }
+  @media (max-width: 768px) { .signature-container { grid-template-columns: 1fr; } }
+  .signature-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+  .signature-title { font-size: 0.85rem; font-weight: 700; color: var(--dark-green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 15px; border-bottom: 1px dashed var(--border-color); padding-bottom: 8px; }
+  
+  .signature-dropzone {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    margin-bottom: 12px;
+    background: #FFFFFF;
+    border: 1.5px dashed var(--teal);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .signature-dropzone:hover { background: #F0FDF4; border-color: var(--dark-green); }
+  .signature-dropzone p { font-size: 0.8rem; color: var(--text-muted); margin: 0; text-align: center; }
+  
+  .signature-preview-img {
+    max-width: 90%;
+    max-height: 90px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+
+  .signature-actions { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
+  .btn-sig { padding: 6px 12px; font-size: 0.78rem; font-weight: 700; border-radius: 4px; border: none; cursor: pointer; transition: all 0.2s ease; }
+  .btn-upload { background: #E2E8F0; color: var(--navy-blue); }
+  .btn-upload:hover { background: #CBD5E1; }
+  .btn-lock { background: var(--dark-green); color: #FFFFFF; }
+  .btn-lock:hover { background: #143225; }
+  .btn-sig:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .signatory-name { font-size: 1rem; font-weight: 800; color: var(--navy-blue); }
+  .signatory-role { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 4px; }
+  .signatory-meta { font-size: 0.78rem; color: var(--teal); font-weight: 600; }
+  .signature-status { font-size: 0.75rem; font-weight: 700; color: #D97706; margin-top: 6px; }
+  .signature-status.locked { color: #059669; }
+
+  .institutional-block { background-color: var(--navy-blue); color: #FFFFFF; padding: 30px; border-radius: 8px; margin-top: 40px; border-top: 4px solid var(--dark-green); }
+  .institutional-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; font-size: 0.9rem; }
+  .institutional-item strong { color: var(--sunny-gold); display: block; margin-bottom: 4px; }
+  .contact-link { color: #FFFFFF; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="container" id="documentContainer">
+
+  <!-- Ownership Header Bar -->
+  <div class="ownership-bar">
+    <div>PROPRIETARY &amp; CONFIDENTIAL — <span>LWANDILE ENGINEERING PROJECTS &amp; INCLUSIVE ENTREPRENEURIAL ACADEMY</span></div>
+    <div>SCAPUSH PRECISION STANDARD</div>
+  </div>
+
+  <!-- Main Heading Block -->
+  <header class="header-block" id="secHeader">
+    <h1>IDEAL MVP LABOR FORCE, MACHINERY &amp; 12-MONTH BUFFERED TIMELINE</h1>
+    <div class="subtitle">Sovereign Bio-Solar-Thermal Campus | JET EOI Operational Execution Specification</div>
+    <div class="tags">
+      <span class="tag">Doc Ref: 24_labor_machinery_timeline.html</span>
+      <span class="tag">Status: JET EXECUTION BASELINE (20,000M² FENCE INFUSED)</span>
+      <span class="tag">Governance: Scapush Precision</span>
+      <span class="tag">12-Month Gantt Master</span>
+    </div>
+  </header>
+
+  <!-- Control Panel -->
+  <div class="control-panel" role="region" aria-label="Accessibility Control Center">
+    <div class="control-row">
+      <div class="control-title">
+        <span>🔊 Auto-Scrolling Live Narration Engine</span>
+      </div>
+      <div class="button-group">
+        <button class="btn-action" onclick="startAutoScrollingNarration()">▶ Start Auto-Scroll Narration</button>
+        <button class="btn-stop" onclick="stopSpeech()">⏹ Stop / Misa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1: Executive Intent & Resource Optimization -->
+  <section id="sec1">
+    <h2>
+      <span>1. Human Capital &amp; Machinery Execution Strategy</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec1')">🔊 Listen Section</button>
+    </h2>
+    <p>This document quantifies the exact labor force man-hours, skilled trade allocation, heavy/specialized machinery plant-hours, and a 12-month buffered execution timeline for the <strong>R3.73M Scaled MVP Scope (Infused with 20,000m² Perimeter Fence)</strong>, featuring 4,800 Broilers, 160 Swine, 70m³ Biodigester, 30 kWp Solar PV, 15 kW Biogas CHP, 60 kWh LFP BESS, Accessibility Hub, and SCADA Control Center.</p>
+
+    <div class="teachability-box">
+      <div class="teachability-title">PRECISION RESOURCE ALLOCATION &amp; 12-MONTH BUFFER MANDATE</div>
+      <p style="margin-bottom: 0; color: var(--text-primary);">
+        Civil works commence with the 20,000m² site perimeter fencing (2.2m height) and earthworks to establish immediate sovereign biosecurity control. Construction emphasizes localized labor trade crews and targeted machinery deployments, incorporating a 2.5-month weather and supply-chain contingency buffer for on-time JET EOI commissioning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2: Detailed Labor Force & Trade Man-Hours -->
+  <section id="sec2">
+    <h2>
+      <span>2. Labor Force Breakdown &amp; Trade Man-Hours Register</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec2')">🔊 Listen Section</button>
+    </h2>
+    <p>Labor force requirements are calculated based on standard South African civil and MEP productivity rates adjusted for high-precision off-grid nexus installation:</p>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Build Phase / Trade Category</th>
+          <th>Skill Level &amp; Role Title</th>
+          <th>Peak Personnel Count</th>
+          <th>Total Phase Man-Hours</th>
+          <th>Primary Work Packages &amp; Deliverables</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase 01: Fence, Civil &amp; Water</strong></td>
+          <td>Site Supervisor, Fencing Crew, Rig Operators, Laborers</td>
+          <td>10 Personnel</td>
+          <td><strong>920 Man-Hours</strong></td>
+          <td>20,000m² perimeter security fence (2.2m height), borehole drilling oversight, trenching, 6m tank tower erection, concrete pads.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 02: Solar &amp; Microgrid</strong></td>
+          <td>Certified Wireman, PV Installers, Riggers</td>
+          <td>6 Personnel</td>
+          <td><strong>560 Man-Hours</strong></td>
+          <td>30kWp PV mounting frames, panel wiring, 60kWh BESS positioning, 30kVA hybrid inverter AC/DC integration.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 03: Barns 1 &amp; 2</strong></td>
+          <td>Steel Erectors, Bricklayers, Plumbers</td>
+          <td>12 Personnel</td>
+          <td><strong>1,840 Man-Hours</strong></td>
+          <td>Barn 1 (384m²) &amp; Barn 2 (384m²) structures, 2% sloped floors, gravity flumes, drinker/feeder lines, biosecurity station.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 04: Digester &amp; CHP</strong></td>
+          <td>Masonry Specialists, Gas Fitters, Mechanics</td>
+          <td>8 Personnel</td>
+          <td><strong>1,120 Man-Hours</strong></td>
+          <td>70m³ fixed-dome masonry dome, gas scrubbing manifold, 15kW CHP set placement, hydronic heat exchanger piping.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 05: Nursery &amp; SCADA</strong></td>
+          <td>Instrumentation Tech, Electrician, HVAC</td>
+          <td>5 Personnel</td>
+          <td><strong>480 Man-Hours</strong></td>
+          <td>Hydronic floor loop manifold, Zone F nursery pod insulation, SCADA PLC desk wiring, 120 sensor calibrations.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 06: Access &amp; Academy</strong></td>
+          <td>Paving Crew, Carpentry, General Labor</td>
+          <td>6 Personnel</td>
+          <td><strong>400 Man-Hours</strong></td>
+          <td>Zone M step-free paving, 4x wheelchair bays, 30kW DC EV charger mount, 12m container classroom fit-out.</td>
+        </tr>
+        <tr>
+          <td><strong>Project Commissioning</strong></td>
+          <td>Lead Systems Engineer, SCADA Specialist</td>
+          <td>3 Personnel</td>
+          <td><strong>320 Man-Hours</strong></td>
+          <td>End-to-end nexus integration, black-start testing, biosecurity wet runs, Academy operational handoff.</td>
+        </tr>
+        <tr style="background: #F0FDF4; font-weight: bold;">
+          <td colspan="3" style="text-align: right; color: var(--navy-blue);">TOTAL REQUIRED MVP LABOR MAN-HOURS:</td>
+          <td colspan="2" style="color: var(--dark-green);">5,640 Man-Hours (Avg. 8–12 Workers on site)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 3: Machinery & Plant Operational Hours -->
+  <section id="sec3">
+    <h2>
+      <span>3. Machinery, Heavy Plant &amp; Specialized Equipment Hours Register</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec3')">🔊 Listen Section</button>
+    </h2>
+    <p>Machinery hours are scheduled to maximize machine efficiency, avoiding idle standby costs on site:</p>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Machinery / Equipment Type</th>
+          <th>Capacity / Machine Specification</th>
+          <th>Operating Hours</th>
+          <th>Primary Site Tasks &amp; Execution Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hydraulic Rotary Drilling Rig</strong></td>
+          <td>Heavy Truck-Mounted Rig (100m depth capability)</td>
+          <td><strong>32 Machine-Hours</strong></td>
+          <td>Drilling Borehole-01 (165mm uPVC casing) to water strike and gravel packing.</td>
+        </tr>
+        <tr>
+          <td><strong>20-Ton Crawler Excavator</strong></td>
+          <td>Bucket capacity 0.9 m³, Breaker attachment</td>
+          <td><strong>64 Machine-Hours</strong></td>
+          <td>Earthworks site leveling, 70m³ digester underground bowl excavation, slurry trenching.</td>
+        </tr>
+        <tr>
+          <td><strong>TLB (Tractor Backhoe Loader)</strong></td>
+          <td>4x4 Heavy Utility TLB</td>
+          <td><strong>120 Machine-Hours</strong></td>
+          <td>Foundation trenching for Barns 1 &amp; 2, water pipe/cable trench backfilling, fence post holes.</td>
+        </tr>
+        <tr>
+          <td><strong>10-Ton Smooth Drum Compactor</strong></td>
+          <td>Vibratory Soil Roller Compactor</td>
+          <td><strong>32 Machine-Hours</strong></td>
+          <td>Sub-base compaction for Barn concrete slabs, Zone M paving, and digester base.</td>
+        </tr>
+        <tr>
+          <td><strong>Mobile All-Terrain Crane</strong></td>
+          <td>25-Ton Mobile Hydraulic Crane</td>
+          <td><strong>24 Machine-Hours</strong></td>
+          <td>Lifting 6m steel water tank tower, 12m container classroom, BESS enclosure, CHP set.</td>
+        </tr>
+        <tr>
+          <td><strong>Ready-Mix Concrete Trucks</strong></td>
+          <td>6 m³ Drum Transit Mixers (18 Trips Total)</td>
+          <td><strong>48 Plant-Hours</strong></td>
+          <td>Pouring Barn slabs (768m² total), biosecurity station pad, digester base, tank footings.</td>
+        </tr>
+        <tr>
+          <td><strong>Plate Compactors &amp; Mixers</strong></td>
+          <td>On-site 350L Concrete Mixers &amp; Rammer Compactors</td>
+          <td><strong>210 Equipment-Hours</strong></td>
+          <td>In-situ masonry mortar mixing for digester, localized infill compaction, pathway edge beams.</td>
+        </tr>
+        <tr style="background: #F0FDF4; font-weight: bold;">
+          <td colspan="2" style="text-align: right; color: var(--navy-blue);">TOTAL DEDICATED MACHINERY &amp; PLANT TIME:</td>
+          <td colspan="2" style="color: var(--dark-green);">530 Machine/Plant Hours Across Build Lifecycle</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 4: 12-Month Buffered Project Timeline (Gantt Structure) -->
+  <section id="sec4">
+    <h2>
+      <span>4. 12-Month Buffered Project Master Timeline (Chronological Gantt)</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec4')">🔊 Listen Section</button>
+    </h2>
+    <p>A 12-month timeline structured into distinct milestones, incorporating a 10-week contingency buffer for wet-weather delays and import lead times:</p>
+
+    <div class="card" style="margin-bottom: 25px;">
+      <div class="card-header">12-Month Chronological Execution Schedule</div>
+      <div class="diagram-box">
+M01: 20k m² Perimeter Fence, Borehole-01 &amp; Site Civil Establishment<br>
+↓<br>
+M02--M03: Water Tower Reticulation, 70m³ Digester Masonry Bowl &amp; Slurry Flumes<br>
+↓<br>
+M04--M05: Barn 1 (Poultry 4.8k) &amp; Barn 2 (Swine 160) Superstructures<br>
+↓<br>
+M06--M07: 30kWp Solar PV, 60kWh BESS, 15kW CHP &amp; Power Microgrid<br>
+↓<br>
+M08--M09: Zone F Nursery Hydronics, SCADA 120-Tag Logic &amp; Zone M Access Hub<br>
+↓<br>
+M10--M12: [ BUFFERED PERIOD ] Wet Testing, Biosecurity Stocking &amp; JET Handoff
+      </div>
+    </div>
+
+    <!-- Timeline Table -->
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Primary Work Package</th>
+          <th>Labor &amp; Machinery Intensity</th>
+          <th>Milestone Output &amp; Buffer Safeguard</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Month 01</strong></td>
+          <td>20k m² Perimeter Fence &amp; Borehole Drilling</td>
+          <td>1 Rig, 1 TLB, 10 Workers (400h)</td>
+          <td>2.2m high security fence erected around 20,000m² leasehold; Borehole-01 struck &amp; cased.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 02</strong></td>
+          <td>Water Tower Reticulation &amp; Civil Earthworks</td>
+          <td>1 TLB, 1 Compactor, 8 Workers (360h)</td>
+          <td>Elevated 20kL tank tower erected; site pad leveled; primary utility trenching complete.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 03</strong></td>
+          <td>70m³ Digester Dig &amp; Masonry Core Build</td>
+          <td>1 Excavator, Bricklayer Crew (520h)</td>
+          <td>Digester bowl excavated and dome masonry constructed with gas-tight seal layer.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 04</strong></td>
+          <td>Barns 1 &amp; 2 Foundations &amp; Slurry Flumes</td>
+          <td>Ready-Mix Trucks, 12 Workers (640h)</td>
+          <td>Barn 1 (384m²) and Barn 2 (384m²) concrete slabs and 2% sloped flumes completed.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 05</strong></td>
+          <td>Barn Superstructures &amp; Biosecurity Station</td>
+          <td>Steel Erectors, Plumbers (680h)</td>
+          <td>Roofing, wall cladding, drinker/feeder lines, and shower-in/out station installed.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 06</strong></td>
+          <td>30 kWp Solar PV &amp; Mounting Array</td>
+          <td>PV Electrical Crew, Riggers (360h)</td>
+          <td>Ground frames and rooftop arrays mounted; DC combiner boxes wired.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 07</strong></td>
+          <td>BESS Enclosure &amp; 15 kW CHP Set Delivery</td>
+          <td>Mobile Crane, Wiremen (400h)</td>
+          <td>60kWh LFP battery container placed; 15kW CHP engine aligned with exhaust heat loops.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 08</strong></td>
+          <td>Microgrid Switchgear &amp; Hydronic Piping</td>
+          <td>Certified Electricians, Plumbers (440h)</td>
+          <td>30kVA hybrid inverter energized; nursery hydronic underfloor loops connected.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 09</strong></td>
+          <td>SCADA Control Desk &amp; Sensor Wiring</td>
+          <td>Instrumentation Engineer (320h)</td>
+          <td>120 telemetry sensors online; PLC programmed; HMI dual monitors rendering live maps.</td>
+        </tr>
+        <tr>
+          <td><strong>Month 10</strong></td>
+          <td>Zone M Accessibility Hub &amp; Academy Lab</td>
+          <td>Paving Crew, Carpenters (360h)</td>
+          <td>Step-free pathways paved; 30kW DC EV charger mounted; Academy container ready.</td>
+        </tr>
+        <tr style="background: #FFFBEB;">
+          <td><strong>Month 11</strong></td>
+          <td><strong>[ BUFFER 1 ] Integrated Wet-Commissioning</strong></td>
+          <td>Lead Engineers, Operators (200h)</td>
+          <td>Full bio-water-power system wet runs, black start tests, and biodigester seeding.</td>
+        </tr>
+        <tr style="background: #FFFBEB;">
+          <td><strong>Month 12</strong></td>
+          <td><strong>[ BUFFER 2 ] Biosecurity Stocking &amp; Handover</strong></td>
+          <td>Academy Staff, Operators (200h)</td>
+          <td>4,800 chicks &amp; 160 swine stocked; JET EOI audit verification &amp; Academy launch.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section 5: Freeze Register & Authorization -->
+  <section id="sec5">
+    <h2>
+      <span>5. Operational Lock-In Register &amp; JET EOI Execution Declaration</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec5')">🔊 Listen Section</button>
+    </h2>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Ref Code</th>
+          <th>Locked Operational Parameter</th>
+          <th>Governance &amp; EOI Execution Basis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>EXEC-001-F</strong></td><td>20,000m² Perimeter Fencing Execution</td><td>Immediate Month 1 boundary lockdown with 2.2m high heavy-duty security fence.</td></tr>
+        <tr><td><strong>EXEC-002</strong></td><td>5,640 Total Labor Man-Hours</td><td>Managed across 6 distinct specialized trade crews over 12 months.</td></tr>
+        <tr><td><strong>EXEC-003</strong></td><td>530 Machinery / Plant Hours</td><td>Optimized machine deployment eliminating idle equipment rental costs.</td></tr>
+        <tr><td><strong>EXEC-004</strong></td><td>12-Month Schedule (2.5m Buffer)</td><td>Robust timeline built to absorb Highveld rainy season delays and import lead times.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Signatures & Authorization -->
+  <section id="sec6">
+    <h2>
+      <span>6. Approval &amp; Authorization</span>
+      <button class="section-audio-btn" onclick="speakSingleSection('sec6')">🔊 Listen Section</button>
+    </h2>
+    <div class="teachability-box" style="border-left-color: var(--sunny-gold);">
+      <div class="teachability-title" style="color: var(--navy-blue);">DOCUMENT STATUS</div>
+      <p style="font-weight: 700; color: var(--navy-blue); margin-bottom: 0;">STATUS: APPROVED BASELINE (REV 2.0) — INFUSED WITH 20,000M² PERIMETER FENCE &amp; LOCKED FOR JET EOI EXECUTION</p>
+    </div>
+
+    <div class="signature-container">
+      <!-- Signatory 1: Sipho Wiseman Khuzwayo -->
+      <div class="signature-card">
+        <div class="signature-title">Project Steward &amp; Technical Lead</div>
+        
+        <input type="file" id="file-lead" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-lead">
+          <p id="placeholder-lead" style="display: none;">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(Pre-loading 'My Signature.jpg')</span></p>
+          <img id="img-lead" class="signature-preview-img" style="display: block;" alt="Signature Preview" src="data:image/png;base64,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">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-lead">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-lead">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Sipho Wiseman Khuzwayo</div>
+        <div class="signatory-role">Inclusive Legacy Architect / Principal Lead</div>
+        <div class="signatory-meta">Lwandile Engineering Projects (Pty) Ltd</div>
+        <div class="signature-status" id="status-lead">Status: Signature Image Loaded</div>
+      </div>
+
+      <!-- Signatory 2: Dr. Palesa Charlotte Felix-Faure -->
+      <div class="signature-card">
+        <div class="signature-title">Governance &amp; Academic Lead</div>
+        
+        <input type="file" id="file-academic" accept="image/*" style="display: none;">
+        <div class="signature-dropzone" id="dropzone-academic">
+          <p id="placeholder-academic">Click or drag &amp; drop signature file<br><span style="font-size:0.7rem; color:var(--teal);">(JPG / PNG / SVG)</span></p>
+          <img id="img-academic" class="signature-preview-img" style="display: none;" alt="Signature Preview">
+        </div>
+        
+        <div class="signature-actions">
+          <button type="button" class="btn-sig btn-upload" id="btn-upload-academic">Select File</button>
+          <button type="button" class="btn-sig btn-lock" id="btn-lock-academic">Lock Signature</button>
+        </div>
+
+        <div class="signatory-name">Dr. Palesa Charlotte Felix-Faure</div>
+        <div class="signatory-role">Founder &amp; Academic Lead</div>
+        <div class="signatory-meta">Inclusive Entrepreneurial Academy</div>
+        <div class="signature-status" id="status-academic">Status: Awaiting Signature File</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Institutional Profile Footer Block -->
+  <footer class="institutional-block" id="secFooter">
+    <div class="institutional-grid">
+      <div class="institutional-item">
+        <strong>Consortium Leadership</strong>
+        Sipho Wiseman Khuzwayo — Lead System Architect (Lwandile Engineering)<br>
+        Dr. Palesa Charlotte Felix-Faure — Academic &amp; Governance Lead (Inclusive Entrepreneurial Academy)
+      </div>
+      <div class="institutional-item">
+        <strong>Execution Entities &amp; Standard</strong>
+        Lwandile Engineering Projects (Pty) Ltd<br>
+        Inclusive Entrepreneurial Academy<br>
+        Scapush Precision Execution Standard
+      </div>
+      <div class="institutional-item">
+        <strong>Operational Footprint</strong>
+        Sovereign Bio-Solar-Thermal Campus, Mpumalanga, South Africa
+      </div>
+      <div class="institutional-item">
+        <strong>Primary Contact &amp; Communication</strong>
+        <a href="mailto:siphokhuzwayo12@gmail.com" class="contact-link">siphokhuzwayo12@gmail.com</a><br>
+        <a href="https://www.linkedin.com/search/results/all/?keywords=sipho%20wiseman%20khuzwayo" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn Profile</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- Auto-Scroll Narration & Signature Image Controller Script -->
+<script>
+  function stopSpeech() {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+    }
+    clearActiveHighlights();
+  }
+
+  function clearActiveHighlights() {
+    document.querySelectorAll('section, header').forEach(el => el.classList.remove('active-narration'));
+  }
+
+  function highlightAndScroll(elementId) {
+    clearActiveHighlights();
+    const target = document.getElementById(elementId);
+    if (target) {
+      target.classList.add('active-narration');
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  const timelineNarrationSequence = [
+    {
+      elementId: 'secHeader',
+      text: "Ideal MVP Labor Force, Machinery, and 12-Month Buffered Timeline Architecture infused with the 20,000 square meter perimeter fence for the Sovereign Bio Solar Thermal Campus."
+    },
+    {
+      elementId: 'sec1',
+      text: "Section 1. Human Capital and Machinery Execution Strategy. Incorporating the 20,000 square meter security fence into Month 1 civil deployment."
+    },
+    {
+      elementId: 'sec2',
+      text: "Section 2. Labor Force Breakdown and Trade Man-Hours Register. Detailed man-hour allocation across specialized trade crews totaling 5,640 hours."
+    },
+    {
+      elementId: 'sec3',
+      text: "Section 3. Machinery, Heavy Plant, and Specialized Equipment Hours Register. Optimized equipment operating hours and machinery deployment schedule."
+    },
+    {
+      elementId: 'sec4',
+      text: "Section 4. 12-Month Buffered Project Master Timeline. Chronological execution roadmap featuring 2.5 months of contingency weather and supply chain buffering."
+    },
+    {
+      elementId: 'sec5',
+      text: "Section 5. Operational Lock-In Register and JET EOI Execution Declaration. Traceability register covering parameters EXEC-001-F through EXEC-004."
+    },
+    {
+      elementId: 'sec6',
+      text: "Section 6. Approval, Authorization, and Digital Signature Verification. Live vector image stamp upload slots and digital sealing framework."
+    },
+    {
+      elementId: 'secFooter',
+      text: "Institutional profile footer and communication channels for Lwandile Engineering Projects."
+    }
+  ];
+
+  function playNarrationStep(index) {
+    if (!('speechSynthesis' in window)) return;
+    if (index >= timelineNarrationSequence.length) {
+      clearActiveHighlights();
+      return;
+    }
+
+    const step = timelineNarrationSequence[index];
+    highlightAndScroll(step.elementId);
+
+    let utterance = new SpeechSynthesisUtterance(step.text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.95;
+    utterance.onend = function() {
+      playNarrationStep(index + 1);
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  function startAutoScrollingNarration() {
+    stopSpeech();
+    playNarrationStep(0);
+  }
+
+  function speakSingleSection(sectionId) {
+    stopSpeech();
+    const foundStep = timelineNarrationSequence.find(s => s.elementId === sectionId);
+    if (foundStep) {
+      highlightAndScroll(sectionId);
+      let utterance = new SpeechSynthesisUtterance(foundStep.text);
+      utterance.lang = 'en-US';
+      utterance.rate = 0.95;
+      utterance.onend = () => clearActiveHighlights();
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  // Signature Image Controller Setup
+  document.addEventListener("DOMContentLoaded", function () {
+    function setupSignatureSlot(prefix, defaultImagePath) {
+      const fileInput = document.getElementById(`file-${prefix}`);
+      const dropzone = document.getElementById(`dropzone-${prefix}`);
+      const placeholder = document.getElementById(`placeholder-${prefix}`);
+      const imgPreview = document.getElementById(`img-${prefix}`);
+      const btnUpload = document.getElementById(`btn-upload-${prefix}`);
+      const btnLock = document.getElementById(`btn-lock-${prefix}`);
+      const statusText = document.getElementById(`status-${prefix}`);
+
+      let isLocked = false;
+
+      function renderImage(src) {
+        imgPreview.src = src;
+        imgPreview.style.display = "block";
+        placeholder.style.display = "none";
+      }
+
+      dropzone.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+      btnUpload.addEventListener("click", () => { if (!isLocked) fileInput.click(); });
+
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      dropzone.addEventListener("dragover", (e) => { e.preventDefault(); });
+      dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        if (isLocked) return;
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          const file = e.dataTransfer.files[0];
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            renderImage(event.target.result);
+            statusText.textContent = "Status: Signature Image Loaded";
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      btnLock.addEventListener("click", () => {
+        if (imgPreview.style.display === "none") {
+          alert("Please upload or select a signature image first.");
+          return;
+        }
+        isLocked = true;
+        btnUpload.disabled = true;
+        btnLock.disabled = true;
+        dropzone.style.cursor = "default";
+        
+        const lockTimestamp = new Date().toISOString().replace('T', ' ').substring(0, 19) + ' UTC';
+        statusText.textContent = `Status: Digitally Sealed (${lockTimestamp}) [Scapush Precision]`;
+        statusText.classList.add("locked");
+      });
+    }
+
+    setupSignatureSlot("lead", "My Signature.jpg");
+    setupSignatureSlot("academic", null);
+  });
+</script>
+
+
+</body></html>

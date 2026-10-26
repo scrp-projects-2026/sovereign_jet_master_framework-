@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/ASUS/Downloads/gemini-code-1792780435596.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lwandile Broiler Environmental Controller | Prestige Blueprint</title>
+    <!-- Tailwind CSS -->
+    <script src="./broiler_microclimate_blueprint_files/saved_resource"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="./broiler_microclimate_blueprint_files/all.min.css">
+    <!-- MathJax for rendering LaTeX formulas -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async="" src="./broiler_microclimate_blueprint_files/tex-svg.js.download"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #020617;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 75%),
+                linear-gradient(to bottom, rgba(16, 185, 129, 0.02) 1px, transparent 1px);
+            background-size: 100% 40px, 40px 40px;
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .blueprint-grid {
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, rgba(16, 185, 129, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+        }
+        .glow-emerald { filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.8)); }
+        .wire-flow {
+            stroke-dasharray: 8;
+            animation: flow 1.0s linear infinite;
+        }
+        @keyframes flow { to { stroke-dashoffset: -16; } }
+
+        /* Floating Controller Bar Highlight Glow */
+        .audio-bar-pulse {
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), inset 0 0 10px rgba(16, 185, 129, 0.1);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.bottom-4{bottom:1rem}.left-1\/2{left:50%}.right-0{right:0px}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mr-1{margin-right:0.25rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-auto{height:auto}.min-h-screen{min-height:100vh}.w-1\.5{width:0.375rem}.w-10{width:2.5rem}.w-9{width:2.25rem}.w-\[92\%\]{width:92%}.w-full{width:100%}.w-11{width:2.75rem}.min-w-\[700px\]{min-width:700px}.max-w-4xl{max-width:56rem}.max-w-7xl{max-width:80rem}.max-w-md{max-width:28rem}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-visible{overflow:visible}.overflow-x-auto{overflow-x:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.rounded-lg{border-radius:0.5rem}.rounded-bl-xl{border-bottom-left-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-emerald-500\/20{border-color:rgb(16 185 129 / 0.2)}.border-emerald-500\/30{border-color:rgb(16 185 129 / 0.3)}.border-emerald-500\/40{border-color:rgb(16 185 129 / 0.4)}.border-emerald-500\/50{border-color:rgb(16 185 129 / 0.5)}.border-rose-500\/40{border-color:rgb(244 63 94 / 0.4)}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-slate-800\/80{border-color:rgb(30 41 59 / 0.8)}.border-emerald-500\/10{border-color:rgb(16 185 129 / 0.1)}.border-cyan-500\/40{border-color:rgb(6 182 212 / 0.4)}.bg-\[\#14532d\]\/10{background-color:rgb(20 83 45 / 0.1)}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-emerald-500\/10{background-color:rgb(16 185 129 / 0.1)}.bg-emerald-500\/20{background-color:rgb(16 185 129 / 0.2)}.bg-rose-500\/20{background-color:rgb(244 63 94 / 0.2)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/40{background-color:rgb(15 23 42 / 0.4)}.bg-slate-900\/60{background-color:rgb(15 23 42 / 0.6)}.bg-slate-950\/80{background-color:rgb(2 6 23 / 0.8)}.bg-slate-950\/90{background-color:rgb(2 6 23 / 0.9)}.bg-slate-950\/95{background-color:rgb(2 6 23 / 0.95)}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-slate-950{--tw-bg-opacity:1;background-color:rgb(2 6 23 / var(--tw-bg-opacity, 1))}.bg-slate-950\/60{background-color:rgb(2 6 23 / 0.6)}.bg-emerald-950\/30{background-color:rgb(2 44 34 / 0.3)}.bg-cyan-500\/20{background-color:rgb(6 182 212 / 0.2)}.bg-cyan-950\/30{background-color:rgb(8 51 68 / 0.3)}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-8{padding-top:2rem;padding-bottom:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-28{padding-bottom:7rem}.pb-2{padding-bottom:0.5rem}.pb-6{padding-bottom:1.5rem}.pl-3{padding-left:0.75rem}.pr-3{padding-right:0.75rem}.pt-2{padding-top:0.5rem}.pb-3{padding-bottom:0.75rem}.text-left{text-align:left}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[9px\]{font-size:9px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-\[0\.4em\]{letter-spacing:0.4em}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-\[\#d4af37\]{--tw-text-opacity:1;color:rgb(212 175 55 / var(--tw-text-opacity, 1))}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-rose-300{--tw-text-opacity:1;color:rgb(253 164 175 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-85{opacity:0.85}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.after\:absolute::after{content:var(--tw-content);position:absolute}.after\:left-\[2px\]::after{content:var(--tw-content);left:2px}.after\:top-\[2px\]::after{content:var(--tw-content);top:2px}.after\:top-0\.5::after{content:var(--tw-content);top:0.125rem}.after\:h-4::after{content:var(--tw-content);height:1rem}.after\:h-5::after{content:var(--tw-content);height:1.25rem}.after\:w-4::after{content:var(--tw-content);width:1rem}.after\:w-5::after{content:var(--tw-content);width:1.25rem}.after\:rounded-full::after{content:var(--tw-content);border-radius:9999px}.after\:border::after{content:var(--tw-content);border-width:1px}.after\:border-slate-300::after{content:var(--tw-content);--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.after\:bg-slate-400::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(148 163 184 / var(--tw-bg-opacity, 1))}.after\:transition-all::after{content:var(--tw-content);transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.after\:content-\[\'\'\]::after{--tw-content:'';content:var(--tw-content)}.hover\:border-emerald-500\/30:hover{border-color:rgb(16 185 129 / 0.3)}.hover\:border-emerald-500\/40:hover{border-color:rgb(16 185 129 / 0.4)}.hover\:bg-emerald-500\/30:hover{background-color:rgb(16 185 129 / 0.3)}.hover\:bg-rose-500\/30:hover{background-color:rgb(244 63 94 / 0.3)}.hover\:bg-slate-900:hover{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-500\/20:hover{background-color:rgb(16 185 129 / 0.2)}.group:hover .group-hover\:text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.peer:checked ~ .peer-checked\:bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.peer:checked ~ .peer-checked\:after\:translate-x-full::after{content:var(--tw-content);--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.peer:checked ~ .peer-checked\:after\:border-white::after{content:var(--tw-content);--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.peer:checked ~ .peer-checked\:after\:bg-emerald-950::after{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(2 44 34 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:w-auto{width:auto}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:border-r{border-right-width:1px}.sm\:border-t-0{border-top-width:0px}.sm\:pt-0{padding-top:0px}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-center{align-items:center}.md\:p-4{padding:1rem}.md\:p-6{padding:1.5rem}.md\:px-8{padding-left:2rem;padding-right:2rem}.md\:text-5xl{font-size:3rem;line-height:1}}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:flex{display:flex}.lg\:w-auto{width:auto}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:items-center{align-items:center}}</style><style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-SVG-styles">
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style></head>
+<body class="min-h-screen text-slate-100 py-8 px-4 md:px-8 blueprint-grid pb-28">
+
+    <!-- FLOATING FIXED ACCESSIBLE AUDIO NARRATION & CONTROLLER BAR -->
+    <aside aria-label="Audio Narration Control Bar" class="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-4xl bg-slate-950/95 border-2 border-emerald-500/50 backdrop-blur-xl rounded-2xl p-3 md:p-4 shadow-2xl audio-bar-pulse flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+            <div id="narratorStatusIcon" class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-volume-high text-emerald-400 text-lg"></i>
+            </div>
+            <div class="overflow-hidden">
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">Scapush Audio Narrator</span>
+                    <span id="speechStateBadge" class="text-[9px] font-mono uppercase tracking-wider text-slate-400">Finished</span>
+                </div>
+                <p id="floatingCommentaryText" class="text-xs text-slate-200 font-semibold truncate max-w-md mt-0.5">13:00 PM Peak Heat Mitigation Phase: Midday sun pushes broiler house temperatures to 34°C. Heat sensor A triggers HIGH (1), and safety sensor C is active (1). Input A passes through the OR gate to enable ventilation fans at maximum 950 RPM. Simultaneously, heat signal A feeds into the misting AND gate alongside active ventilation, triggering misting solenoids ON at 4.2 Liters per minute. Flash-evaporative cooling drops ambient air temperature safely.</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto justify-end border-t sm:border-t-0 border-slate-800 pt-2 sm:pt-0">
+            <!-- Audio Toggle Checkbox -->
+            <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800 mr-1">
+                <span class="text-xs font-bold text-slate-300">Voice</span>
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="narratorToggle" class="sr-only peer" checked="">
+                    <div class="w-9 h-5 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-500 peer-checked:after:bg-emerald-950"></div>
+                </label>
+            </div>
+
+            <!-- Action Buttons -->
+            <button onclick="replayCurrentNarration()" class="px-3 py-1.5 bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all">
+                <i class="fa-solid fa-play"></i> Read Aloud
+            </button>
+            <button onclick="stopSpeech()" class="px-3 py-1.5 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/40 text-rose-300 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all">
+                <i class="fa-solid fa-stop"></i> Stop
+            </button>
+        </div>
+    </aside>
+
+    <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Header -->
+        <header class="flex flex-col lg:flex-row justify-between items-start lg:items-center border-b border-emerald-500/30 pb-6 gap-6">
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs uppercase tracking-[0.4em] text-emerald-400 font-bold">Lwandile Engineering Projects</span>
+                    <span class="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20 font-bold uppercase tracking-wider">Beijing Prestige Gear</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-bold tracking-tight mt-1 text-white flex items-center gap-3">
+                    <i class="fa-solid fa-wind text-emerald-400"></i> Broiler Microclimate Controller
+                </h1>
+                <p class="text-slate-400 text-sm mt-1">
+                    Multi-stage microclimate logical protection matrix mapped for 4,800-broiler cohorts under the JET Framework.
+                </p>
+            </div>
+            
+            <!-- Metadata Registry Panel -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:flex items-center gap-3 bg-slate-950/80 p-4 rounded-2xl border border-emerald-500/20 w-full lg:w-auto text-xs mono">
+                <div class="pr-3 border-r border-slate-800">
+                    <span class="text-slate-500 block text-[9px] uppercase">DOC ID</span>
+                    <span class="font-bold text-slate-300">LEP-BRW-002</span>
+                </div>
+                <div class="px-3 sm:border-r border-slate-800">
+                    <span class="text-slate-500 block text-[9px] uppercase">VERSION</span>
+                    <span class="font-bold text-emerald-400">v3.0-PRESTIGE</span>
+                </div>
+                <div class="px-3 border-r border-slate-800">
+                    <span class="text-slate-500 block text-[9px] uppercase">STATUS</span>
+                    <span class="font-bold text-emerald-400 flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping"></span> SECURE
+                    </span>
+                </div>
+                <div class="pl-3">
+                    <span class="text-slate-500 block text-[9px] uppercase">AUTHORIZATION</span>
+                    <span class="font-bold text-[#d4af37]">S.W. KHUZWAYO</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Diurnal Lifecycle Interactive Simulator Control Panel -->
+        <section class="bg-slate-950/90 border-2 border-emerald-500/30 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-emerald-500/10 text-emerald-400 px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-bl-xl border-l border-b border-emerald-500/20">
+                Sovereign Teachability Engine
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+                <h2 class="text-xl font-bold flex items-center gap-2 text-emerald-400">
+                    <i class="fa-solid fa-clock"></i> Broiler Diurnal Microclimate Walkthrough
+                </h2>
+            </div>
+            
+            <p class="text-slate-300 text-sm mb-6 max-w-4xl">
+                Observe how the logical controllers prevent biological mortality by dynamically evaluating ambient temperature inputs, ventilation thresholds, and ammonia safety offsets. Click a scenario below to run the simulation.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Scenario 1: Cool Dawn -->
+                <button onclick="setDiurnalScenario('dawn')" class="text-left bg-slate-900/60 p-4 rounded-xl border border-slate-800 hover:border-emerald-500/40 hover:bg-slate-900 transition-all group">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-cyan-400 font-mono uppercase">06:00 AM — Cool Dawn</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-emerald-400 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Dawn Ammonia Clear</h3>
+                    <p class="text-xs text-slate-400">Toxic gases build up overnight. Fans kick in to clear ammonia; mist is locked out.</p>
+                </button>
+
+                <!-- Scenario 2: Midday Peak Heat Stress -->
+                <button onclick="setDiurnalScenario('heatstress')" class="text-left bg-slate-900/60 p-4 rounded-xl border border-slate-800 hover:border-emerald-500/40 hover:bg-slate-900 transition-all group">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-amber-500 font-mono uppercase">13:00 PM — Peak Heat</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-emerald-400 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Heat Stress Mitigation</h3>
+                    <p class="text-xs text-slate-400">Ambient temp hits 34°C. Ventilation runs full scale, misting sprays open.</p>
+                </button>
+
+                <!-- Scenario 3: Quiet Afternoon -->
+                <button onclick="setDiurnalScenario('afternoon')" class="text-left bg-slate-900/60 p-4 rounded-xl border border-slate-800 hover:border-emerald-500/40 hover:bg-slate-900 transition-all group">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-emerald-400 font-mono uppercase">16:00 PM — Normal</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-emerald-400 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Steady State Comfort</h3>
+                    <p class="text-xs text-slate-400">Temps drop to 24°C, air quality is pristine. Normal standby operations.</p>
+                </button>
+
+                <!-- Scenario 4: Deep Freeze Safeguard -->
+                <button onclick="setDiurnalScenario('freeze')" class="text-left bg-slate-900/60 p-4 rounded-xl border border-slate-800 hover:border-emerald-500/40 hover:bg-slate-900 transition-all group">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold text-sky-400 font-mono uppercase">03:00 AM — Winter Night</span>
+                        <i class="fa-solid fa-circle-chevron-right text-slate-600 group-hover:text-emerald-400 transition-colors"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-sm mb-1">Cold Stress Safeguard</h3>
+                    <p class="text-xs text-slate-400">Highveld winter freezing hazard (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="0" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="8.362ex" height="1.781ex" role="img" focusable="false" viewBox="0 -705 3696.1 787" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mo" transform="translate(981.8,0)"><use data-c="3D" xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="msup" transform="translate(2037.6,0)"><g data-mml-node="mn"><use data-c="34" xlink:href="#MJX-TEX-N-34"></use></g><g data-mml-node="mo" transform="translate(533,363) scale(0.707)"><use data-c="2218" xlink:href="#MJX-TEX-N-2218"></use></g></g><g data-mml-node="mtext" transform="translate(2974.1,0)"><use data-c="43" xlink:href="#MJX-TEX-N-43"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo>=</mo><msup><mn>4</mn><mo>∘</mo></msup><mtext>C</mtext></math></mjx-assistive-mml></mjx-container>). Cold override locks out mist/fans.</p>
+                </button>
+            </div>
+
+            <!-- Dynamic Scenario Narrative Board -->
+            <div id="narrativeBoard" class="mt-4 bg-[#14532d]/10 border border-emerald-500/20 rounded-xl p-4 text-sm text-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-[10px] uppercase font-mono tracking-wider text-emerald-400 block mb-1">Live Controller Commentary &amp; Teachability Guide</span>
+                    <p id="scenarioDescription" class="leading-relaxed">13:00 PM Peak Heat Mitigation Phase: Midday sun pushes broiler house temperatures to 34°C. Heat sensor A triggers HIGH (1), and safety sensor C is active (1). Input A passes through the OR gate to enable ventilation fans at maximum 950 RPM. Simultaneously, heat signal A feeds into the misting AND gate alongside active ventilation, triggering misting solenoids ON at 4.2 Liters per minute. Flash-evaporative cooling drops ambient air temperature safely.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Workspace Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Left Panel: Parameter Controls & Physics Engines -->
+            <div class="lg:col-span-4 space-y-4">
+                
+                <!-- Signal Controllers -->
+                <div class="bg-slate-950/90 backdrop-blur-md border border-emerald-500/20 rounded-2xl p-5 shadow-2xl">
+                    <h2 class="text-lg font-bold mb-4 flex items-center justify-between text-emerald-400 border-b border-slate-800 pb-2">
+                        <span><i class="fa-solid fa-sliders"></i> Sensor Calibration</span>
+                        <span class="text-xs uppercase font-mono text-slate-500">Live Inputs</span>
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <!-- Input A -->
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="font-bold text-sm text-slate-200 flex items-center gap-2">
+                                    <i class="fa-solid fa-temperature-high text-amber-500"></i> A: Heat Threshold (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="1" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="5.742ex" height="1.906ex" role="img" focusable="false" viewBox="0 -677 2538 842.6" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.375ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="TeXAtom" transform="translate(617,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><use data-c="48" xlink:href="#MJX-TEX-N-48"></use><use data-c="49" xlink:href="#MJX-TEX-N-49" transform="translate(750,0)"></use><use data-c="47" xlink:href="#MJX-TEX-N-47" transform="translate(1111,0)"></use><use data-c="48" xlink:href="#MJX-TEX-N-48" transform="translate(1896,0)"></use></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>T</mi><mrow data-mjx-texclass="ORD"><mtext>HIGH</mtext></mrow></msub></math></mjx-assistive-mml></mjx-container>)
+                                </label>
+                                <span id="valA" class="mono text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">1 (5V VCC)</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-3">High (5V) when temperature inside the broiler exceeds <mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="2" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="4.884ex" height="1.649ex" role="img" focusable="false" viewBox="0 -707 2158.6 729" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.05ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><use data-c="33" xlink:href="#MJX-TEX-N-33"></use><use data-c="30" xlink:href="#MJX-TEX-N-30" transform="translate(500,0)"></use></g><g data-mml-node="mo" transform="translate(1033,393.1) scale(0.707)"><use data-c="2218" xlink:href="#MJX-TEX-N-2218"></use></g></g><g data-mml-node="mtext" transform="translate(1436.6,0)"><use data-c="43" xlink:href="#MJX-TEX-N-43"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>30</mn><mo>∘</mo></msup><mtext>C</mtext></math></mjx-assistive-mml></mjx-container>.</p>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="switchA" class="sr-only peer" onchange="updateCircuit(true)">
+                                <div class="w-11 h-6 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500 peer-checked:after:bg-emerald-950"></div>
+                            </label>
+                        </div>
+
+                        <!-- Input B -->
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="font-bold text-sm text-slate-200 flex items-center gap-2">
+                                    <i class="fa-solid fa-biohazard text-cyan-400"></i> B: Toxic Air Overwrite (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="3" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="5.484ex" height="1.994ex" role="img" focusable="false" viewBox="0 -716 2424 881.6" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.375ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D434" xlink:href="#MJX-TEX-I-1D434"></use></g><g data-mml-node="TeXAtom" transform="translate(783,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><use data-c="54" xlink:href="#MJX-TEX-N-54"></use><use data-c="4F" xlink:href="#MJX-TEX-N-4F" transform="translate(722,0)"></use><use data-c="58" xlink:href="#MJX-TEX-N-58" transform="translate(1500,0)"></use></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>A</mi><mrow data-mjx-texclass="ORD"><mtext>TOX</mtext></mrow></msub></math></mjx-assistive-mml></mjx-container>)
+                                </label>
+                                <span id="valB" class="mono text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">1 (5V VCC)</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-3">High (5V) when ammonia level exceeds <mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="4" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="7.229ex" height="1.946ex" role="img" focusable="false" viewBox="0 -666 3195 860" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.439ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-TEX-N-31"></use><use data-c="35" xlink:href="#MJX-TEX-N-35" transform="translate(500,0)"></use></g><g data-mml-node="mtext" transform="translate(1000,0)"><use data-c="A0" xlink:href="#MJX-TEX-N-A0"></use><use data-c="70" xlink:href="#MJX-TEX-N-70" transform="translate(250,0)"></use><use data-c="70" xlink:href="#MJX-TEX-N-70" transform="translate(806,0)"></use><use data-c="6D" xlink:href="#MJX-TEX-N-6D" transform="translate(1362,0)"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>15</mn><mtext>&nbsp;ppm</mtext></math></mjx-assistive-mml></mjx-container> or <mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="5" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="4.381ex" height="1.934ex" role="img" focusable="false" viewBox="0 -705 1936.6 855" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.339ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mtext"><use data-c="43" xlink:href="#MJX-TEX-N-43"></use><use data-c="4F" xlink:href="#MJX-TEX-N-4F" transform="translate(722,0)"></use></g><g data-mml-node="mn" transform="translate(1533,-150) scale(0.707)"><use data-c="32" xlink:href="#MJX-TEX-N-32"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mtext>CO</mtext><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container> is dense.</p>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="switchB" class="sr-only peer" onchange="updateCircuit(true)">
+                                <div class="w-11 h-6 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500 peer-checked:after:bg-emerald-950"></div>
+                            </label>
+                        </div>
+
+                        <!-- Input C -->
+                        <div class="bg-slate-900/40 p-4 rounded-xl border border-slate-800/80 hover:border-emerald-500/30 transition-all">
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="font-bold text-sm text-slate-200 flex items-center gap-2">
+                                    <i class="fa-solid fa-shield-halved text-emerald-400"></i> C: Safe Temperature Zone (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="6" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="6.029ex" height="1.976ex" role="img" focusable="false" viewBox="0 -705 2664.8 873.2" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.381ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use data-c="1D436" xlink:href="#MJX-TEX-I-1D436"></use></g><g data-mml-node="TeXAtom" transform="translate(748,-152.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><use data-c="53" xlink:href="#MJX-TEX-N-53"></use><use data-c="41" xlink:href="#MJX-TEX-N-41" transform="translate(556,0)"></use><use data-c="46" xlink:href="#MJX-TEX-N-46" transform="translate(1306,0)"></use><use data-c="45" xlink:href="#MJX-TEX-N-45" transform="translate(1959,0)"></use></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mrow data-mjx-texclass="ORD"><mtext>SAFE</mtext></mrow></msub></math></mjx-assistive-mml></mjx-container>)
+                                </label>
+                                <span id="valC" class="mono text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30">1 (5V VCC)</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mb-3">High (5V) when ambient temperature is clear of cold stress danger (<mjx-container class="MathJax CtxtMenu_Attached_0" jax="SVG" tabindex="0" ctxtmenu_counter="7" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="9.493ex" height="1.69ex" role="img" focusable="false" viewBox="0 -707 4196.1 747" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.09ex;"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D447" xlink:href="#MJX-TEX-I-1D447"></use></g><g data-mml-node="mo" transform="translate(981.8,0)"><use data-c="3E" xlink:href="#MJX-TEX-N-3E"></use></g><g data-mml-node="msup" transform="translate(2037.6,0)"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-TEX-N-31"></use><use data-c="38" xlink:href="#MJX-TEX-N-38" transform="translate(500,0)"></use></g><g data-mml-node="mo" transform="translate(1033,393.1) scale(0.707)"><use data-c="2218" xlink:href="#MJX-TEX-N-2218"></use></g></g><g data-mml-node="mtext" transform="translate(3474.1,0)"><use data-c="43" xlink:href="#MJX-TEX-N-43"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo>&gt;</mo><msup><mn>18</mn><mo>∘</mo></msup><mtext>C</mtext></math></mjx-assistive-mml></mjx-container>).</p>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="switchC" class="sr-only peer" onchange="updateCircuit(true)">
+                                <div class="w-11 h-6 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-slate-400 after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500 peer-checked:after:bg-emerald-950"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Physical Engine Block -->
+                <div class="bg-slate-950/90 backdrop-blur-md border border-emerald-500/20 rounded-2xl p-5 shadow-2xl space-y-4">
+                    <h2 class="text-lg font-bold flex items-center justify-between text-emerald-400 border-b border-slate-800 pb-2">
+                        <span><i class="fa-solid fa-calculator"></i> Bio-Diagnostics</span>
+                        <span class="text-xs uppercase font-mono text-slate-500">Live Physics</span>
+                    </h2>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-400 font-sans">Misting Output Rate</span>
+                            <span id="mistRate" class="text-xs font-bold text-cyan-400">4.2 L/min</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-slate-400 font-sans">Air Changes Per Hour (ACH)</span>
+                            <span id="achRate" class="text-xs font-bold text-emerald-400">18.2 ACH</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs mono font-sans">
+                        <div class="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
+                            <span class="text-slate-500 block text-[9px] uppercase">FAN SPEED</span>
+                            <span id="fanSpeed" class="text-emerald-400 font-bold text-sm">950 RPM</span>
+                            <span class="text-[9px] text-slate-500 block mt-0.5">Dual-axial status</span>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded-lg border border-slate-800">
+                            <span class="text-slate-500 block text-[9px] uppercase">HEAT INDEX</span>
+                            <span id="heatIndexValue" class="text-amber-500 font-bold text-sm">STRESS (34°C)</span>
+                            <span class="text-[9px] text-slate-500 block mt-0.5">Calculated biological load</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Blueprint Canvas -->
+            <div class="lg:col-span-8 space-y-4">
+                
+                <div class="bg-slate-950/95 backdrop-blur-md border border-emerald-500/20 rounded-2xl p-4 md:p-6 shadow-2xl relative overflow-hidden">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2 border-b border-slate-800 pb-3">
+                        <h2 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
+                            <i class="fa-solid fa-diagram-project"></i> Broiler Microclimate Controller Schematic
+                        </h2>
+                        <div class="flex gap-2">
+                            <button onclick="resetCircuit()" class="px-3 py-1.5 text-xs font-semibold bg-slate-900 border border-slate-800 hover:border-emerald-500/30 rounded-lg transition-all flex items-center gap-1 text-slate-300">
+                                <i class="fa-solid fa-arrow-rotate-left"></i> Reset
+                            </button>
+                            <button onclick="copyFormulas()" class="px-3 py-1.5 text-xs font-semibold bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 rounded-lg transition-all flex items-center gap-1">
+                                <i class="fa-solid fa-copy"></i> Copy Formulas
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SVG Canvas -->
+                    <div class="w-full bg-slate-950/60 p-3 rounded-xl border border-emerald-500/10 relative overflow-x-auto">
+                        <svg viewBox="0 0 800 400" class="w-full min-w-[700px] h-auto overflow-visible select-none">
+                            <defs>
+                                <pattern id="blueprint-dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <circle cx="10" cy="10" r="0.8" fill="rgba(16, 185, 129, 0.15)"></circle>
+                                </pattern>
+                                
+                                <g id="ieee-or-gate">
+                                    <path d="M 0,-25 C 12,-25 22,-18 32,-10 C 42,-2 48,0 52,0 C 48,0 42,2 32,10 C 22,18 12,25 0,25 C 8,12 8,-12 0,-25 Z" fill="#064e3b" stroke="#10b981" stroke-width="2.5"></path>
+                                    <text x="18" y="5" font-family="sans-serif" font-size="11" font-weight="bold" fill="#10b981" text-anchor="middle" class="mono">OR</text>
+                                </g>
+
+                                <g id="ieee-and-gate">
+                                    <path d="M 0,-25 L 25,-25 C 45,-25 45,25 25,25 L 0,25 Z" fill="#064e3b" stroke="#10b981" stroke-width="2.5"></path>
+                                    <text x="18" y="5" font-family="sans-serif" font-size="11" font-weight="bold" fill="#10b981" text-anchor="middle" class="mono">AND</text>
+                                </g>
+                            </defs>
+
+                            <rect width="800" height="400" fill="url(#blueprint-dots)" rx="8"></rect>
+
+                            <!-- Bus Wires -->
+                            <path id="wireA" d="M 120,60 L 220,60 L 220,85 L 250,85" fill="none" stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round"></path>
+                            <path id="flowA" d="M 120,60 L 220,60 L 220,85 L 250,85" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireB" d="M 120,130 L 220,130 L 220,105 L 250,105" fill="none" stroke="#06b6d4" stroke-width="4.5" stroke-linecap="round"></path>
+                            <path id="flowB" d="M 120,130 L 220,130 L 220,105 L 250,105" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireOROut" d="M 302,95 L 390,95 L 390,195 L 430,195" fill="none" stroke="#10b981" stroke-width="4.5" stroke-linecap="round"></path>
+                            <path id="flowOROut" d="M 302,95 L 390,95 L 390,195 L 430,195" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireC" d="M 120,215 L 430,215" fill="none" stroke="#10b981" stroke-width="4.5" stroke-linecap="round"></path>
+                            <path id="flowC" d="M 120,215 L 430,215" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireYVent" d="M 482,205 L 560,205 M 560,205 L 680,205 M 560,205 L 560,315 L 600,315" fill="none" stroke="#10b981" stroke-width="4.5" stroke-linecap="round"></path>
+                            <path id="flowYVent" d="M 482,205 L 560,205 M 560,205 L 680,205 M 560,205 L 560,315 L 600,315" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireTapA" d="M 180,60 L 180,335 L 370,335 L 370,295 L 600,295" fill="none" stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round"></path>
+                            <path id="flowTapA" d="M 180,60 L 180,335 L 370,335 L 370,295 L 600,295" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <path id="wireYMist" d="M 652,305 L 680,305" fill="none" stroke="#06b6d4" stroke-width="4.5" stroke-linecap="round"></path>
+                            <path id="flowYMist" d="M 652,305 L 680,305" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" class="wire-flow opacity-85"></path>
+
+                            <!-- Gates -->
+                            <g transform="translate(250, 95)">
+                                <use href="#ieee-or-gate"></use>
+                                <text x="28" y="-32" font-size="11" fill="#10b981" font-weight="bold" class="mono" text-anchor="middle">74HC32 (OR)</text>
+                            </g>
+
+                            <g transform="translate(430, 205)">
+                                <use href="#ieee-and-gate"></use>
+                                <text x="25" y="-32" font-size="11" fill="#10b981" font-weight="bold" class="mono" text-anchor="middle">74HC08 (AND)</text>
+                            </g>
+
+                            <g transform="translate(600, 305)">
+                                <use href="#ieee-and-gate"></use>
+                                <text x="25" y="-32" font-size="11" fill="#10b981" font-weight="bold" class="mono" text-anchor="middle">74HC08 (AND)</text>
+                            </g>
+
+                            <!-- Nodes -->
+                            <g transform="translate(120, 60)">
+                                <circle r="13" fill="#f59e0b" stroke="#ffffff" stroke-width="3.5" id="nodeA"></circle>
+                                <text y="4" font-size="10" font-weight="bold" fill="#020617" text-anchor="middle" class="mono" id="txtA">0</text>
+                                <text x="-25" y="-20" font-size="11" font-weight="bold" fill="#10b981" text-anchor="start" class="mono">TEMP (A)</text>
+                            </g>
+
+                            <g transform="translate(120, 130)">
+                                <circle r="13" fill="#06b6d4" stroke="#ffffff" stroke-width="3.5" id="nodeB"></circle>
+                                <text y="4" font-size="10" font-weight="bold" fill="#020617" text-anchor="middle" class="mono" id="txtB">0</text>
+                                <text x="-25" y="-20" font-size="11" font-weight="bold" fill="#10b981" text-anchor="start" class="mono">TOXIC (B)</text>
+                            </g>
+
+                            <g transform="translate(120, 215)">
+                                <circle r="13" fill="#10b981" stroke="#ffffff" stroke-width="3.5" id="nodeC"></circle>
+                                <text y="4" font-size="10" font-weight="bold" fill="#020617" text-anchor="middle" class="mono" id="txtC">0</text>
+                                <text x="-25" y="-20" font-size="11" font-weight="bold" fill="#10b981" text-anchor="start" class="mono">C_SAFE (C)</text>
+                            </g>
+
+                            <g transform="translate(705, 205)">
+                                <circle r="22" fill="#10b981" stroke="#ffffff" stroke-width="4" id="nodeY1" class="glow-emerald"></circle>
+                                <text y="5" font-size="13" font-weight="bold" fill="#020617" text-anchor="middle" class="mono" id="txtY1">0</text>
+                                <text x="-30" y="-32" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="start" class="mono">FAN (Y_VENT)</text>
+                            </g>
+
+                            <g transform="translate(705, 305)">
+                                <circle r="22" fill="#06b6d4" stroke="#ffffff" stroke-width="4" id="nodeY2" class="glow-emerald"></circle>
+                                <text y="5" font-size="13" font-weight="bold" fill="#020617" text-anchor="middle" class="mono" id="txtY2">0</text>
+                                <text x="-30" y="-32" font-size="11" font-weight="bold" fill="#cbd5e1" text-anchor="start" class="mono">MIST (Y_MIST)</text>
+                            </g>
+                        </svg>
+                    </div>
+
+                    <!-- Formula Output Block -->
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div id="statusVENT" class="bg-emerald-950/30 p-4 rounded-xl border border-emerald-500/40 text-sm flex items-center justify-between">
+                            <div>
+                                <span class="text-[9px] uppercase tracking-wider text-slate-500 font-bold block">Ventilation Output (U2A Out)</span>
+                                <span class="font-bold text-emerald-400 mono">Y_VENT = (A ∨ B) ∧ C</span>
+                            </div>
+                            <span id="diagnosticVENT" class="font-mono bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded font-bold text-xs border border-emerald-500/40">ACTIVE (5V)</span>
+                        </div>
+                        <div id="statusMIST" class="bg-cyan-950/30 p-4 rounded-xl border border-cyan-500/40 text-sm flex items-center justify-between">
+                            <div>
+                                <span class="text-[9px] uppercase tracking-wider text-slate-500 font-bold block">Misting Cooling Output (U2B Out)</span>
+                                <span class="font-bold text-cyan-400 mono">Y_MIST = A ∧ Y_VENT</span>
+                            </div>
+                            <span id="diagnosticMIST" class="font-mono bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded font-bold text-xs border border-cyan-500/40">ACTIVE (5V)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactive Logic & Text-to-Speech Narrator Engine -->
+    <script>
+        let state = { A: false, B: false, C: false };
+
+        const narratives = {
+            dawn: "06:00 AM Dawn Ammonia Clear Phase: Overnight, closed curtains cause ammonia and CO2 buildup. Sensor B detects toxicity (Signal 1). Safety sensor C confirms temperature is above freezing (Signal 1). High heat A remains off (Signal 0). The OR gate routes toxic alert to the ventilation AND gate, turning ON fans at 450 RPM to purge ammonia. Crucially, misting remains OFF because heat threshold A is inactive, preventing wet litter and respiratory diseases.",
+            heatstress: "13:00 PM Peak Heat Mitigation Phase: Midday sun pushes broiler house temperatures to 34°C. Heat sensor A triggers HIGH (1), and safety sensor C is active (1). Input A passes through the OR gate to enable ventilation fans at maximum 950 RPM. Simultaneously, heat signal A feeds into the misting AND gate alongside active ventilation, triggering misting solenoids ON at 4.2 Liters per minute. Flash-evaporative cooling drops ambient air temperature safely.",
+            afternoon: "16:00 PM Steady State Comfort Phase: Ambient temperature drops to an optimal 24°C, and ammonia levels are well within safe thresholds. Thermal safety C stays active (1). With no thermal or gas stress triggers present, both ventilation and misting outputs drop to standby. Airflow maintains a baseline whisper speed of 250 RPM to preserve quiet bio-comfort for the flock.",
+            freeze: "03:00 AM Cold Stress Safeguard Phase: Highveld winter frost drops temperatures to 4°C. Thermal safety C drops LOW to Ground (0). Even if overnight ammonia builds up, safety gate input C acts as an absolute master lockout. The ventilation AND gate returns LOW, preventing freezing external air from chilling the birds. Misting is also completely locked out, averting catastrophic flock hypothermia.",
+            toggle_A_on: "Heat Threshold Switch A toggled HIGH (1). Temperature exceeds 30°C. If thermal safety C is active, ventilation fans turn on to dissipate heat, and misting activates to provide evaporative cooling.",
+            toggle_A_off: "Heat Threshold Switch A toggled LOW (0). High heat signal cleared. Misting turns off immediately to prevent wetting the bedding.",
+            toggle_B_on: "Toxic Air Overwrite Switch B toggled HIGH (1). Ammonia or CO2 concentration exceeds safe limits. Signal feeds into OR gate requesting immediate ventilation regardless of room temperature.",
+            toggle_B_off: "Toxic Air Overwrite Switch B toggled LOW (0). Gas levels restored to safe PPM limits.",
+            toggle_C_on: "Safe Temperature Zone C toggled HIGH (1). Room temperature is above cold-stress hazard level (18°C). Master safety interlock allows ventilation and misting systems to operate.",
+            toggle_C_off: "Safe Temperature Zone C toggled LOW (0). CRITICAL SAFETY LOCKOUT! Temperature is too cold (under 18°C). Master interlock disables ALL fans and misting to protect chicks from freezing."
+        };
+
+        let currentScript = narratives.afternoon;
+
+        function updateSpeechStateBadge(stateText) {
+            const badge = document.getElementById('speechStateBadge');
+            if (badge) badge.innerText = stateText;
+        }
+
+        function speakText(text) {
+            const toggle = document.getElementById('narratorToggle');
+            if (!toggle || !toggle.checked) return;
+
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.95;
+                utterance.pitch = 1.0;
+                
+                utterance.onstart = () => updateSpeechStateBadge('Speaking...');
+                utterance.onend = () => updateSpeechStateBadge('Finished');
+                utterance.onerror = () => updateSpeechStateBadge('Error');
+
+                const voices = window.speechSynthesis.getVoices();
+                const preferredVoice = voices.find(v => v.lang.includes('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha')));
+                if (preferredVoice) utterance.voice = preferredVoice;
+
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function stopSpeech() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                updateSpeechStateBadge('Stopped');
+            }
+        }
+
+        function replayCurrentNarration() {
+            speakText(currentScript);
+        }
+
+        function syncFloatingBarText(text) {
+            const el = document.getElementById('floatingCommentaryText');
+            if (el) el.innerText = text;
+            const desc = document.getElementById('scenarioDescription');
+            if (desc) desc.innerText = text;
+        }
+
+        function setDiurnalScenario(type) {
+            if (type === 'dawn') {
+                state.A = false; state.B = true; state.C = true;
+                currentScript = narratives.dawn;
+            } else if (type === 'heatstress') {
+                state.A = true; state.B = true; state.C = true;
+                currentScript = narratives.heatstress;
+            } else if (type === 'afternoon') {
+                state.A = false; state.B = false; state.C = true;
+                currentScript = narratives.afternoon;
+            } else if (type === 'freeze') {
+                state.A = false; state.B = true; state.C = false;
+                currentScript = narratives.freeze;
+            }
+
+            document.getElementById('switchA').checked = state.A;
+            document.getElementById('switchB').checked = state.B;
+            document.getElementById('switchC').checked = state.C;
+
+            updateCircuit(false);
+            syncFloatingBarText(currentScript);
+            speakText(currentScript);
+        }
+
+        function updateCircuit(isManualToggle = false) {
+            if (isManualToggle) {
+                const prevA = state.A, prevB = state.B, prevC = state.C;
+
+                state.A = document.getElementById('switchA').checked;
+                state.B = document.getElementById('switchB').checked;
+                state.C = document.getElementById('switchC').checked;
+
+                if (state.A !== prevA) currentScript = state.A ? narratives.toggle_A_on : narratives.toggle_A_off;
+                else if (state.B !== prevB) currentScript = state.B ? narratives.toggle_B_on : narratives.toggle_B_off;
+                else if (state.C !== prevC) currentScript = state.C ? narratives.toggle_C_on : narratives.toggle_C_off;
+
+                syncFloatingBarText(currentScript);
+                speakText(currentScript);
+            }
+
+            const OR_Out = state.A || state.B;
+            const Y_VENT = OR_Out && state.C;
+            const Y_MIST = state.A && Y_VENT;
+
+            updateNode('nodeA', 'txtA', 'valA', state.A, '#f59e0b');
+            updateNode('nodeB', 'txtB', 'valB', state.B, '#06b6d4');
+            updateNode('nodeC', 'txtC', 'valC', state.C, '#10b981');
+
+            updateOutputNode('nodeY1', 'txtY1', Y_VENT, '#10b981');
+            updateOutputNode('nodeY2', 'txtY2', Y_MIST, '#06b6d4');
+
+            setWireState('wireA', 'flowA', state.A, '#f59e0b');
+            setWireState('wireTapA', 'flowTapA', state.A, '#f59e0b');
+            setWireState('wireB', 'flowB', state.B, '#06b6d4');
+            setWireState('wireOROut', 'flowOROut', OR_Out, '#10b981');
+            setWireState('wireC', 'flowC', state.C, '#10b981');
+            setWireState('wireYVent', 'flowYVent', Y_VENT, '#10b981');
+            setWireState('wireYMist', 'flowYMist', Y_MIST, '#06b6d4');
+
+            const diagVent = document.getElementById('diagnosticVENT');
+            const statusVentBox = document.getElementById('statusVENT');
+            if (Y_VENT) {
+                diagVent.innerText = "ACTIVE (5V)";
+                diagVent.className = "font-mono bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded font-bold text-xs border border-emerald-500/40";
+                statusVentBox.className = "bg-emerald-950/30 p-4 rounded-xl border border-emerald-500/40 text-sm flex items-center justify-between";
+            } else {
+                diagVent.innerText = "INACTIVE (GND)";
+                diagVent.className = "font-mono bg-slate-950 px-3 py-1 rounded text-slate-500 font-bold text-xs";
+                statusVentBox.className = "bg-slate-900/40 p-4 rounded-xl border border-slate-800 text-sm flex items-center justify-between";
+            }
+
+            const diagMist = document.getElementById('diagnosticMIST');
+            const statusMistBox = document.getElementById('statusMIST');
+            if (Y_MIST) {
+                diagMist.innerText = "ACTIVE (5V)";
+                diagMist.className = "font-mono bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded font-bold text-xs border border-cyan-500/40";
+                statusMistBox.className = "bg-cyan-950/30 p-4 rounded-xl border border-cyan-500/40 text-sm flex items-center justify-between";
+            } else {
+                diagMist.innerText = "INACTIVE (GND)";
+                diagMist.className = "font-mono bg-slate-950 px-3 py-1 rounded text-slate-500 font-bold text-xs";
+                statusMistBox.className = "bg-slate-900/40 p-4 rounded-xl border border-slate-800 text-sm flex items-center justify-between";
+            }
+
+            const mistRateEl = document.getElementById('mistRate');
+            const achRateEl = document.getElementById('achRate');
+            const fanSpeedEl = document.getElementById('fanSpeed');
+            const heatIndexEl = document.getElementById('heatIndexValue');
+
+            mistRateEl.innerText = Y_MIST ? "4.2 L/min" : "0.0 L/min";
+
+            if (Y_VENT && state.A) {
+                achRateEl.innerText = "18.2 ACH";
+                fanSpeedEl.innerText = "950 RPM";
+            } else if (Y_VENT) {
+                achRateEl.innerText = "8.5 ACH";
+                fanSpeedEl.innerText = "450 RPM";
+            } else {
+                achRateEl.innerText = "2.4 ACH";
+                fanSpeedEl.innerText = "250 RPM";
+            }
+
+            if (state.A) {
+                heatIndexEl.innerText = "STRESS (34°C)";
+                heatIndexEl.className = "text-amber-500 font-bold text-sm";
+            } else if (!state.C) {
+                heatIndexEl.innerText = "COLD (4°C)";
+                heatIndexEl.className = "text-sky-400 font-bold text-sm";
+            } else {
+                heatIndexEl.innerText = "Safe (24°C)";
+                heatIndexEl.className = "text-emerald-400 font-bold text-sm";
+            }
+        }
+
+        function updateNode(nodeId, textId, valId, isActive, activeColor) {
+            const circle = document.getElementById(nodeId);
+            const text = document.getElementById(textId);
+            const val = document.getElementById(valId);
+
+            if (isActive) {
+                circle.setAttribute('fill', activeColor);
+                circle.setAttribute('stroke', '#ffffff');
+                text.innerText = "1";
+                text.setAttribute('fill', '#020617');
+                val.innerText = "1 (5V VCC)";
+                val.className = "mono text-xs px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold border border-emerald-500/30";
+            } else {
+                circle.setAttribute('fill', '#020617');
+                circle.setAttribute('stroke', '#475569');
+                text.innerText = "0";
+                text.setAttribute('fill', '#94a3b8');
+                val.innerText = "0 (GND)";
+                val.className = "mono text-xs px-2 py-0.5 rounded bg-slate-950 text-slate-500 font-bold";
+            }
+        }
+
+        function updateOutputNode(nodeId, textId, isActive, activeColor) {
+            const circle = document.getElementById(nodeId);
+            const text = document.getElementById(textId);
+
+            if (isActive) {
+                circle.setAttribute('fill', activeColor);
+                circle.setAttribute('stroke', '#ffffff');
+                circle.setAttribute('class', 'glow-emerald');
+                text.innerText = "1";
+                text.setAttribute('fill', '#020617');
+            } else {
+                circle.setAttribute('fill', '#020617');
+                circle.setAttribute('stroke', '#475569');
+                circle.setAttribute('class', '');
+                text.innerText = "0";
+                text.setAttribute('fill', '#ffffff');
+            }
+        }
+
+        function setWireState(wireId, flowId, isActive, activeColor) {
+            const wire = document.getElementById(wireId);
+            const flow = document.getElementById(flowId);
+
+            if (isActive) {
+                wire.setAttribute('stroke', activeColor);
+                flow.classList.remove('hidden');
+            } else {
+                wire.setAttribute('stroke', '#1e293b');
+                flow.classList.add('hidden');
+            }
+        }
+
+        function resetCircuit() {
+            setDiurnalScenario('afternoon');
+        }
+
+        function copyFormulas() {
+            const text = "Lwandile Broiler Environmental Controller Logic Formulas:\nVentilation: Y_VENT = (A ∨ B) ∧ C\nMisting: Y_MIST = A ∧ Y_VENT";
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Formulas copied to clipboard!");
+            });
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            updateCircuit(false);
+            syncFloatingBarText(currentScript);
+        });
+    </script>
+
+<svg id="MJX-SVG-global-cache" style="display: none;"><defs><path id="MJX-TEX-I-1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-TEX-N-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path id="MJX-TEX-N-2218" d="M55 251Q55 328 112 386T249 444T386 388T444 249Q444 171 388 113T250 55Q170 55 113 112T55 251ZM245 403Q188 403 142 361T96 250Q96 183 141 140T250 96Q284 96 313 109T354 135T375 160Q403 197 403 250Q403 313 360 358T245 403Z"></path><path id="MJX-TEX-N-43" d="M56 342Q56 428 89 500T174 615T283 681T391 705Q394 705 400 705T408 704Q499 704 569 636L582 624L612 663Q639 700 643 704Q644 704 647 704T653 705H657Q660 705 666 699V419L660 413H626Q620 419 619 430Q610 512 571 572T476 651Q457 658 426 658Q322 658 252 588Q173 509 173 342Q173 221 211 151Q232 111 263 84T328 45T384 29T428 24Q517 24 571 93T626 244Q626 251 632 257H660L666 251V236Q661 133 590 56T403 -21Q262 -21 159 83T56 342Z"></path><path id="MJX-TEX-N-48" d="M128 622Q121 629 117 631T101 634T58 637H25V683H36Q57 680 180 680Q315 680 324 683H335V637H302Q262 636 251 634T233 622L232 500V378H517V622Q510 629 506 631T490 634T447 637H414V683H425Q446 680 569 680Q704 680 713 683H724V637H691Q651 636 640 634T622 622V61Q628 51 639 49T691 46H724V0H713Q692 3 569 3Q434 3 425 0H414V46H447Q489 47 498 49T517 61V332H232V197L233 61Q239 51 250 49T302 46H335V0H324Q303 3 180 3Q45 3 36 0H25V46H58Q100 47 109 49T128 61V622Z"></path><path id="MJX-TEX-N-49" d="M328 0Q307 3 180 3T32 0H21V46H43Q92 46 106 49T126 60Q128 63 128 342Q128 620 126 623Q122 628 118 630T96 635T43 637H21V683H32Q53 680 180 680T328 683H339V637H317Q268 637 254 634T234 623Q232 620 232 342Q232 63 234 60Q238 55 242 53T264 48T317 46H339V0H328Z"></path><path id="MJX-TEX-N-47" d="M56 342Q56 428 89 500T174 615T283 681T391 705Q394 705 400 705T408 704Q499 704 569 636L582 624L612 663Q639 700 643 704Q644 704 647 704T653 705H657Q660 705 666 699V419L660 413H626Q620 419 619 430Q610 512 571 572T476 651Q457 658 426 658Q401 658 376 654T316 633T254 592T205 519T177 411Q173 369 173 335Q173 259 192 201T238 111T302 58T370 31T431 24Q478 24 513 45T559 100Q562 110 562 160V212Q561 213 557 216T551 220T542 223T526 225T502 226T463 227H437V273H449L609 270Q715 270 727 273H735V227H721Q674 227 668 215Q666 211 666 108V6Q660 0 657 0Q653 0 639 10Q617 25 600 42L587 54Q571 27 524 3T406 -22Q317 -22 238 22T108 151T56 342Z"></path><path id="MJX-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path id="MJX-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><path id="MJX-TEX-N-54" d="M36 443Q37 448 46 558T55 671V677H666V671Q667 666 676 556T685 443V437H645V443Q645 445 642 478T631 544T610 593Q593 614 555 625Q534 630 478 630H451H443Q417 630 414 618Q413 616 413 339V63Q420 53 439 50T528 46H558V0H545L361 3Q186 1 177 0H164V46H194Q264 46 283 49T309 63V339V550Q309 620 304 625T271 630H244H224Q154 630 119 601Q101 585 93 554T81 486T76 443V437H36V443Z"></path><path id="MJX-TEX-N-4F" d="M56 340Q56 423 86 494T164 610T270 680T388 705Q521 705 621 601T722 341Q722 260 693 191T617 75T510 4T388 -22T267 3T160 74T85 189T56 340ZM467 647Q426 665 388 665Q360 665 331 654T269 620T213 549T179 439Q174 411 174 354Q174 144 277 61Q327 20 385 20H389H391Q474 20 537 99Q603 188 603 354Q603 411 598 439Q577 592 467 647Z"></path><path id="MJX-TEX-N-58" d="M270 0Q252 3 141 3Q46 3 31 0H23V46H40Q129 50 161 88Q165 94 244 216T324 339Q324 341 235 480T143 622Q133 631 119 634T57 637H37V683H46Q64 680 172 680Q297 680 318 683H329V637H324Q307 637 286 632T263 621Q263 618 322 525T384 431Q385 431 437 511T489 593Q490 595 490 599Q490 611 477 622T436 637H428V683H437Q455 680 566 680Q661 680 676 683H684V637H667Q585 634 551 599Q548 596 478 491Q412 388 412 387Q412 385 514 225T620 62Q628 53 642 50T695 46H726V0H717Q699 3 591 3Q466 3 445 0H434V46H440Q454 46 476 51T499 64Q499 67 463 124T390 238L353 295L350 292Q348 290 343 283T331 265T312 236T286 195Q219 88 218 84Q218 70 234 59T272 46H280V0H270Z"></path><path id="MJX-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJX-TEX-N-A0" d=""></path><path id="MJX-TEX-N-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"></path><path id="MJX-TEX-N-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path id="MJX-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-TEX-I-1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path><path id="MJX-TEX-N-53" d="M55 507Q55 590 112 647T243 704H257Q342 704 405 641L426 672Q431 679 436 687T446 700L449 704Q450 704 453 704T459 705H463Q466 705 472 699V462L466 456H448Q437 456 435 459T430 479Q413 605 329 646Q292 662 254 662Q201 662 168 626T135 542Q135 508 152 480T200 435Q210 431 286 412T370 389Q427 367 463 314T500 191Q500 110 448 45T301 -21Q245 -21 201 -4T140 27L122 41Q118 36 107 21T87 -7T78 -21Q76 -22 68 -22H64Q61 -22 55 -16V101Q55 220 56 222Q58 227 76 227H89Q95 221 95 214Q95 182 105 151T139 90T205 42T305 24Q352 24 386 62T420 155Q420 198 398 233T340 281Q284 295 266 300Q261 301 239 306T206 314T174 325T141 343T112 367T85 402Q55 451 55 507Z"></path><path id="MJX-TEX-N-41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z"></path><path id="MJX-TEX-N-46" d="M128 619Q121 626 117 628T101 631T58 634H25V680H582V676Q584 670 596 560T610 444V440H570V444Q563 493 561 501Q555 538 543 563T516 601T477 622T431 631T374 633H334H286Q252 633 244 631T233 621Q232 619 232 490V363H284Q287 363 303 363T327 364T349 367T372 373T389 385Q407 403 410 459V480H450V200H410V221Q407 276 389 296Q381 303 371 307T348 313T327 316T303 317T284 317H232V189L233 61Q240 54 245 52T270 48T333 46H360V0H348Q324 3 182 3Q51 3 36 0H25V46H58Q100 47 109 49T128 61V619Z"></path><path id="MJX-TEX-N-45" d="M128 619Q121 626 117 628T101 631T58 634H25V680H597V676Q599 670 611 560T625 444V440H585V444Q584 447 582 465Q578 500 570 526T553 571T528 601T498 619T457 629T411 633T353 634Q266 634 251 633T233 622Q233 622 233 621Q232 619 232 497V376H286Q359 378 377 385Q413 401 416 469Q416 471 416 473V493H456V213H416V233Q415 268 408 288T383 317T349 328T297 330Q290 330 286 330H232V196V114Q232 57 237 52Q243 47 289 47H340H391Q428 47 452 50T505 62T552 92T584 146Q594 172 599 200T607 247T612 270V273H652V270Q651 267 632 137T610 3V0H25V46H58Q100 47 109 49T128 61V619Z"></path><path id="MJX-TEX-N-3E" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path><path id="MJX-TEX-N-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path></defs></svg></body></html>
